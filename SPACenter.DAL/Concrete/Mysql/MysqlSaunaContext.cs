@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 //MySql.Data ve MySql.Data.EntityFramework paketlerini yukledim.
 namespace SPACenter.DAL.Concrete.Mysql
 
