@@ -19,6 +19,11 @@ namespace SPACenter.DAL.Concrete.Mysql
     {
         public MysqlSaunaContext() : base("MysqlSaunaContext") { }
 
+        public MysqlSaunaContext(string dbConnectionString)
+        {
+
+        }
+
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Department> Departments { get; set; }

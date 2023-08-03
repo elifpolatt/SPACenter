@@ -20,14 +20,14 @@ namespace SPACenter.Entities.Database
 
         [Required(ErrorMessage = "Müşteri adını boş geçemezsiniz.")]
         [StringLength(50, ErrorMessage = "Müşteri adı 50 karakterden fazla olamaz.")]
-        //[DisplayName("Adı")]
+        [DisplayName("Adı")]
         public string Name { get; set; }
         [StringLength(50, ErrorMessage = "Müşteri soyadı 50 karakterden fazla olamaz.")]
-        //[DisplayName("Soyadı")]
+        [DisplayName("Soyadı")]
         public string Surname { get; set; }
 
         [StringLength(20, ErrorMessage = "Telefon numarası 15 karakterden fazla olamaz.")]
-        //[DisplayName("Telefon Numarası")]
+        [DisplayName("Telefon Numarası")]
         public string PhoneNumber { get; set; }
 
         //byte olarak tutma nedenimiz veri tabanına direkt olarak fotografların image seklinde kaydedilmemesi icindir.
@@ -36,9 +36,9 @@ namespace SPACenter.Entities.Database
         //Burada MemoryStream kullanılarak byte tutucagız ve byte dizesini Photoya atacagız. 
         ////Bu yapı sayesinde, veritabanında Photo adlı bir sütuna doğrudan fotoğrafın byte dizisi depolanmaz. Bunun yerine, Image özelliği aracılığıyla fotoğrafı doğrudan alabilir ve işleyebiliriz. Bu, Image türündeki fotoğrafı daha kolay kullanılabilir ve işlenebilir hale getirir ve Photo adlı byte dizisi özelliğinin doğrudan kullanılmasından kaçınır.
 
-        [NotMapped]
+        [NotMapped] //-> veri tabanında gormek ıstemedıgımız kısımlarda kullanıyoruz. oraya kaydetmeye gerek yok 
         [DisplayName("Fotoğraf")]
-        public Image Image{ get; set; }  //MemoryStream uygulanacak. using System.Drawing; ekledik 
+        public Image Image{ get; set; }  //MemoryStream uygulanacak.Image için using System.Drawing; ekledik 
 
 
 

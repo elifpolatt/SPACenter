@@ -13,7 +13,8 @@ namespace SPACenter.DAL.Abstracts
         Customer Delete(int Id);
         Customer Update(Customer customer);
         Customer Get(int Id);
-        List<Customer> GetAllCustomer();
+        List<Customer> GetAll();
+
 
     }
 }

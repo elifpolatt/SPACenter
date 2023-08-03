@@ -13,9 +13,6 @@ namespace SPACenter.Entities.Database
         //    Appointments = new List<Appointment>();
         //}
 
-
-
-
         public int Id { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }

@@ -11,6 +11,18 @@ namespace SPACenter.DAL.Concrete
 {
     public class MssqlSaunaContext : DbContext
     {
+        private string _connectionString;
+
+        public MssqlSaunaContext(string connectionString) : base(connectionString)
+        {
+            _connectionString = connectionString;
+            //veri tabanı baglantısı burada saklandı 
+        }
+
+        public MssqlSaunaContext()
+        {
+            
+        }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Department> Departments { get; set; }

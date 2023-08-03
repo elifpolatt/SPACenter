@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Text;
+using System.Threading.Tasks;
+using SPACenter.Entities.Enums;
+using SPACenter.Entities.Models;
+using SPACenter.UI.Properties;
+
+namespace SPACenter.UI
+{
+    public static class GlobalVariables
+    {
+        //uygulamanın farklı yerlerınde tekrar tekrar aynı verılere erısmek yerıne burada tuttuk. verılerı tutar ve burada guncelleyebılırız. her yerden erisildiginde aynı verilere ulasılır.(singleton)
+        private static ConnectInfo connectInfo { get; set; }
+        //burada connectInfodan gıedcegız sınıf dısında da asagıdakı yapıyı kullnacagız.
+
+        public static ConnectInfo ConnectInfo
+        {
+            get
+            {
+                if (connectInfo != null)
+                {
+                    return connectInfo;
+
+                }
+                DatabaseType selectdb = Settings.Default.DatabaseType;
+                //DatabaseType selectdb = DatabaseType.Mssql; //boyle sadece mssql gelir.
+                string connectionString;
+                ConnectionStringSettingsCollection connectionStringCol = ConfigurationManager.ConnectionStrings;
+                //app.configdeki veri tabanı baglantısına erismek ıcın ConnectionStringSettingsCollection türünde connectionStringCol degiskeni tanımladık
+
+                switch (selectdb)
+                {
+                    case DatabaseType.Mssql:
+                        connectionString = connectionStringCol["MssqlSaunaContext"].ConnectionString;
+                        break;
+                  case DatabaseType.Mysql:
+                        connectionString = connectionStringCol["MysqlSaunaContext"].ConnectionString;
+                       break;
+                    default:
+                       throw new ArgumentOutOfRangeException("unhandled databasetype: " + selectdb.ToString()); 
+                    //beklenmeyen durum hatası verecek hicbir secenek de olmuyorsa
+
+                }
+                //ConnectInfo(string, DatabaseType)
+                //deafult durum belırtılmedıgınde connectionStringde hata verırdi. her durumu goz onune alarak calısıyor cunku su an. hata durumunda ne yapacagını bılmezse o kısımda hata verecektı.
+                connectInfo = new ConnectInfo(connectionString, selectdb);
+                return connectInfo;
+                    
+            }
+           
+
+        }
+
+
+    }
+
+}
+

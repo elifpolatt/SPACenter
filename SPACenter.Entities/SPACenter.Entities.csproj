@@ -115,13 +115,16 @@
     <Compile Include="Database\RendezvousTime.cs" />
     <Compile Include="Database\ServerSetting.cs" />
     <Compile Include="Database\User.cs" />
+    <Compile Include="Enums\DatabaseType.cs" />
     <Compile Include="Enums\PaymentType.cs" />
+    <Compile Include="Models\ConnectInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
