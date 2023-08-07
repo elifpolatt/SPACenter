@@ -28,7 +28,7 @@ namespace SPACenter.UI.Message
 
         public static DialogResult DeleteConfirmationDialog(string name)
         {
-            return XtraMessageBox.Show("{name} silinecek , onaylıyor musunuz?", "uyarı", MessageBoxButtons.YesNo,
+            return XtraMessageBox.Show($"{name} silinecek , onaylıyor musunuz?", "uyarı", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
         }
     }

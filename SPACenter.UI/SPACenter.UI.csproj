@@ -137,6 +137,18 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormAppointment.Designer.cs">
+      <DependentUpon>XtraFormAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XtraFormAppointmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormAppointmentDetails.Designer.cs">
+      <DependentUpon>XtraFormAppointmentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XtraFormCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,12 +161,24 @@
     <Compile Include="Forms\XtraFormCustomerDetails.Designer.cs">
       <DependentUpon>XtraFormCustomerDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormDepartment.Designer.cs">
+      <DependentUpon>XtraFormDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVariables.cs" />
     <Compile Include="Message\MessageBoxes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormAppointment.resx">
+      <DependentUpon>XtraFormAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormAppointmentDetails.resx">
+      <DependentUpon>XtraFormAppointmentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormCustomer.resx">
       <DependentUpon>XtraFormCustomer.cs</DependentUpon>

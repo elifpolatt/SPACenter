@@ -34,6 +34,14 @@
             this.accordionControlElementCustomers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementAppointments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPayments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementDepartments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementUsers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementTimes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElemenDB = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementSettings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +49,8 @@
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement});
+            this.accordionControlElement,
+            this.accordionControlElement1});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(260, 621);
@@ -52,7 +61,9 @@
             this.accordionControlElement.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementCustomers,
             this.accordionControlElementAppointments,
-            this.accordionControlElementPayments});
+            this.accordionControlElementPayments,
+            this.accordionControlSeparator1,
+            this.accordionControlSeparator2});
             this.accordionControlElement.Expanded = true;
             this.accordionControlElement.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -77,6 +88,7 @@
             this.accordionControlElementAppointments.Name = "accordionControlElementAppointments";
             this.accordionControlElementAppointments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementAppointments.Text = "Randevular";
+            this.accordionControlElementAppointments.Click += new System.EventHandler(this.accordionControlElementAppointments_Click);
             // 
             // accordionControlElementPayments
             // 
@@ -84,6 +96,62 @@
             this.accordionControlElementPayments.Name = "accordionControlElementPayments";
             this.accordionControlElementPayments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementPayments.Text = "Ödemeler";
+            // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElementDepartments,
+            this.accordionControlElementUsers,
+            this.accordionControlElementTimes,
+            this.accordionControlElemenDB,
+            this.accordionControlElementSettings});
+            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
+            this.accordionControlElement1.Name = "accordionControlElement1";
+            this.accordionControlElement1.Text = "Admin İşlemleri";
+            // 
+            // accordionControlElementDepartments
+            // 
+            this.accordionControlElementDepartments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElementDepartments.Name = "accordionControlElementDepartments";
+            this.accordionControlElementDepartments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDepartments.Text = "Bölümler";
+            // 
+            // accordionControlElementUsers
+            // 
+            this.accordionControlElementUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
+            this.accordionControlElementUsers.Name = "accordionControlElementUsers";
+            this.accordionControlElementUsers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementUsers.Text = "Sistem Kullanıcıları";
+            // 
+            // accordionControlElementTimes
+            // 
+            this.accordionControlElementTimes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
+            this.accordionControlElementTimes.Name = "accordionControlElementTimes";
+            this.accordionControlElementTimes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementTimes.Text = "Seans Saatleri";
+            // 
+            // accordionControlElemenDB
+            // 
+            this.accordionControlElemenDB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
+            this.accordionControlElemenDB.Name = "accordionControlElemenDB";
+            this.accordionControlElemenDB.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElemenDB.Text = "Veri Tabanı İzleme";
+            // 
+            // accordionControlElementSettings
+            // 
+            this.accordionControlElementSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
+            this.accordionControlElementSettings.Name = "accordionControlElementSettings";
+            this.accordionControlElementSettings.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementSettings.Text = "Sistem Ayarları";
             // 
             // FormMain
             // 
@@ -108,6 +176,14 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementCustomers;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementAppointments;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementPayments;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDepartments;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementUsers;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementTimes;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElemenDB;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementSettings;
     }
 }
 

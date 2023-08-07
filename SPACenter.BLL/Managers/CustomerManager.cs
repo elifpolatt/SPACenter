@@ -67,9 +67,9 @@ namespace SPACenter.BLL.Managers
             return Tuple.Create(isSuccess, resultMessages, newCustomer);
         }
 
-        public List<Customer> GetAll()
+        public List<Customer> GetAll(bool? deleted = false)
         {
-            return _CustomerDal.GetAll();
+            return _CustomerDal.GetAll(deleted);
         }
 
         public Customer Get(int id)

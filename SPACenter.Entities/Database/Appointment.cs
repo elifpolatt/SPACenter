@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -14,21 +15,21 @@ namespace SPACenter.Entities.Database
 
         [Range(1, Int32.MaxValue, ErrorMessage = "Müşteri seçiniz.")]
         public int CustomerId { get; set; }
-        //[DisplayName("Müşteri")]
+        [DisplayName("Müşteri")]
         public Customer Customer { get; set; }
 
-        //[DisplayName("Tarih")]
+        [DisplayName("Tarih")]
         public DateTime RendevousDate { get; set; }
 
         [Range(1, Int32.MaxValue, ErrorMessage = "Randevu saati seçiniz.")]
         public int RendezvousTimeId { get; set; }
-        //[DisplayName("Randevu Saatleri")]
+        [DisplayName("Randevu Saatleri")]
 
         public RendezvousTime RendevousTime { get; set; }
 
         [Range(1, Int32.MaxValue, ErrorMessage = "Bölüm seçiniz.")]
         public int DepartmentId { get; set; }
-        //[DisplayName("Bölüm")]
+        [DisplayName("Bölüm")]
         public Department Department { get; set; }
 
     }

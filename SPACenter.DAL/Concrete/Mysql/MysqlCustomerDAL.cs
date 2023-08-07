@@ -32,12 +32,11 @@ namespace SPACenter.DAL.Concrete.Mysql
         }
 
 
-        public List<Customer> GetAll()
+        public List<Customer> GetAll(bool? deleted)
         {
             using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
             {
-
-                List<Customer> Customers = context.Customers.ToList();
+                List<Customer> Customers = context.Customers.Where(x => deleted == null || x.DelFlag == deleted).ToList();
                 return Customers;
             }
         }

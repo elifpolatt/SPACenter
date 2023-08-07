@@ -63,7 +63,7 @@ namespace SPACenter.UI.Forms
             }
         }
        
-        //Müşterileri tabloda listeli şekilde getirilicek
+        //Müşterileri tabloda listeli şekilde getir
         void GetCustomers()
         {
             List<Customer> allCustomers = customerManager.GetAll();
@@ -80,9 +80,10 @@ namespace SPACenter.UI.Forms
 
             }
 
-            if (MessageBoxes.DeleteConfirmationDialog(name: customer.Name) != DialogResult.OK)
+            if (MessageBoxes.DeleteConfirmationDialog(name: customer.Name) != DialogResult.Yes)
             {
                 return;
+
             }
 
             Tuple<bool, List<string>, Customer> delete = customerManager.Delete(customer.Id);

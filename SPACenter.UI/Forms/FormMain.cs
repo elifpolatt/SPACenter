@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SPACenter.Entities.Database;
 using SPACenter.UI.Forms;
 
 namespace SPACenter.UI
@@ -15,12 +16,6 @@ namespace SPACenter.UI
         public FormMain()
         {
             InitializeComponent();
-        }
-
-        private void accordionControlElementCustomers_Click(object sender, EventArgs e)
-        {
-            Form customerForm = new XtraFormCustomer();
-            OpenFormSingle(ref customerForm);
         }
 
         private void OpenFormSingle(ref Form form)
@@ -39,5 +34,17 @@ namespace SPACenter.UI
                 formOpen.Show();
             }
         }
+        private void accordionControlElementCustomers_Click(object sender, EventArgs e)
+        {
+            Form customerForm = new XtraFormCustomer();
+            OpenFormSingle(ref customerForm);
+        }
+        private void accordionControlElementAppointments_Click(object sender, EventArgs e)
+        {
+            Form appointmentForm = new XtraFormAppointment();
+            OpenFormSingle(ref appointmentForm);
+        }
+
+       
     }
 }

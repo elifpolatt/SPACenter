@@ -25,16 +25,16 @@ namespace SPACenter.DAL.Concrete.Mssql
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
                 Customer Customer = context.Customers.Add(c);
-                return context.SaveChanges() ? Customer : null;
+               // return context.SaveChanges() ? Customer : null;
 
-                //if (context.SaveChanges())
-                //{
-                //    return Customer;
-                //}
-                //else
-                //{
-                //    return null;
-                //}
+                if (context.SaveChanges())
+                {
+                    return Customer;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -43,16 +43,16 @@ namespace SPACenter.DAL.Concrete.Mssql
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
                 context.Entry(c).State = EntityState.Modified;
-                return context.SaveChanges() ? c : null;
+                //return context.SaveChanges() ? c : null;
+                if (context.SaveChanges())
+                {
+                    return c;
+                }
+                else
+                {
+                    return null;
+                }
 
-                //if (context.SaveChanges())
-                //{
-                //    return c;
-                //}
-                //else
-                //{
-                //    return null;
-                //}
             }
         }
 
@@ -66,19 +66,40 @@ namespace SPACenter.DAL.Concrete.Mssql
             
         }
 
-        public List<Customer> GetAll()
+        public List<Customer> GetAll(bool? deleted)
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                List<Customer> Customers = context.Customers.ToList();
+                List<Customer> Customers = context.Customers.Where(x=>deleted == null || x.DelFlag == deleted).ToList();
                 return Customers;
             }
         }
+
         public Customer Delete(int id)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                Customer Customer = context.Customers.FirstOrDefault(x => x.Id == id);
+
+
+                if (Customer == null)
+                {
+                    return null;
+                }
+
+                Customer.DelFlag = true;
+                //  return context.SaveChanges() ? Customer : null;
+                if (context.SaveChanges())
+                {
+                    return Customer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
-       
+    
     }
 }
