@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using SPACenter.DAL.Abstracts;
+using SPACenter.DAL.Concrete.Mysql;
 using SPACenter.Entities.Database;
 
 namespace SPACenter.DAL.Concrete.Mssql
@@ -19,46 +20,48 @@ namespace SPACenter.DAL.Concrete.Mssql
             DbConnectionString = dbConnectionString;
         }
 
-        public Customer Add(Customer customer)
+        public Customer Add(Customer c)
         {
-            using (var context = new MssqlSaunaContext(DbConnectionString))
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                context.Customers.Add(customer);
-                context.SaveChanges();
-                return customer;
+                Customer Customer = context.Customers.Add(c);
+                return context.SaveChanges() ? Customer : null;
+
+                //if (context.SaveChanges())
+                //{
+                //    return Customer;
+                //}
+                //else
+                //{
+                //    return null;
+                //}
             }
         }
 
-        public Customer Delete(int Id)
+        public Customer Update(Customer c)
         {
-            using (var context = new MssqlSaunaContext(DbConnectionString))
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                var customer = context.Customers.Find(Id);
-                if (customer != null)
-                {
-                    context.Customers.Remove(customer);
-                    context.SaveChanges();
-                }
-                return customer;
-            }
+                context.Entry(c).State = EntityState.Modified;
+                return context.SaveChanges() ? c : null;
 
-        }
-
-        public Customer Update(Customer customer)
-        {
-            using (var context = new MssqlSaunaContext(DbConnectionString))
-            {
-                context.Entry(customer).State = EntityState.Modified;
-                context.SaveChanges();
-                return customer;
+                //if (context.SaveChanges())
+                //{
+                //    return c;
+                //}
+                //else
+                //{
+                //    return null;
+                //}
             }
         }
 
-        public Customer Get(int Id)
+        public Customer Get(int id)
         {
-            using (var context = new MssqlSaunaContext(DbConnectionString))
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                return context.Customers.FirstOrDefault(x => x.Id == Id);
+                Customer Customer = context.Customers.FirstOrDefault(x => x.Id == id);
+                return Customer;
             }
             
         }
@@ -71,5 +74,11 @@ namespace SPACenter.DAL.Concrete.Mssql
                 return Customers;
             }
         }
+        public Customer Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+       
     }
 }

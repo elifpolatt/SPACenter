@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -9,6 +10,7 @@ using Ninject.Modules;
 using SPACenter.BLL.Ninject;
 using SPACenter.DAL.Abstracts;
 using SPACenter.Entities.Database;
+using SPACenter.Entities.Messages;
 using SPACenter.Entities.Models;
 
 namespace SPACenter.BLL.Managers
@@ -20,76 +22,75 @@ namespace SPACenter.BLL.Managers
 
         public CustomerManager(ConnectInfo connectInfo)
         {
+            // dependency enjeksiyonu kullanarak ICustomerDAL nesnesi oluşturduk
+            // NinjectModules sınıfından bağımlılıkla alınıyo
+
             _CustomerDal = new NinjectModules(connectInfo).StandardKernel.Get<ICustomerDAL>();
         }
 
-
-        //Müşteri ekleme
-        public (bool success, List<string> Errors, Customer customer) Add(Customer customer)
+        //Müşteri ekleme metodu
+        public Tuple<bool, List<string>, Customer> Add(Customer c)
         {
-            //List<string> Errors = new List<string>();
+            // Validasyon işlemi. Validations sınıfındaki ObjectValidator.Validate metodu kullanılıyor
+            Tuple<bool, List<string>, Customer> validate = Validations.ObjectValidator.Validate(c);
 
-            ////fluent validation eklenecek
-            ////ValueTuple ile yapıldı 
+            if (!validate.Item1) //validaasyon sonucları false ise hata mesajları dönecek
+            {
+                return validate;
+            }
 
-            //if (string.IsNullOrEmpty(customer.Name))
-            //{
-            //    Errors.Add("Müşteri adı boş olamaz.");
-            //}
+            //müşteri ekle
+            Customer newCustomer = _CustomerDal.Add(c);
 
-            //if (string.IsNullOrEmpty(customer.Surname))
-            //{
-            //    Errors.Add("Müşteri soyadı boş olamaz.");
-            //}
+            // Müşteri eklenme sonucu ve mesajları Tuple olarak döndürülüyor.
+            //return new Tuple<bool, List<string>, Customer>(newCustomer != null,
+            //    StaticMessages.GetResultMessage(newCustomer != null), customerNew);
+            bool isSuccess = newCustomer != null;
+            List<string> resultMessages = StaticMessages.GetResultMessage(isSuccess);
 
-            //if (Errors.Any())
-            //{
-            //    return (false, Errors, null);
-            //}
+            return Tuple.Create(isSuccess, resultMessages, newCustomer);//Tuple.Create, Tuple nesnesini hızlı bir şekilde oluşturulamsına yardımcı olur. Create yöntemi, Tuple sınıfının oluşturulmasını kolaylaştırır ve kodun daha okunabilir olmasını sağlar.
 
-            //Customer newCustomer = _CustomerDal.Add(customer);
-
-            //return (true, null, newCustomer);
-            return (true, null, null);
 
         }
+        //Müşteri güncelleme metodu
+        public Tuple<bool, List<string>, Customer> Update(Customer c)
+        {
+            // Validasyon işlemi. Validations sınıfındaki ObjectValidator.Validate metodu kullanılıyor
+            Tuple<bool, List<string>, Customer> validate = Validations.ObjectValidator.Validate(c);
+            if (!validate.Item1)//validaasyon sonucları false ise hata mesajları dönecek
+            {
+                return validate; 
+            }
+            Customer newCustomer = _CustomerDal.Update(c);
+            bool isSuccess = newCustomer != null;
+            List<string> resultMessages = StaticMessages.GetResultMessage(isSuccess); //issuccesin durumuna baglı olarak staticmessagedaki getresultmessagedan basarılı veya basarısız sonucu donduurlecek
+            return Tuple.Create(isSuccess, resultMessages, newCustomer);
+        }
 
-        public List<Customer> GetAllCustomers()
+        public List<Customer> GetAll()
         {
             return _CustomerDal.GetAll();
         }
 
+        public Customer Get(int id)
+        {
+            return _CustomerDal.Get(id);
+        }
 
-        //tuple ile 
-        //public Tuple<bool, List<string>, Customer> Add(Customer customer)
-        //{
-        //    // Basit bir doğrulama mekanizması ekleme
-        //    List<string> validationErrors = new List<string>();
 
-        //    if (string.IsNullOrEmpty(customer.Name))
-        //    {
-        //        validationErrors.Add("Müşteri adı boş olamaz.");
-        //    }
+        //Müşteri silme metodu
+        public Tuple<bool, List<string>, Customer> Delete(int id)
+        {
+            Customer newCustomer = _CustomerDal.Delete(id);
+            bool isSuccess = newCustomer != null;
+            List<string> resultMessages = StaticMessages.GetResultMessage(isSuccess);
+            return Tuple.Create(isSuccess, resultMessages, newCustomer);
 
-        //    if (string.IsNullOrEmpty(customer.Surname))
-        //    {
-        //        validationErrors.Add("Müşteri soyadı boş olamaz.");
-        //    }
-
-        //    // Burada gerekli diğer doğrulamaları ekleyebilirsiniz
-
-        //    if (validationErrors.Any())
-        //    {
-        //        return new Tuple<bool, List<string>, Customer>(false, validationErrors, null);
-        //    }
-
-        //    // Tüm doğrulamalar başarılı ise müşteriyi ekle
-        //    Customer newCustomer = _CustomerDal.Add(customer);
-
-        //    return new Tuple<bool, List<string>, Customer>(true, null, newCustomer);
-        //}
+        }
     }
-    }
+
+
+}
 
 
 

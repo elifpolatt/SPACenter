@@ -9,12 +9,11 @@ namespace SPACenter.DAL.Abstracts
 {
     public interface ICustomerDAL
     {
-        Customer Add(Customer customer);
-        Customer Delete(int Id);
-        Customer Update(Customer customer);
-        Customer Get(int Id);
-        List<Customer> GetAll();
-
+        Customer Add(Customer c); //Customer türünden nesne alacak ve ekleme işlemi gerçekleştirilecek
+        Customer Delete(int id); //idye göre müşteri silme işlemi gerçekleşecek.
+        Customer Update(Customer c); //zaten var olan bir müşteri güncellenecek
+        Customer Get(int id); //idye sahip müşteriyi çekmek için kullanılacak.
+        List<Customer> GetAll(); //veri tabanındaki tüm müşterileri listeleyecek.
 
     }
 }

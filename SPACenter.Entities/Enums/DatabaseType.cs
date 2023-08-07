@@ -10,5 +10,6 @@ namespace SPACenter.Entities.Enums
     {
         Mysql = 0,
         Mssql = 1
+        //0 ve 1 yazmasaydık da default olarak zaten 0 ve 1 olacaktı daha net olması ıcın yapıldı sadece.
     }
 }

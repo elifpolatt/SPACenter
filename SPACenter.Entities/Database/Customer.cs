@@ -18,13 +18,17 @@ namespace SPACenter.Entities.Database
         //}
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Müşteri adını boş geçemezsiniz.")]
+
+        //Buradaki uyarıları fluent validation ile yapacagım.
+       // [Required(ErrorMessage = "Müşteri adını boş geçemezsiniz.")]
         [StringLength(50, ErrorMessage = "Müşteri adı 50 karakterden fazla olamaz.")]
         [DisplayName("Adı")]
         public string Name { get; set; }
         [StringLength(50, ErrorMessage = "Müşteri soyadı 50 karakterden fazla olamaz.")]
         [DisplayName("Soyadı")]
         public string Surname { get; set; }
+
+
 
         [StringLength(20, ErrorMessage = "Telefon numarası 15 karakterden fazla olamaz.")]
         [DisplayName("Telefon Numarası")]

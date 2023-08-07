@@ -117,6 +117,7 @@
     <Compile Include="Database\User.cs" />
     <Compile Include="Enums\DatabaseType.cs" />
     <Compile Include="Enums\PaymentType.cs" />
+    <Compile Include="Messages\StaticMessages.cs" />
     <Compile Include="Models\ConnectInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

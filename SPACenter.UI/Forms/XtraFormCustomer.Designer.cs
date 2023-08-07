@@ -38,10 +38,9 @@
             this.barButtonItemDelete = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.gridControlCustomer = new DevExpress.XtraGrid.GridControl();
-            this.bindingSourceCustomer = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,10 +50,9 @@
             this.colMail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -94,6 +92,7 @@
             this.barButtonItemUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemUpdate.ImageOptions.Image")));
             this.barButtonItemUpdate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemUpdate.ImageOptions.LargeImage")));
             this.barButtonItemUpdate.Name = "barButtonItemUpdate";
+            this.barButtonItemUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemUpdate_ItemClick);
             // 
             // barButtonItemDelete
             // 
@@ -102,6 +101,7 @@
             this.barButtonItemDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemDelete.ImageOptions.Image")));
             this.barButtonItemDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemDelete.ImageOptions.LargeImage")));
             this.barButtonItemDelete.Name = "barButtonItemDelete";
+            this.barButtonItemDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDelete_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -118,21 +118,25 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // gridControlCustomer
+            // gridControl1
             // 
-            this.gridControlCustomer.DataSource = this.customerBindingSource;
-            this.gridControlCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.DataSource = this.customerBindingSource;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.RelationName = "Level1";
-            this.gridControlCustomer.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControlCustomer.Location = new System.Drawing.Point(0, 183);
-            this.gridControlCustomer.MainView = this.gridView1;
-            this.gridControlCustomer.MenuManager = this.ribbonControl1;
-            this.gridControlCustomer.Name = "gridControlCustomer";
-            this.gridControlCustomer.Size = new System.Drawing.Size(1135, 395);
-            this.gridControlCustomer.TabIndex = 3;
-            this.gridControlCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl1.Location = new System.Drawing.Point(0, 183);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.ribbonControl1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1135, 395);
+            this.gridControl1.TabIndex = 3;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(SPACenter.Entities.Database.Customer);
             // 
             // gridView1
             // 
@@ -145,12 +149,8 @@
             this.colImage,
             this.colMail,
             this.colDelFlag});
-            this.gridView1.GridControl = this.gridControlCustomer;
+            this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(SPACenter.Entities.Database.Customer);
             // 
             // colId
             // 
@@ -183,7 +183,7 @@
             this.colPhoneNumber.MinWidth = 25;
             this.colPhoneNumber.Name = "colPhoneNumber";
             this.colPhoneNumber.Visible = true;
-            this.colPhoneNumber.VisibleIndex = 2;
+            this.colPhoneNumber.VisibleIndex = 3;
             this.colPhoneNumber.Width = 94;
             // 
             // colPhoto
@@ -206,7 +206,7 @@
             this.colMail.MinWidth = 25;
             this.colMail.Name = "colMail";
             this.colMail.Visible = true;
-            this.colMail.VisibleIndex = 3;
+            this.colMail.VisibleIndex = 2;
             this.colMail.Width = 94;
             // 
             // colDelFlag
@@ -221,16 +221,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 578);
-            this.Controls.Add(this.gridControlCustomer);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormCustomer";
             this.Text = "Müşteriler";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,10 +244,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItemUpdate;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDelete;
-        private DevExpress.XtraGrid.GridControl gridControlCustomer;
+        private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.BindingSource bindingSourceCustomer;
-        private System.Windows.Forms.BindingSource customerBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSurname;
@@ -257,5 +254,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colImage;
         private DevExpress.XtraGrid.Columns.GridColumn colMail;
         private DevExpress.XtraGrid.Columns.GridColumn colDelFlag;
+        private System.Windows.Forms.BindingSource customerBindingSource;
     }
 }

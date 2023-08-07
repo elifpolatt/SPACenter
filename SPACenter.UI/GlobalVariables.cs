@@ -11,12 +11,11 @@ using SPACenter.UI.Properties;
 
 namespace SPACenter.UI
 {
+    //static sınıf olusturma nedenimiz bu sınıf ıcındeki propertylerı kullanabilmek ıcın her defasında yeni bir nesne olusturmamak. yanı ortak olan tum ozellıkler bu sınıf ıcınde tutulacak.
     public static class GlobalVariables
-    {
-        //uygulamanın farklı yerlerınde tekrar tekrar aynı verılere erısmek yerıne burada tuttuk. verılerı tutar ve burada guncelleyebılırız. her yerden erisildiginde aynı verilere ulasılır.(singleton)
+    { 
         private static ConnectInfo connectInfo { get; set; }
-        //burada connectInfodan gıedcegız sınıf dısında da asagıdakı yapıyı kullnacagız.
-
+        //burada connectInfodan gıdecegız sınıf dısında da asagıdakı yapıyı kullnacagız.
         public static ConnectInfo ConnectInfo
         {
             get
@@ -41,8 +40,8 @@ namespace SPACenter.UI
                         connectionString = connectionStringCol["MysqlSaunaContext"].ConnectionString;
                        break;
                     default:
-                       throw new ArgumentOutOfRangeException("unhandled databasetype: " + selectdb.ToString()); 
-                    //beklenmeyen durum hatası verecek hicbir secenek de olmuyorsa
+                       throw new ArgumentOutOfRangeException("unhandled databasetype: " + selectdb.ToString()); // hicbir secenek de olmuyorsa
+                    //beklenmeyen durum hatası verecek
 
                 }
                 //ConnectInfo(string, DatabaseType)
