@@ -167,6 +167,12 @@
     <Compile Include="Forms\XtraFormDepartment.Designer.cs">
       <DependentUpon>XtraFormDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormDepartmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormDepartmentDetails.Designer.cs">
+      <DependentUpon>XtraFormDepartmentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVariables.cs" />
     <Compile Include="Message\MessageBoxes.cs" />
     <Compile Include="Program.cs" />
@@ -185,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormCustomerDetails.resx">
       <DependentUpon>XtraFormCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormDepartment.resx">
+      <DependentUpon>XtraFormDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormDepartmentDetails.resx">
+      <DependentUpon>XtraFormDepartmentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

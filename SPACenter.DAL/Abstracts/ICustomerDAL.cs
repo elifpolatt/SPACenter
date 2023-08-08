@@ -1,9 +1,5 @@
-﻿using System;
+﻿using SPACenter.Entities.Database;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SPACenter.Entities.Database;
 
 namespace SPACenter.DAL.Abstracts
 {

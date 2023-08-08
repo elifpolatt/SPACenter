@@ -96,6 +96,7 @@
             this.accordionControlElementPayments.Name = "accordionControlElementPayments";
             this.accordionControlElementPayments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementPayments.Text = "Ödemeler";
+            this.accordionControlElementPayments.Click += new System.EventHandler(this.accordionControlElementPayments_Click);
             // 
             // accordionControlSeparator1
             // 
@@ -120,35 +121,36 @@
             // 
             // accordionControlElementDepartments
             // 
-            this.accordionControlElementDepartments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElementDepartments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementDepartments.ImageOptions.Image")));
             this.accordionControlElementDepartments.Name = "accordionControlElementDepartments";
             this.accordionControlElementDepartments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementDepartments.Text = "Bölümler";
+            this.accordionControlElementDepartments.Click += new System.EventHandler(this.accordionControlElementDepartments_Click);
             // 
             // accordionControlElementUsers
             // 
-            this.accordionControlElementUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
+            this.accordionControlElementUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementUsers.ImageOptions.Image")));
             this.accordionControlElementUsers.Name = "accordionControlElementUsers";
             this.accordionControlElementUsers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementUsers.Text = "Sistem Kullanıcıları";
             // 
             // accordionControlElementTimes
             // 
-            this.accordionControlElementTimes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
+            this.accordionControlElementTimes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementTimes.ImageOptions.Image")));
             this.accordionControlElementTimes.Name = "accordionControlElementTimes";
             this.accordionControlElementTimes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementTimes.Text = "Seans Saatleri";
             // 
             // accordionControlElemenDB
             // 
-            this.accordionControlElemenDB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
+            this.accordionControlElemenDB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElemenDB.ImageOptions.Image")));
             this.accordionControlElemenDB.Name = "accordionControlElemenDB";
             this.accordionControlElemenDB.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElemenDB.Text = "Veri Tabanı İzleme";
             // 
             // accordionControlElementSettings
             // 
-            this.accordionControlElementSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
+            this.accordionControlElementSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementSettings.ImageOptions.Image")));
             this.accordionControlElementSettings.Name = "accordionControlElementSettings";
             this.accordionControlElementSettings.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementSettings.Text = "Sistem Ayarları";

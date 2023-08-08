@@ -1,15 +1,10 @@
 ﻿using Ninject;
 using Ninject.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SPACenter.DAL.Abstracts;
 using SPACenter.DAL.Concrete.Mssql;
+using SPACenter.DAL.Concrete.Mysql;
 using SPACenter.Entities.Enums;
 using SPACenter.Entities.Models;
-using SPACenter.DAL.Concrete.Mysql;
 
 namespace SPACenter.BLL.Ninject
 {
@@ -51,6 +46,8 @@ namespace SPACenter.BLL.Ninject
         public void LoadMysql()
         {
             StandardKernel.Bind<ICustomerDAL>().To<MysqlCustomerDAL>().WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IDepartmentDAL>().To<MysqlDepartmentDAL>()
+                .WithConstructorArgument("dbConnectionString", ConString);
         }
 
         public void LoadMssql()
@@ -58,6 +55,8 @@ namespace SPACenter.BLL.Ninject
             //ICustomerDAL isminde bir interface gördüğünde MssqlCustomerDAL sınıfından bir nesne baglayacak.
             StandardKernel.Bind<ICustomerDAL>().To<MssqlCustomerDAL>().WithConstructorArgument("dbConnectionString", ConString);
             //bu connectionString sanırım globalvariabledan geliyor.
+            StandardKernel.Bind<IDepartmentDAL>().To<MysqlDepartmentDAL>()
+                .WithConstructorArgument("dbConnectionString", ConString);
 
         }
     }

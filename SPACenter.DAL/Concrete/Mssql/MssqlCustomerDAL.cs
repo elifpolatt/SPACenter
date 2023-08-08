@@ -1,13 +1,8 @@
-﻿using System;
+﻿using SPACenter.DAL.Abstracts;
+using SPACenter.Entities.Database;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using SPACenter.DAL.Abstracts;
-using SPACenter.DAL.Concrete.Mysql;
-using SPACenter.Entities.Database;
 
 namespace SPACenter.DAL.Concrete.Mssql
 {

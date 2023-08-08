@@ -45,6 +45,15 @@ namespace SPACenter.UI
             OpenFormSingle(ref appointmentForm);
         }
 
-       
+        private void accordionControlElementPayments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElementDepartments_Click(object sender, EventArgs e)
+        {
+            Form deparmentForm = new XtraFormDepartment();
+            OpenFormSingle(ref deparmentForm);
+        }
     }
 }

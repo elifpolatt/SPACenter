@@ -39,7 +39,6 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,10 +48,11 @@
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -134,10 +134,6 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(SPACenter.Entities.Database.Customer);
-            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -216,6 +212,10 @@
             this.colDelFlag.Name = "colDelFlag";
             this.colDelFlag.Width = 94;
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(SPACenter.Entities.Database.Customer);
+            // 
             // XtraFormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -228,8 +228,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

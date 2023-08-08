@@ -22,9 +22,13 @@ using SPACenter.UI.Message;
 namespace SPACenter.UI.Forms
 {
     public partial class XtraFormCustomer : DevExpress.XtraEditors.XtraForm
-    {
+
+    { 
+        //Fields
         private CustomerManager customerManager;
 
+
+        //Constructor
         //Müşterilere tıklatıldıgında tüm müşteriler listelenecek : getcustomers
         public XtraFormCustomer()
         {
@@ -35,6 +39,7 @@ namespace SPACenter.UI.Forms
            
         }
 
+        //Methods
         //Müşteri ekleye tıklatıldığında müşteri detay formu açılacak. 
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

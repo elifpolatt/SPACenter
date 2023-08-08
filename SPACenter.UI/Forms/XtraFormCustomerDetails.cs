@@ -18,10 +18,13 @@ namespace SPACenter.UI.Forms
 {
     public partial class XtraFormCustomerDetails : DevExpress.XtraEditors.XtraForm
     {
+
+        //Fields
         private CustomerManager customerManager;
         public bool Result { get; set; }
         public Customer Customer { get; set; }
 
+        //Constructors
         public XtraFormCustomerDetails()
         {
             //müşteri eklemek istediğimde calısacak olan ctor
@@ -41,6 +44,7 @@ namespace SPACenter.UI.Forms
 
 
         }
+        //Methods
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Tuple<bool, List<string>, Customer> updateResult;

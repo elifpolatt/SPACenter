@@ -16,10 +16,14 @@ using SPACenter.Entities.Models;
 namespace SPACenter.BLL.Managers
 {
     public class CustomerManager
+
+    
     {
+        //Fields
         public ICustomerDAL _CustomerDal;
 
 
+        //Constructor
         public CustomerManager(ConnectInfo connectInfo)
         {
             // dependency enjeksiyonu kullanarak ICustomerDAL nesnesi oluşturduk
@@ -28,6 +32,7 @@ namespace SPACenter.BLL.Managers
             _CustomerDal = new NinjectModules(connectInfo).StandardKernel.Get<ICustomerDAL>();
         }
 
+        //Methods
         //Müşteri ekleme metodu
         public Tuple<bool, List<string>, Customer> Add(Customer c)
         {

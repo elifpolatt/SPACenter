@@ -70,7 +70,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1187, 183);
+            this.ribbonControl1.Size = new System.Drawing.Size(1204, 183);
             // 
             // barButtonItemAdd
             // 
@@ -130,7 +130,7 @@
             this.departmentGridControl.MainView = this.gridView1;
             this.departmentGridControl.MenuManager = this.ribbonControl1;
             this.departmentGridControl.Name = "departmentGridControl";
-            this.departmentGridControl.Size = new System.Drawing.Size(1187, 325);
+            this.departmentGridControl.Size = new System.Drawing.Size(1204, 419);
             this.departmentGridControl.TabIndex = 2;
             this.departmentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -221,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 508);
+            this.ClientSize = new System.Drawing.Size(1204, 602);
             this.Controls.Add(this.departmentGridControl);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormAppointment";
