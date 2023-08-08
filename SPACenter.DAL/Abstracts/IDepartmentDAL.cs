@@ -12,6 +12,6 @@ namespace SPACenter.DAL.Abstracts
 
         Department Get(int id);
 
-        List<Department> GetAll();
+        List<Department> GetAll(bool? deleted = false);
     }
 }

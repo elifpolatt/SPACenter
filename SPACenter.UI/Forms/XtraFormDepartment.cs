@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SPACenter.BLL.Managers;
 using SPACenter.Entities.Database;
+using SPACenter.UI.Message;
 
 namespace SPACenter.UI.Forms
 {
@@ -43,9 +44,37 @@ namespace SPACenter.UI.Forms
 
         private void barButtonItemUpdate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraFormDepartmentDetails department = new XtraFormDepartmentDetails();
-            department.ShowDialog();
+            Department department = departmentBindingSource.Current as Department;
+
+            if (department == null)
+            {
+                return;
+            }
+            XtraFormDepartmentDetails departmentDetails = new XtraFormDepartmentDetails(department.Id);
+            departmentDetails.ShowDialog();
             GetDepartments();
+        }
+
+        private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Department department = departmentBindingSource.Current as Department;
+            if (department == null)
+            {
+                return;
+            }
+
+            if (MessageBoxes.DeleteConfirmationDialog(name: department.Name) != DialogResult.OK)
+            {
+                return;
+            }
+
+           
+            Tuple<bool, List<string>, Department> delete = departmentManager.Delete(department.Id);
+            MessageBoxes.ShowResult(delete);
+            if (delete.Item1)
+            {
+                GetDepartments();
+            }
         }
     }
 }

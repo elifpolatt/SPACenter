@@ -39,15 +39,34 @@ namespace SPACenter.UI.Forms
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             
-            Tuple<bool, List<string>, Department> addResult;
-            addResult = departmentManager.Add(Department);
-            MessageBoxes.ShowResult(addResult);
+            //Tuple<bool, List<string>, Department> addResult;
+            //addResult = departmentManager.Add(Department);
+            //MessageBoxes.ShowResult(addResult);
 
-            if (addResult.Item1)
+            //if (addResult.Item1)
+            //{
+            //    Department = addResult.Item3;
+            //    Result = addResult.Item1;
+            //    Close();
+            //}
+
+            Tuple<bool, List<string>, Department> operationResult;
+            if (Department.Id > 0) //bir seçim yapıldıysa id sıfırdan buyukse:
             {
-                Department = addResult.Item3;
-                Result = addResult.Item1;
+                operationResult = departmentManager.Update(Department);
+            }
+            else
+            {
+                operationResult = departmentManager.Add(Department);
+            }
+
+            MessageBoxes.ShowResult(operationResult);
+            if (operationResult.Item1)
+            {
+                Department = operationResult.Item3;
+                Result = operationResult.Item1;
                 Close();
+
             }
         }
     }

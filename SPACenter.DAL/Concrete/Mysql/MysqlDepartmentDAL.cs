@@ -31,7 +31,7 @@ namespace SPACenter.DAL.Concrete.Mysql
             throw new NotImplementedException();
         }
 
-        public List<Department> GetAll()
+        public List<Department> GetAll(bool? deleted)
         {
             throw new NotImplementedException();
         }

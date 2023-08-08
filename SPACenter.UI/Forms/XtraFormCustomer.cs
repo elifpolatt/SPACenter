@@ -75,6 +75,7 @@ namespace SPACenter.UI.Forms
             customerBindingSource.DataSource = allCustomers;
         }
 
+        //Müşteri sil
         private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Customer customer = customerBindingSource.Current as Customer;
@@ -97,6 +98,9 @@ namespace SPACenter.UI.Forms
             {
                 GetCustomers();
             }
+
+
+
         }
         }
 }

@@ -47,7 +47,8 @@ namespace SPACenter.UI
 
         private void accordionControlElementPayments_Click(object sender, EventArgs e)
         {
-
+            Form paymentForm = new XtraFormPayment();
+            OpenFormSingle(ref paymentForm);
         }
 
         private void accordionControlElementDepartments_Click(object sender, EventArgs e)
