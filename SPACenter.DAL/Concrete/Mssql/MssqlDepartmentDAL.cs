@@ -41,12 +41,21 @@ namespace SPACenter.DAL.Concrete.Mssql
 
         public Department Get(int id)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext())
+            {
+                Department Department = context.Departments.FirstOrDefault(x => x.Id == id);
+                return Department;
+            }
         }
 
         public List<Department> GetAll()
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext())
+            {
+                return context.Departments.ToList();
+
+                
+            }
         }
 
         public Department Update(Department c)

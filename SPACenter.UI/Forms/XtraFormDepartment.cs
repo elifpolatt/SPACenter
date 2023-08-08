@@ -37,8 +37,15 @@ namespace SPACenter.UI.Forms
 
         public void GetDepartments()
         {
-            List<Department> departments = new List<Department>();
+            List<Department> departments = departmentManager.GetAll();
             departmentBindingSource.DataSource = departments;
+        }
+
+        private void barButtonItemUpdate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraFormDepartmentDetails department = new XtraFormDepartmentDetails();
+            department.ShowDialog();
+            GetDepartments();
         }
     }
 }

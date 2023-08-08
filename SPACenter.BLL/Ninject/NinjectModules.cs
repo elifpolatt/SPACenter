@@ -45,18 +45,20 @@ namespace SPACenter.BLL.Ninject
 
         public void LoadMysql()
         {
-            StandardKernel.Bind<ICustomerDAL>().To<MysqlCustomerDAL>().WithConstructorArgument("dbConnectionString", ConString);
-            StandardKernel.Bind<IDepartmentDAL>().To<MysqlDepartmentDAL>()
-                .WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<ICustomerDAL>().To<MysqlCustomerDAL>().
+                WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IDepartmentDAL>().To<MysqlDepartmentDAL>().
+                WithConstructorArgument("dbConnectionString", ConString);
         }
 
         public void LoadMssql()
         {
             //ICustomerDAL isminde bir interface gördüğünde MssqlCustomerDAL sınıfından bir nesne baglayacak.
-            StandardKernel.Bind<ICustomerDAL>().To<MssqlCustomerDAL>().WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<ICustomerDAL>().To<MssqlCustomerDAL>().
+                WithConstructorArgument("dbConnectionString", ConString);
             //bu connectionString sanırım globalvariabledan geliyor.
-            StandardKernel.Bind<IDepartmentDAL>().To<MysqlDepartmentDAL>()
-                .WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IDepartmentDAL>().To<MssqlDepartmentDAL>().
+                WithConstructorArgument("dbConnectionString", ConString);
 
         }
     }

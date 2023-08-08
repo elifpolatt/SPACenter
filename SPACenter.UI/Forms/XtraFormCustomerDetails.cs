@@ -47,61 +47,26 @@ namespace SPACenter.UI.Forms
         //Methods
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Tuple<bool, List<string>, Customer> updateResult;
+            Tuple<bool, List<string>, Customer> operationResult;
              
             if (Customer.Id > 0)  //id sıfırdan buyukse yanı bır secim yapıldıysa save butonunda guncelleme islemi yap
             {
-                updateResult = customerManager.Update(Customer);
+                operationResult = customerManager.Update(Customer);
             }
             else // yoksa ekleme işlemi yap 
             {
-                updateResult = customerManager.Add(Customer);
+                operationResult = customerManager.Add(Customer);
             }
 
-            MessageBoxes.ShowResult(updateResult);  //kullanıcıya sonucu messageboxesdan goster 
+            MessageBoxes.ShowResult(operationResult);  //kullanıcıya sonucu messageboxesdan goster 
 
-            if (updateResult.Item1)  //bool = true ise işlem basarılıysa: 
+            if (operationResult.Item1)  //bool = true ise işlem basarılıysa: 
             {
-                Customer = updateResult.Item3;  //eklenmiş veya güncellenmiş olan müsteri bilgisini güncelle
-                Result = updateResult.Item1; //sonucu true olarak ayarla ve kaapt
+                Customer = operationResult.Item3;  //eklenmiş veya güncellenmiş olan müsteri bilgisini güncelle
+                Result = operationResult.Item1; //sonucu true olarak ayarla ve kaapt
                 Close();
             }
         }
-
-        //private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        //{
-        //string name = textEditName.Text;
-        //string surname = textEditSurname.Text;
-        //string mail = textEditMail.Text;
-        //string telefon = textEditTel.Text;
-
-        //Customer newCustomer= new Customer
-        //{
-        //    Name = name,
-        //    Surname = surname,
-        //    Mail = mail,
-        //    PhoneNumber = telefon
-        //};
-        //bunun yerine bindingsource eklenecek
-
-        //Customer customerToAdd = (Customer)bindingSourceCustomer.DataSource;
-
-
-        //var result = customerManager.Add(Customer);
-        //if (Customer != null)
-        //{
-        //    //var result = customerManager.Add(customer);
-
-        //    MessageBox.Show("başarılı", "başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    this.Close();
-
-        //}
-        //else
-        //{
-        //    MessageBox.Show("müşteri adı ve soyadı boş bırakılamaz", "hata", MessageBoxButtons.OK,
-        //        MessageBoxIcon.Error);
-        //}
-        //}
 
 
     }

@@ -36,17 +36,17 @@
             this.barButtonItemDelete = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlDepartment = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuotaPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaymentPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSessionLength = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,7 @@
             this.barButtonItemUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemUpdate.ImageOptions.Image")));
             this.barButtonItemUpdate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemUpdate.ImageOptions.LargeImage")));
             this.barButtonItemUpdate.Name = "barButtonItemUpdate";
+            this.barButtonItemUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemUpdate_ItemClick);
             // 
             // barButtonItemDelete
             // 
@@ -104,17 +105,17 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemDelete);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // gridControl1
+            // gridControlDepartment
             // 
-            this.gridControl1.DataSource = this.departmentBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 183);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbonControl1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1134, 458);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlDepartment.DataSource = this.departmentBindingSource;
+            this.gridControlDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDepartment.Location = new System.Drawing.Point(0, 183);
+            this.gridControlDepartment.MainView = this.gridView1;
+            this.gridControlDepartment.MenuManager = this.ribbonControl1;
+            this.gridControlDepartment.Name = "gridControlDepartment";
+            this.gridControlDepartment.Size = new System.Drawing.Size(1134, 458);
+            this.gridControlDepartment.TabIndex = 4;
+            this.gridControlDepartment.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -126,12 +127,8 @@
             this.colPaymentPerSeance,
             this.colSessionLength,
             this.colDelFlag});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridControlDepartment;
             this.gridView1.Name = "gridView1";
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Department);
             // 
             // colId
             // 
@@ -183,18 +180,22 @@
             this.colDelFlag.Name = "colDelFlag";
             this.colDelFlag.Width = 94;
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Department);
+            // 
             // XtraFormDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 641);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gridControlDepartment);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormDepartment";
             this.Text = "Bölümler";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -210,7 +211,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemUpdate;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDelete;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlDepartment;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;

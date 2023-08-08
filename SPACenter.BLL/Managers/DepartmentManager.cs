@@ -41,5 +41,15 @@ namespace SPACenter.BLL.Managers
 
         }
 
+        public Department Get(int id)
+        {
+            return _IDepartmentDal.Get(id);
+        }
+
+        public List<Department> GetAll()
+        {
+            return _IDepartmentDal.GetAll();
+        }
+
             }
 }
