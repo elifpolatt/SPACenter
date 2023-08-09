@@ -106,11 +106,14 @@
   <ItemGroup>
     <Compile Include="Abstracts\ICustomerDAL.cs" />
     <Compile Include="Abstracts\IDepartmentDAL.cs" />
+    <Compile Include="Abstracts\IPaymentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlCustomerDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlDepartmentDAL.cs" />
+    <Compile Include="Concrete\Mssql\MssqlPaymentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlSaunaContext.cs" />
     <Compile Include="Concrete\Mysql\MysqlCustomerDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlDepartmentDAL.cs" />
+    <Compile Include="Concrete\Mysql\MysqlPaymentDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlSaunaContext.cs" />
     <Compile Include="Migrations.Mssql\Configuration.cs" />
     <Compile Include="Migrations.Mysql\Configuration.cs" />

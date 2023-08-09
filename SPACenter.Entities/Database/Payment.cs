@@ -27,5 +27,24 @@ namespace SPACenter.Entities.Database
         [DisplayName("Ödeme Türü")]
         public PaymentType PaymentType { get; set; }
 
+        public string SelectPaymentType
+        {
+            get
+            {
+                switch (PaymentType)
+                {
+                    case PaymentType.Cash:
+                        return "Nakit";
+                    case PaymentType.CreditCard:
+                        return "Kredi Kartı";
+                    default:
+                        return null;
+                }
+                {
+                    
+                }
+            }
+        }
+
     }
 }

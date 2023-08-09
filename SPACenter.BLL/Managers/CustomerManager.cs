@@ -72,11 +72,13 @@ namespace SPACenter.BLL.Managers
             return Tuple.Create(isSuccess, resultMessages, newCustomer);
         }
 
+        //müşterileri listeleme
         public List<Customer> GetAll(bool? deleted = false)
         {
             return _CustomerDal.GetAll(deleted);
         }
 
+        //belirli bir müşteriyi idye gore getiriyor
         public Customer Get(int id)
         {
             return _CustomerDal.Get(id);

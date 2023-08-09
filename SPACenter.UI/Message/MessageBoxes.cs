@@ -13,7 +13,9 @@ namespace SPACenter.UI.Message
         public static DialogResult ShowResult<T>(Tuple<bool, List<string>, T> result)
         {
             StringBuilder stringBuilder = new StringBuilder();
-            result.Item2.ForEach(s => { stringBuilder.AppendLine(s);});  //burada hata mesajlarını StringBuilder'a ekler.
+            result.Item2.ForEach(s => { stringBuilder.AppendLine(s);});
+            //burada hata mesajlarını StringBuilder'a ekler.
+            // Tuple içindeki ikinci öğe (List<string>) üzerinde döngü başlatılarak, her bir hata mesajı stringBuilder'a ekleniyor.
             //StringBuilder, metin icindeki gerçekleştirilen değişiklikleri aynı nesne içinde yönetir.
             //metin parçalarını birleştirmek veya değiştirmek için bellekte daha az kaynak kullanımı sağlar. 
             string message = stringBuilder.ToString();

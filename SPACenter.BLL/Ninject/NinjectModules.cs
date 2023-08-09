@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using System.Diagnostics.Eventing.Reader;
+using Ninject;
 using Ninject.Modules;
 using SPACenter.DAL.Abstracts;
 using SPACenter.DAL.Concrete.Mssql;
@@ -49,6 +50,8 @@ namespace SPACenter.BLL.Ninject
                 WithConstructorArgument("dbConnectionString", ConString);
             StandardKernel.Bind<IDepartmentDAL>().To<MysqlDepartmentDAL>().
                 WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IPaymentDAL>().To<MysqlPaymentDAL>()
+                .WithConstructorArgument("dbConnectionString", ConString);
         }
 
         public void LoadMssql()
@@ -59,6 +62,8 @@ namespace SPACenter.BLL.Ninject
             //bu connectionString sanırım globalvariabledan geliyor.
             StandardKernel.Bind<IDepartmentDAL>().To<MssqlDepartmentDAL>().
                 WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IPaymentDAL>().To<MssqlPaymentDAL>()
+                .WithConstructorArgument("dbConnectionString", ConString);
 
         }
     }

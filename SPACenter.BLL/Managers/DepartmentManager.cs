@@ -26,7 +26,7 @@ namespace SPACenter.BLL.Managers
         }
 
         //Methods
-        //Bölüm Ekle
+        //Bölüm nesnesini ekler ve doğrulama kontrolleri gerceklestırir
         public Tuple<bool, List<string>, Department> Add(Department c)
         {
             Tuple<bool, List<string>, Department> validate = Validations.ObjectValidator.Validate(c);

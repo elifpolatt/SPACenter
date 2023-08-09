@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Managers\CustomerManager.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />
+    <Compile Include="Managers\PaymentManager.cs" />
     <Compile Include="Ninject\NinjectModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validations\ObjectValidator.cs" />
