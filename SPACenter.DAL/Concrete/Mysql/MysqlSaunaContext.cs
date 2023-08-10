@@ -54,6 +54,17 @@ namespace SPACenter.DAL.Concrete.Mysql
             //bölüm için birden fazla ödeme olabilir ve bölümidye baglı.
 
         }
-
+        public new bool SaveChanges()
+        {
+            try
+            {
+                base.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

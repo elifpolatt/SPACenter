@@ -11,7 +11,7 @@ namespace SPACenter.DAL.Abstracts
     {
         Appointment Add(Appointment c);
         Appointment Update(Appointment c);
-        Appointment Delete(Appointment c);
+        Appointment Delete(int id);
         Appointment Get(int id);
         List<Appointment> GetAll();
     }

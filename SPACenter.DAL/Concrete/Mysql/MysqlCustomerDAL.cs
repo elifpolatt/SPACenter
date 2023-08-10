@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,19 +17,53 @@ namespace SPACenter.DAL.Concrete.Mysql
         {
             DbConnectionString = dbConnectionString;
         }
-        public Customer Add(Customer customer)
+        public Customer Add(Customer c)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                Customer Customer = context.Customers.Add(c);
+                // return context.SaveChanges() ? Customer : null;
+
+                if (context.SaveChanges())
+                {
+                    return Customer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
-        public Customer Delete(int Id)
+        public Customer Delete(int id)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                Customer Customer = context.Customers.FirstOrDefault(x => x.Id == id);
+                if (Customer == null)
+                {
+                    return null;
+                }
+
+                Customer.DelFlag = true;
+                if (context.SaveChanges())
+                {
+                    return Customer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
-        public Customer Get(int Id)
+        public Customer Get(int id)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                Customer Customer = context.Customers.FirstOrDefault(x => x.Id == id);
+                return Customer;
+            }
         }
 
 
@@ -41,9 +76,20 @@ namespace SPACenter.DAL.Concrete.Mysql
             }
         }
 
-        public Customer Update(Customer customer)
+        public Customer Update(Customer c)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                context.Entry(c).State = EntityState.Modified;
+                if (context.SaveChanges())
+                {
+                    return c;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }

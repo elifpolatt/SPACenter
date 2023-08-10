@@ -30,7 +30,7 @@ namespace SPACenter.BLL.Managers
                 return validate;
             }
 
-            Payment newPayment = _IPaymentDal.Add(c);  //Müşteriyi eklemek icin dal kullanıyoruz
+            Payment newPayment = _IPaymentDal.Add(c);  //ödemeyi eklemek icin dal kullanıyoruz
             
             bool isSucces = newPayment != null;
             List<string> resultMessages = StaticMessages.GetResultMessage(isSucces);

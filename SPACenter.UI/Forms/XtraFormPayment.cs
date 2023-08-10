@@ -72,6 +72,7 @@ namespace SPACenter.UI.Forms
                 return;
             }
 
+            //messageboxtaki {name} silinecek onaylıyor musunuz mesajını alıyoruz. Ödeme silinecek onaylıyor musunuz seklinde popup cıkacak
             if (MessageBoxes.DeleteConfirmationDialog(name: "Ödeme") != DialogResult.OK)
             {
                 return;
