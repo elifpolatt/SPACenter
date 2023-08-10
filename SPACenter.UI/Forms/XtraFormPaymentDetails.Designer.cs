@@ -42,11 +42,6 @@
             this.gridLookUpEditCustomers = new DevExpress.XtraEditors.GridLookUpEdit();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEditDepartment = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.comboBoxEditPaymentType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEditAmount = new DevExpress.XtraEditors.TextEdit();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,12 +50,18 @@
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridLookUpEditDepartment = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuotaPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaymentPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSessionLength = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.comboBoxEditPaymentType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.textEditAmount = new DevExpress.XtraEditors.TextEdit();
+            this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -70,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -157,6 +159,7 @@
             // 
             // gridLookUpEditCustomers
             // 
+            this.gridLookUpEditCustomers.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.customerBindingSource, "Name", true));
             this.gridLookUpEditCustomers.Location = new System.Drawing.Point(283, 236);
             this.gridLookUpEditCustomers.MenuManager = this.ribbonControl1;
             this.gridLookUpEditCustomers.Name = "gridLookUpEditCustomers";
@@ -190,65 +193,6 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridLookUpEditDepartment
-            // 
-            this.gridLookUpEditDepartment.Location = new System.Drawing.Point(283, 277);
-            this.gridLookUpEditDepartment.MenuManager = this.ribbonControl1;
-            this.gridLookUpEditDepartment.Name = "gridLookUpEditDepartment";
-            this.gridLookUpEditDepartment.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEditDepartment.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEditDepartment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEditDepartment.Properties.DataSource = this.departmentBindingSource;
-            this.gridLookUpEditDepartment.Properties.DisplayMember = "Name";
-            this.gridLookUpEditDepartment.Properties.PopupView = this.gridLookUpEdit2View;
-            this.gridLookUpEditDepartment.Properties.ValueMember = "Id";
-            this.gridLookUpEditDepartment.Size = new System.Drawing.Size(260, 28);
-            this.gridLookUpEditDepartment.TabIndex = 6;
-            this.gridLookUpEditDepartment.EditValueChanged += new System.EventHandler(this.gridLookUpEditDepartment_EditValueChanged);
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Department);
-            // 
-            // gridLookUpEdit2View
-            // 
-            this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId1,
-            this.colName1,
-            this.colQuotaPerSeance,
-            this.colPaymentPerSeance,
-            this.colSessionLength,
-            this.colDelFlag1});
-            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
-            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
-            // 
-            // comboBoxEditPaymentType
-            // 
-            this.comboBoxEditPaymentType.EditValue = "Nakit";
-            this.comboBoxEditPaymentType.Location = new System.Drawing.Point(283, 321);
-            this.comboBoxEditPaymentType.MenuManager = this.ribbonControl1;
-            this.comboBoxEditPaymentType.Name = "comboBoxEditPaymentType";
-            this.comboBoxEditPaymentType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBoxEditPaymentType.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEditPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditPaymentType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEditPaymentType.Size = new System.Drawing.Size(260, 28);
-            this.comboBoxEditPaymentType.TabIndex = 7;
-            // 
-            // textEditAmount
-            // 
-            this.textEditAmount.Location = new System.Drawing.Point(283, 359);
-            this.textEditAmount.MenuManager = this.ribbonControl1;
-            this.textEditAmount.Name = "textEditAmount";
-            this.textEditAmount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEditAmount.Properties.Appearance.Options.UseFont = true;
-            this.textEditAmount.Size = new System.Drawing.Size(260, 28);
-            this.textEditAmount.TabIndex = 8;
             // 
             // colId
             // 
@@ -294,6 +238,42 @@
             this.colDelFlag.FieldName = "DelFlag";
             this.colDelFlag.Name = "colDelFlag";
             // 
+            // gridLookUpEditDepartment
+            // 
+            this.gridLookUpEditDepartment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.departmentBindingSource, "Name", true));
+            this.gridLookUpEditDepartment.Location = new System.Drawing.Point(283, 277);
+            this.gridLookUpEditDepartment.MenuManager = this.ribbonControl1;
+            this.gridLookUpEditDepartment.Name = "gridLookUpEditDepartment";
+            this.gridLookUpEditDepartment.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridLookUpEditDepartment.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditDepartment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEditDepartment.Properties.DataSource = this.departmentBindingSource;
+            this.gridLookUpEditDepartment.Properties.DisplayMember = "Name";
+            this.gridLookUpEditDepartment.Properties.PopupView = this.gridLookUpEdit2View;
+            this.gridLookUpEditDepartment.Properties.ValueMember = "Id";
+            this.gridLookUpEditDepartment.Size = new System.Drawing.Size(260, 28);
+            this.gridLookUpEditDepartment.TabIndex = 6;
+            this.gridLookUpEditDepartment.EditValueChanged += new System.EventHandler(this.gridLookUpEditDepartment_EditValueChanged);
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Department);
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId1,
+            this.colName1,
+            this.colQuotaPerSeance,
+            this.colPaymentPerSeance,
+            this.colSessionLength,
+            this.colDelFlag1});
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
             // colId1
             // 
             this.colId1.FieldName = "Id";
@@ -326,6 +306,37 @@
             this.colDelFlag1.FieldName = "DelFlag";
             this.colDelFlag1.Name = "colDelFlag1";
             // 
+            // comboBoxEditPaymentType
+            // 
+            this.comboBoxEditPaymentType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.paymentBindingSource, "SelectPaymentType", true));
+            this.comboBoxEditPaymentType.EditValue = "Kredi Kartı";
+            this.comboBoxEditPaymentType.Location = new System.Drawing.Point(283, 321);
+            this.comboBoxEditPaymentType.MenuManager = this.ribbonControl1;
+            this.comboBoxEditPaymentType.Name = "comboBoxEditPaymentType";
+            this.comboBoxEditPaymentType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBoxEditPaymentType.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditPaymentType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEditPaymentType.Size = new System.Drawing.Size(260, 28);
+            this.comboBoxEditPaymentType.TabIndex = 7;
+            this.comboBoxEditPaymentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditPaymentType_SelectedIndexChanged);
+            // 
+            // textEditAmount
+            // 
+            this.textEditAmount.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.paymentBindingSource, "Amount", true));
+            this.textEditAmount.Location = new System.Drawing.Point(283, 359);
+            this.textEditAmount.MenuManager = this.ribbonControl1;
+            this.textEditAmount.Name = "textEditAmount";
+            this.textEditAmount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textEditAmount.Properties.Appearance.Options.UseFont = true;
+            this.textEditAmount.Size = new System.Drawing.Size(260, 28);
+            this.textEditAmount.TabIndex = 8;
+            // 
+            // paymentBindingSource
+            // 
+            this.paymentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Payment);
+            // 
             // XtraFormPaymentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -352,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +402,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPaymentPerSeance;
         private DevExpress.XtraGrid.Columns.GridColumn colSessionLength;
         private DevExpress.XtraGrid.Columns.GridColumn colDelFlag1;
+        private System.Windows.Forms.BindingSource paymentBindingSource;
     }
 }

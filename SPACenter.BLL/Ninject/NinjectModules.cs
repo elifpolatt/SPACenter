@@ -59,7 +59,6 @@ namespace SPACenter.BLL.Ninject
             //ICustomerDAL isminde bir interface gördüğünde MssqlCustomerDAL sınıfından bir nesne baglayacak.
             StandardKernel.Bind<ICustomerDAL>().To<MssqlCustomerDAL>().
                 WithConstructorArgument("dbConnectionString", ConString);
-            //bu connectionString sanırım globalvariabledan geliyor.
             StandardKernel.Bind<IDepartmentDAL>().To<MssqlDepartmentDAL>().
                 WithConstructorArgument("dbConnectionString", ConString);
             StandardKernel.Bind<IPaymentDAL>().To<MssqlPaymentDAL>()

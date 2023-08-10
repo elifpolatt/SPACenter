@@ -13,19 +13,27 @@ namespace SPACenter.Entities.Database
     {
         public int Id { get; set; }
         public int? CustomerId { get; set; }
+
         //int?
         [DisplayName("Müşteri Adı")]
         public Customer Customer { get; set; }
-        public int? DepartmentId { get; set; }
-        //int?
+        public int? DepartmentId { get; set; } //zorunlu değil
+
+        
         [DisplayName("Bölüm")]
         public Department Department { get; set; }
+
+
         [DisplayName("Tarih")]
         public DateTime DateTime { get; set; }
+
+
         [DisplayName("Ödenecek Tutar")]
         public double Amount { get; set; }
-        [DisplayName("Ödeme Türü")]
         public PaymentType PaymentType { get; set; }
+
+
+        [DisplayName("Ödeme Türü")]
 
         public string SelectPaymentType
         {

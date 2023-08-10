@@ -22,9 +22,9 @@ namespace SPACenter.BLL.Managers
         }
 
         //Ödeme nesnesini ekler ve doğrulama kontrolleri gerceklestırir
-        public Tuple<bool, List<string>, Payment> Add(Payment c)  //burada musterı ve bolum null geliyor !!!!!
+        public Tuple<bool, List<string>, Payment> Add(Payment c)  //burada musterı ve bolum null geliyor??
         {
-            Tuple<bool, List<string>, Payment> validate = Validations.ObjectValidator.Validate(c);  //mğşteri nesnesini alabiliyor muyuz diye kontrol saglıyoruz
+            Tuple<bool, List<string>, Payment> validate = Validations.ObjectValidator.Validate(c);  //müşteri nesnesini alabiliyor muyuz diye kontrol saglıyoruz
             if (!validate.Item1)
             {
                 return validate;

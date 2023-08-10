@@ -199,7 +199,7 @@
             // 
             // colPaymentType
             // 
-            this.colPaymentType.FieldName = "PaymentType";
+            this.colPaymentType.FieldName = "SelectPaymentType";
             this.colPaymentType.MinWidth = 25;
             this.colPaymentType.Name = "colPaymentType";
             this.colPaymentType.Visible = true;

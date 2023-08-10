@@ -1,17 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SPACenter.BLL.Managers;
+﻿using SPACenter.BLL.Managers;
 using SPACenter.Entities.Database;
 using SPACenter.Entities.Enums;
 using SPACenter.UI.Message;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SPACenter.UI.Forms
 {
@@ -92,7 +85,7 @@ namespace SPACenter.UI.Forms
                 gridLookUpEditDepartment.EditValue = department.FirstOrDefault(x => x.Id == Payment.DepartmentId);
 
                 //ödeme türü de aynı sekılde en son secılen türe göre gelsin 
-                comboBoxEditPaymentType.SelectedIndex = (int)Payment.PaymentType;
+                comboBoxEditPaymentType.SelectedIndex = (int) Payment.PaymentType;
             }
         }
 
@@ -104,6 +97,11 @@ namespace SPACenter.UI.Forms
                 textEditAmount.Text = editDepartment.PaymentPerSeance.ToString();
                 //ToString("f2") kullanılarak PaymentPerSeance değeri ondalık sayı olarak metin olarak formatlanır ve iki ondalık basamağa sahip bir virgülden sonra kesilir. 
             }
+        }
+
+        private void comboBoxEditPaymentType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

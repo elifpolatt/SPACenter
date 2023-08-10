@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\AppointmentManager.cs" />
     <Compile Include="Managers\CustomerManager.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />
     <Compile Include="Managers\PaymentManager.cs" />

@@ -32,6 +32,7 @@ namespace SPACenter.UI.Forms
             if (paymentDetails.Result)
             {
                 paymentBindingSource.DataSource = paymentManager.GetAll().OrderByDescending(x=>x.DateTime).ToList();
+                //En yakın tarihten en uzak tarihe doğru sıralayarak gridviewa getir.
                 //GetPayments();
             }
            
@@ -41,13 +42,13 @@ namespace SPACenter.UI.Forms
         private void barButtonItemUpdate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            Payment payment = paymentBindingSource.Current as Payment;
+            Payment payment = paymentBindingSource.Current as Payment; //seçilen değeri paymenta attık 
             if (payment == null)
             {
                 return;
             }
 
-            XtraFormPaymentDetails paymentDetails = new XtraFormPaymentDetails(payment.Id);
+            XtraFormPaymentDetails paymentDetails = new XtraFormPaymentDetails(payment.Id); //paymentla da seçilenin idsi alındı 
             paymentDetails.ShowDialog();
             if (paymentDetails.Result)
             {
