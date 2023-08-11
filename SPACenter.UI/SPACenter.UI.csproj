@@ -55,6 +55,10 @@
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Core.Desktop, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Extensions, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -185,6 +189,24 @@
     <Compile Include="Forms\XtraFormPaymentDetails.Designer.cs">
       <DependentUpon>XtraFormPaymentDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormRandevu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormRandevu.Designer.cs">
+      <DependentUpon>XtraFormRandevu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XtraFormRendezvousTimeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormRendezvousTimeDetails.Designer.cs">
+      <DependentUpon>XtraFormRendezvousTimeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XtraFormRendezvousTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormRendezvousTime.Designer.cs">
+      <DependentUpon>XtraFormRendezvousTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XtraFormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +261,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormPaymentDetails.resx">
       <DependentUpon>XtraFormPaymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormRandevu.resx">
+      <DependentUpon>XtraFormRandevu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormRendezvousTimeDetails.resx">
+      <DependentUpon>XtraFormRendezvousTimeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormRendezvousTime.resx">
+      <DependentUpon>XtraFormRendezvousTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormUser.resx">
       <DependentUpon>XtraFormUser.cs</DependentUpon>

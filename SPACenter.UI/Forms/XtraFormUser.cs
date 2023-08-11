@@ -47,7 +47,7 @@ namespace SPACenter.UI.Forms
             {
                 return;
             }
-            XtraFormUserDetails userDetails = new XtraFormUserDetails(/*user.Id*/);
+            XtraFormUserDetails userDetails = new XtraFormUserDetails(user.Id);
 
             userDetails.ShowDialog();
             if (userDetails.Result)

@@ -28,12 +28,15 @@ namespace SPACenter.Entities.Database
 
         //[Range(1, Int32.MaxValue, ErrorMessage = "Seansa ait ücreti boş bırakamazsınız.")]
         [DisplayName("Seans Ücreti")]
+        [DefaultValue(30)]
         public double PaymentPerSeance { get; set; }
 
        // [Range(1, Int32.MaxValue, ErrorMessage = "Seans süresini boş bırakamazsınız.")]
         [DisplayName("Seans Uzunluğu")]
         public int SessionLength { get; set; }
         public bool DelFlag { get; set; }
+
+        [DisplayName("Randevular")]
         public List<Appointment> Appointments { get; set; }
         public List<Payment> Payments { get; set; }
         public List<RendezvousTime> RendezvousTimes { get; set; }

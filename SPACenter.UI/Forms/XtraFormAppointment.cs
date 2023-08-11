@@ -59,6 +59,7 @@ namespace SPACenter.UI.Forms
         {
             List<Appointment> appointments = appointmentManager.GetAll().OrderBy(x => x.RendevousDate)
                 .ThenBy(x => x.RendevousTime.StartTime).ToList();
+
             appointmentBindingSource.DataSource = appointments;
         }
 
