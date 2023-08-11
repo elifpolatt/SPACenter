@@ -133,6 +133,7 @@
             this.accordionControlElementUsers.Name = "accordionControlElementUsers";
             this.accordionControlElementUsers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementUsers.Text = "Sistem Kullanıcıları";
+            this.accordionControlElementUsers.Click += new System.EventHandler(this.accordionControlElementUsers_Click);
             // 
             // accordionControlElementTimes
             // 
@@ -166,6 +167,7 @@
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             this.ResumeLayout(false);
 

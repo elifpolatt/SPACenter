@@ -11,4 +11,23 @@ namespace SPACenter.Entities.Enums
         Cash,
         CreditCard
     }
+
+    public static class PaymentTypeSelect
+    {
+        public static string ToString(this PaymentType type)
+        {
+            switch (type)
+            {
+                case PaymentType.Cash:
+                    return "Nakit";
+                case PaymentType.CreditCard:
+                    return "Kredi Kartı";
+                default:
+                    throw new Exception("hata");
+            }
+            {
+                
+            }
+        }
+    }
 }

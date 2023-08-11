@@ -72,9 +72,9 @@ namespace SPACenter.DAL.Concrete.Mssql
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                List<Payment> payments = context.Payments.Include(x=>x.Customer).Include(x=>x.Department).ToList();
+                List<Payment> Payments = context.Payments.Include(x=>x.Customer).Include(x=>x.Department).ToList();
                 //Paymentın ilişkili oldugu tabloları bu sekılde include ile cekıyoruz. Müşterileri ve bölümleri getirmek ıcın bunu kullanıyoruz.
-                return payments;
+                return Payments;
             }
         }
 

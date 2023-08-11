@@ -60,8 +60,8 @@
             this.colSessionLength = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.comboBoxEditPaymentType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEditAmount = new DevExpress.XtraEditors.TextEdit();
             this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textEditAmount = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -70,8 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -308,8 +308,7 @@
             // 
             // comboBoxEditPaymentType
             // 
-            this.comboBoxEditPaymentType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.paymentBindingSource, "SelectPaymentType", true));
-            this.comboBoxEditPaymentType.EditValue = "Kredi Kartı";
+            this.comboBoxEditPaymentType.EditValue = "Nakit";
             this.comboBoxEditPaymentType.Location = new System.Drawing.Point(283, 321);
             this.comboBoxEditPaymentType.MenuManager = this.ribbonControl1;
             this.comboBoxEditPaymentType.Name = "comboBoxEditPaymentType";
@@ -317,10 +316,17 @@
             this.comboBoxEditPaymentType.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEditPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditPaymentType.Properties.Items.AddRange(new object[] {
+            "Nakit",
+            "Kredi Kartı"});
             this.comboBoxEditPaymentType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditPaymentType.Size = new System.Drawing.Size(260, 28);
             this.comboBoxEditPaymentType.TabIndex = 7;
             this.comboBoxEditPaymentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditPaymentType_SelectedIndexChanged);
+            // 
+            // paymentBindingSource
+            // 
+            this.paymentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Payment);
             // 
             // textEditAmount
             // 
@@ -332,10 +338,6 @@
             this.textEditAmount.Properties.Appearance.Options.UseFont = true;
             this.textEditAmount.Size = new System.Drawing.Size(260, 28);
             this.textEditAmount.TabIndex = 8;
-            // 
-            // paymentBindingSource
-            // 
-            this.paymentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Payment);
             // 
             // XtraFormPaymentDetails
             // 
@@ -362,8 +364,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

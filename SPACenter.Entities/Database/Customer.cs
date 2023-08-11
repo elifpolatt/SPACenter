@@ -20,7 +20,7 @@ namespace SPACenter.Entities.Database
 
 
         //Buradaki uyarıları fluent validation ile yapacagım.
-       // [Required(ErrorMessage = "Müşteri adını boş geçemezsiniz.")]
+       [Required(ErrorMessage = "Müşteri adını boş geçemezsiniz.")]
         [StringLength(50, ErrorMessage = "Müşteri adı 50 karakterden fazla olamaz.")]
         [DisplayName("Adı")]
         public string Name { get; set; }
@@ -54,5 +54,9 @@ namespace SPACenter.Entities.Database
         public List<Appointment> Appointments { get; set; }
         public List<Payment> Payments { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Name} {Surname}";
+        }
     }
 }

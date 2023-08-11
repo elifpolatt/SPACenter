@@ -52,6 +52,10 @@ namespace SPACenter.BLL.Ninject
                 WithConstructorArgument("dbConnectionString", ConString);
             StandardKernel.Bind<IPaymentDAL>().To<MysqlPaymentDAL>()
                 .WithConstructorArgument("dbConnectionString", ConString);
+               StandardKernel.Bind<IUserDAL>().To<MysqlUserDAL>()
+              .WithConstructorArgument("dbConnectionString", ConString);
+               StandardKernel.Bind<IAppointmentDAL>().To<MysqlAppointmentDAL>()
+                   .WithConstructorArgument("dbConnectionString", ConString);
         }
 
         public void LoadMssql()
@@ -63,7 +67,10 @@ namespace SPACenter.BLL.Ninject
                 WithConstructorArgument("dbConnectionString", ConString);
             StandardKernel.Bind<IPaymentDAL>().To<MssqlPaymentDAL>()
                 .WithConstructorArgument("dbConnectionString", ConString);
-
+            StandardKernel.Bind<IUserDAL>().To<MssqlUserDAL>()
+               .WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IAppointmentDAL>().To<MssqlAppointmentDAL>()
+                .WithConstructorArgument("dbConnectionString", ConString);
         }
     }
 }

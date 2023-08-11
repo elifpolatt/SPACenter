@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,20 +16,25 @@ namespace SPACenter.Entities.Database
 
         [Required(ErrorMessage = "Adı boş geçemezsiniz")]
         [StringLength(50, ErrorMessage = "Kullanıcı adı 50 karakterden fazla olamaz.")]
-        //[DisplayName("Adı")]
+        [DisplayName("Adı")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Soyadını boş geçemezsiniz.")]
         [StringLength(100, ErrorMessage = " Kullanıcı soyadı 100 karakterden fazla olamaz")]
-        //[DisplayName("Soyadı")]
+        [DisplayName("Soyadı")]
         public string Surname { get; set; }
 
         [Required]
         public string Password { get; set; }
         public bool DelFlag { get; set; }
 
-        //[DisplayName("Yönetici")]
-        public string SystemAdmin { get; set; }
+        [DisplayName("Yönetici")]
+        public bool SystemAdmin { get; set; }
+
+        [NotMapped]
+        [DisplayName("Hesap Türü")]
+        public string AccountType => SystemAdmin ? "Yönetici" : "Çalışan"; 
+        //System admin true ise yönetici, false ise çalışan
 
         //byte olarak tutma nedenimiz veri tabanına direkt olarak fotografların image seklinde kaydedilmemesi icindir.
 

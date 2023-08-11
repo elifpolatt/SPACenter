@@ -11,10 +11,10 @@ namespace SPACenter.Entities.Database
 {
     public class Department
     {
-        //public Department()
-        //{
-        //    Appointments = new List<Appointment>();
-        //}
+        public Department()
+        {
+            Appointments = new List<Appointment>();
+        }
         public int Id { get; set; }
         [Required(ErrorMessage = "Bölüm adını boş geçemezsiniz.")]
         [StringLength(100, ErrorMessage = "Bölüm adı 100 karakterden fazla olamaz.")]
@@ -38,5 +38,11 @@ namespace SPACenter.Entities.Database
         public List<Payment> Payments { get; set; }
         public List<RendezvousTime> RendezvousTimes { get; set; }
 
+
+        //Id olarak çektiğimiz iiçin veriyi tostring olarak göstermek için override ile idyi ezerek tostringi kullanmalıyız
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }

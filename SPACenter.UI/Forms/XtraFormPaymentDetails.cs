@@ -1,10 +1,12 @@
-﻿using SPACenter.BLL.Managers;
+﻿using DevExpress.XtraEditors;
+using SPACenter.BLL.Managers;
 using SPACenter.Entities.Database;
 using SPACenter.Entities.Enums;
 using SPACenter.UI.Message;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SPACenter.UI.Forms
 {
@@ -36,10 +38,17 @@ namespace SPACenter.UI.Forms
         //kaydet butonuna tıklandıgında 
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+          //  Customer customer = customerBindingSource.Current as Customer;
+            //if (customer == null)
+            //{
+            //    XtraMessageBox.Show("Müşteri boş geçilemez.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
             Payment.CustomerId = (gridLookUpEditCustomers.EditValue as Customer)?.Id;  //secilen musterı customerıdye atanacak
             //Customer sınıfına donusum basarısız olursa null dönsün. ve null degilse id'ssine ulassın 
             //
             
+          //  Department department = customerBindingSource.Current as Department;
             Payment.DepartmentId = (gridLookUpEditDepartment.EditValue as Department)?.Id;
             Payment.DateTime = DateTime.Now;
            //Payment.Amount = textEditAmount.Text;  ??????
@@ -83,7 +92,7 @@ namespace SPACenter.UI.Forms
                 //default olarak son gırılen degerler gelsin dedik
                 gridLookUpEditCustomers.EditValue = customer.FirstOrDefault(x => x.Id == Payment.CustomerId);
                 gridLookUpEditDepartment.EditValue = department.FirstOrDefault(x => x.Id == Payment.DepartmentId);
-
+                textEditAmount.Text = Payment.Amount.ToString();
                 //ödeme türü de aynı sekılde en son secılen türe göre gelsin 
                 comboBoxEditPaymentType.SelectedIndex = (int) Payment.PaymentType;
             }

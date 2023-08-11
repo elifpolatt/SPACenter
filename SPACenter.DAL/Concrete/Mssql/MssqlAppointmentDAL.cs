@@ -12,15 +12,15 @@ namespace SPACenter.DAL.Concrete.Mssql
     public class MssqlAppointmentDAL : IAppointmentDAL
     {
 
-        private string ConnectionString { get;  }
+        private string DbConnectionString { get;  }
 
-        public MssqlAppointmentDAL(string connectionString)
+        public MssqlAppointmentDAL(string dbConnectionString)
         {
-            ConnectionString = connectionString;
+            DbConnectionString = dbConnectionString;
         }
         public Appointment Add(Appointment c)
         {
-            using (MssqlSaunaContext context = new MssqlSaunaContext(ConnectionString))
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
                 Appointment Appointment = context.Appointments.Add(c);
                 if (context.SaveChanges())
@@ -47,12 +47,16 @@ namespace SPACenter.DAL.Concrete.Mssql
 
         public List<Appointment> GetAll()
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                List<Appointment> appointments = context.Appointments.Include(x=>x.Customer).Include(x=>x.Department).Include(x=>x.RendevousTime).ToList();
+                return appointments;
+            }
         }
 
         public Appointment Update(Appointment c)
         {
-            using (MssqlSaunaContext context = new MssqlSaunaContext(ConnectionString))
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
                 context.Entry(c).State = EntityState.Modified;
                 if (context.SaveChanges())
