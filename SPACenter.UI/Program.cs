@@ -28,7 +28,7 @@ namespace SPACenter.UI
             //  Application.Run(new FormMain());
            
 
-
+            //form main acılırken loading ekranı
             SplashScreenManager.ShowForm(typeof(SplashScreenForm));
 
             System.Threading.Thread.Sleep(2000); // 2000 ms = 2 saniye bekleyecek main acılırken

@@ -38,20 +38,33 @@ namespace SPACenter.UI.Forms
         //kaydet butonuna tıklandıgında 
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          //  Customer customer = customerBindingSource.Current as Customer;
-            //if (customer == null)
-            //{
-            //    XtraMessageBox.Show("Müşteri boş geçilemez.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            Payment.CustomerId = (gridLookUpEditCustomers.EditValue as Customer)?.Id;  //secilen musterı customerıdye atanacak
+
+
+            int tempInt;
+            if (!Int32.TryParse(gridLookUpEditCustomers.EditValue.ToString(), out tempInt))
+            {
+                XtraMessageBox.Show("Müşteri boş geçilemez.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Payment.CustomerId = tempInt;  //secilen musterı customerıdye atanacak
             //Customer sınıfına donusum basarısız olursa null dönsün. ve null degilse id'ssine ulassın 
             //
             
-          //  Department department = customerBindingSource.Current as Department;
-            Payment.DepartmentId = (gridLookUpEditDepartment.EditValue as Department)?.Id;
+            if (!Int32.TryParse(gridLookUpEditDepartment.EditValue.ToString(), out tempInt))
+            {
+                XtraMessageBox.Show("Departman boş geçilemez.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Payment.DepartmentId = tempInt;
             Payment.DateTime = DateTime.Now;
-           //Payment.Amount = textEditAmount.Text;  ??????
+
+            if (!Double.TryParse(textEditAmount.Text, out var doubleTemp))
+            {
+                XtraMessageBox.Show("MiktAR boş geçilemez.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Payment.Amount = doubleTemp;
            Payment.PaymentType = (PaymentType)comboBoxEditPaymentType.SelectedIndex;
 
 

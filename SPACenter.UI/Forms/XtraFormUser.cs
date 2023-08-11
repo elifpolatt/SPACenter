@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Org.BouncyCastle.Bcpg;
 using SPACenter.BLL.Managers;
 using SPACenter.Entities.Database;
+using SPACenter.UI.Message;
 
 namespace SPACenter.UI.Forms
 {
@@ -22,7 +24,6 @@ namespace SPACenter.UI.Forms
             userManager = new UserManager(GlobalVariables.ConnectInfo);
             GetUsers();
         }
-
         void GetUsers()
         {
             List<User> allUsers = userManager.GetAll();
@@ -32,13 +33,48 @@ namespace SPACenter.UI.Forms
         {
             XtraFormUserDetails userDetails = new XtraFormUserDetails();
             userDetails.ShowDialog();
+            if (userDetails.Result)
+            {
+                GetUsers();
+            }
             
         }
 
         private void barButtonItemUpdate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraFormUserDetails userDetails = new XtraFormUserDetails();
+            User user = userBindingSource.Current as User;
+            if (user == null)
+            {
+                return;
+            }
+            XtraFormUserDetails userDetails = new XtraFormUserDetails(/*user.Id*/);
+
             userDetails.ShowDialog();
+            if (userDetails.Result)
+            {
+                GetUsers();
+            }
+        }
+
+        private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            User user = userBindingSource.Current as User;
+            if (user == null)
+            {
+                return;
+            }
+
+            if (MessageBoxes.DeleteConfirmationDialog(name: user.Name) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            Tuple<bool, List<string>, User> delete = userManager.Delete(user.Id);
+            MessageBoxes.ShowResult(delete);
+            if (delete.Item1)
+            {
+                GetUsers();
+            }
         }
     }
 }

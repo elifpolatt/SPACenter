@@ -8,16 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SPACenter.BLL.Managers;
 
 namespace SPACenter.UI.Forms
 {
     public partial class XtraFormUserDetails : DevExpress.XtraEditors.XtraForm
     {
+        public bool Result { get; set; }
+        private UserManager userManager;
         public XtraFormUserDetails()
         {
             InitializeComponent();
         }
 
-       
+        private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
