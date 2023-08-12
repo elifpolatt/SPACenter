@@ -8,9 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 using SPACenter.BLL.Managers;
 using SPACenter.Entities.Database;
 using SPACenter.UI.Message;
+using SPACenter.UI.Prints;
 
 namespace SPACenter.UI.Forms
 {
@@ -31,6 +33,8 @@ namespace SPACenter.UI.Forms
             paymentDetails.ShowDialog();
             if (paymentDetails.Result)
             {
+                XtraReportPayment xtraReportPayment = new XtraReportPayment(paymentDetails.Payment.Id);
+                xtraReportPayment.ShowPreview();
                 paymentBindingSource.DataSource = paymentManager.GetAll().OrderByDescending(x=>x.DateTime).ToList();
                 //En yakın tarihten en uzak tarihe doğru sıralayarak gridviewa getir.
                 //GetPayments();
@@ -84,6 +88,11 @@ namespace SPACenter.UI.Forms
             {
                 GetPayments();
             }
+        }
+
+        private void barButtonItemTotalEarn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

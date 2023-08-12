@@ -63,7 +63,7 @@ namespace SPACenter.DAL.Concrete.Mssql
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                Payment payment = context.Payments.FirstOrDefault(x => x.Id == id);
+                Payment payment = context.Payments.Include(p => p.Customer).Include(p => p.Department).FirstOrDefault(x => x.Id == id);
                 return payment;
             }
         }

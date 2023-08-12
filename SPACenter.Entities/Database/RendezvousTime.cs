@@ -17,9 +17,9 @@ namespace SPACenter.Entities.Database
 
         public int Id { get; set; }
 
-        [DisplayName("Başlama Zamanı")]
+        [DisplayName("Başlama Saati")]
         public TimeSpan StartTime { get; set; }
-        [DisplayName("Bitiş Zamanı")]
+        [DisplayName("Bitiş Saati")]
 
         public TimeSpan EndTime { get; set; }
         public int DepartmentId { get; set; }
@@ -30,10 +30,36 @@ namespace SPACenter.Entities.Database
 
 
         //reandevu saatlerini RandezvousId ile aldıgımız ıcın id olan yapıları tostring ile gosterecegız.
-        [DisplayName("Randevu Saatleri")]
+        
         public override string ToString()
         {
             return $"{StartTime} - {EndTime}";
         }
+
+        public DateTime StartTimeTemp
+        {
+            get
+            {
+                return new DateTime(1, 1, 1, StartTime.Hours, StartTime.Minutes, StartTime.Seconds);
+            } set
+            {
+                StartTime = value.TimeOfDay;
+            }
+        }
+
+        public DateTime EndTimeTemp
+        {
+            get
+            {
+                return new DateTime(1, 1, 1, EndTime.Hours, EndTime.Minutes, EndTime.Seconds);
+            }
+            set
+            {
+                EndTime = value.TimeOfDay;
+            }
+        }
+
+        [DisplayName("randevu Saatleri")] public string ToDisplay => $"{StartTime} - {EndTime}";
+
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Managers\CustomerManager.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />
     <Compile Include="Managers\PaymentManager.cs" />
+    <Compile Include="Managers\RendezvousTimeManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Ninject\NinjectModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

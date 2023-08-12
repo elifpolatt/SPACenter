@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormRendezvousTime));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemUpdate = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rendezvousTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rendezvousTimeGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -66,6 +66,33 @@
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(952, 183);
             // 
+            // barButtonItemAdd
+            // 
+            this.barButtonItemAdd.Caption = "Randevu Saati Ekle";
+            this.barButtonItemAdd.Id = 1;
+            this.barButtonItemAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemAdd.ImageOptions.Image")));
+            this.barButtonItemAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemAdd.ImageOptions.LargeImage")));
+            this.barButtonItemAdd.Name = "barButtonItemAdd";
+            this.barButtonItemAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemAdd_ItemClick);
+            // 
+            // barButtonItemUpdate
+            // 
+            this.barButtonItemUpdate.Caption = "Randevu Saatini Güncelle";
+            this.barButtonItemUpdate.Id = 2;
+            this.barButtonItemUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemUpdate.ImageOptions.Image")));
+            this.barButtonItemUpdate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemUpdate.ImageOptions.LargeImage")));
+            this.barButtonItemUpdate.Name = "barButtonItemUpdate";
+            this.barButtonItemUpdate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemUpdate_ItemClick);
+            // 
+            // barButtonItemDelete
+            // 
+            this.barButtonItemDelete.Caption = "Sil";
+            this.barButtonItemDelete.Id = 3;
+            this.barButtonItemDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemDelete.ImageOptions.Image")));
+            this.barButtonItemDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemDelete.ImageOptions.LargeImage")));
+            this.barButtonItemDelete.Name = "barButtonItemDelete";
+            this.barButtonItemDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemDelete_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -79,31 +106,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemUpdate);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemDelete);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
-            // barButtonItemAdd
-            // 
-            this.barButtonItemAdd.Caption = "Randevu Saati Ekle";
-            this.barButtonItemAdd.Id = 1;
-            this.barButtonItemAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItemAdd.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItemAdd.Name = "barButtonItemAdd";
-            this.barButtonItemAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemAdd_ItemClick);
-            // 
-            // barButtonItemUpdate
-            // 
-            this.barButtonItemUpdate.Caption = "Randevu Saatini Güncelle";
-            this.barButtonItemUpdate.Id = 2;
-            this.barButtonItemUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItemUpdate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItemUpdate.Name = "barButtonItemUpdate";
-            // 
-            // barButtonItemDelete
-            // 
-            this.barButtonItemDelete.Caption = "Sil";
-            this.barButtonItemDelete.Id = 3;
-            this.barButtonItemDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItemDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItemDelete.Name = "barButtonItemDelete";
             // 
             // rendezvousTimeBindingSource
             // 

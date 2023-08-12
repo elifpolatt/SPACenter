@@ -54,6 +54,11 @@ namespace SPACenter.Entities.Database
         public List<Appointment> Appointments { get; set; }
         public List<Payment> Payments { get; set; }
 
+
+        [NotMapped]
+        [DisplayName("Adı Soyadı")]
+        public string FullName => $"{Name} {Surname}";
+
         public override string ToString()
         {
             return $"{Name} {Surname}";

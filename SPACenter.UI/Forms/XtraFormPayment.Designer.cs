@@ -47,6 +47,8 @@
             this.colDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaymentType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemTotalEarn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
@@ -60,9 +62,10 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.barButtonItemAdd,
             this.barButtonItemUpdate,
-            this.barButtonItemDelete});
+            this.barButtonItemDelete,
+            this.barButtonItemTotalEarn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -98,7 +101,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Ödemeler";
             // 
@@ -207,6 +211,20 @@
             this.colPaymentType.VisibleIndex = 4;
             this.colPaymentType.Width = 94;
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemTotalEarn);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // barButtonItemTotalEarn
+            // 
+            this.barButtonItemTotalEarn.Caption = "Toplam Kazanç";
+            this.barButtonItemTotalEarn.Id = 4;
+            this.barButtonItemTotalEarn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItemTotalEarn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItemTotalEarn.Name = "barButtonItemTotalEarn";
+            this.barButtonItemTotalEarn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTotalEarn_ItemClick);
+            // 
             // XtraFormPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -245,5 +263,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDateTime;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colPaymentType;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemTotalEarn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

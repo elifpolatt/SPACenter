@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +21,7 @@ namespace SPACenter.Entities.Database
         public Customer Customer { get; set; }
         public int? DepartmentId { get; set; } //zorunlu değil
 
-        
+
         [DisplayName("Bölüm")]
         public Department Department { get; set; }
 
@@ -29,9 +31,19 @@ namespace SPACenter.Entities.Database
 
 
         [DisplayName("Ödenecek Tutar")]
-        public double Amount { get; set; }
+        public double Amount
+        {
+            get;
+            set;
+        }
         public PaymentType PaymentType { get; set; }
 
+        [NotMapped]
+        [DisplayName("Toplam Kazanç")]
+        public double TotalAmount
+        {
+            get { return Amount; }
+        }
 
         [DisplayName("Ödeme Türü")]
 
@@ -49,7 +61,7 @@ namespace SPACenter.Entities.Database
                         return null;
                 }
                 {
-                    
+
                 }
             }
         }

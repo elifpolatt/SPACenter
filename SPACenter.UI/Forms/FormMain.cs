@@ -75,5 +75,12 @@ namespace SPACenter.UI
         {
            
         }
+
+        private void accordionControlElementTimes_Click(object sender, EventArgs e)
+        {
+            WaitForm.ShowWaitForm();
+            Form rendezvousForm = new XtraFormRendezvousTime();
+            OpenFormSingle(ref rendezvousForm);
+        }
     }
 }

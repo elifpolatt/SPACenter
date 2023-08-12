@@ -141,6 +141,7 @@
             this.accordionControlElementTimes.Name = "accordionControlElementTimes";
             this.accordionControlElementTimes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementTimes.Text = "Seans Saatleri";
+            this.accordionControlElementTimes.Click += new System.EventHandler(this.accordionControlElementTimes_Click);
             // 
             // accordionControlElemenDB
             // 
