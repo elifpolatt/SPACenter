@@ -93,6 +93,14 @@ namespace SPACenter.UI.Forms
         private void barButtonItemTotalEarn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+            
+            double totalEarnings = paymentManager.GetAll().Sum(payment => payment.Amount);
+
+            XtraReportTotalEarning xtraReportTotalEarning = new XtraReportTotalEarning();
+            //xtraReportTotalEarning.Parameters["TotalAmount"].Value = totalEarnings;
+            xtraReportTotalEarning.ShowPreview();
+
+
         }
     }
 }

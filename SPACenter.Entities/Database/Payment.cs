@@ -45,6 +45,7 @@ namespace SPACenter.Entities.Database
             get { return Amount; }
         }
 
+
         [DisplayName("Ödeme Türü")]
 
         public string SelectPaymentType
