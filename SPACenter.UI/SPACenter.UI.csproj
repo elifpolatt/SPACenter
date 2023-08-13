@@ -188,6 +188,12 @@
     <Compile Include="Forms\XtraFormDepartmentDetails.Designer.cs">
       <DependentUpon>XtraFormDepartmentDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormLogin.Designer.cs">
+      <DependentUpon>XtraFormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XtraFormPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,12 @@
     <Compile Include="Forms\XtraFormRendezvousTime.Designer.cs">
       <DependentUpon>XtraFormRendezvousTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormSettings.Designer.cs">
+      <DependentUpon>XtraFormSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XtraFormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +258,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\XtraUserControlServerSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\XtraUserControlServerSettings.Designer.cs">
+      <DependentUpon>XtraUserControlServerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wait Forms\SplashScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +297,9 @@
     <EmbeddedResource Include="Forms\XtraFormDepartmentDetails.resx">
       <DependentUpon>XtraFormDepartmentDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormLogin.resx">
+      <DependentUpon>XtraFormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormPayment.resx">
       <DependentUpon>XtraFormPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormRendezvousTime.resx">
       <DependentUpon>XtraFormRendezvousTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormSettings.resx">
+      <DependentUpon>XtraFormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormUser.resx">
       <DependentUpon>XtraFormUser.cs</DependentUpon>
@@ -316,6 +340,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\XtraUserControlServerSettings.resx">
+      <DependentUpon>XtraUserControlServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Wait Forms\SplashScreenForm.resx">
       <DependentUpon>SplashScreenForm.cs</DependentUpon>
     </EmbeddedResource>

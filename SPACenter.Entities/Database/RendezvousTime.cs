@@ -59,7 +59,9 @@ namespace SPACenter.Entities.Database
             }
         }
 
-        [DisplayName("randevu Saatleri")] public string ToDisplay => $"{StartTime} - {EndTime}";
+
+        [NotMapped]
+        [DisplayName("Randevu Saatleri")] public string ToDisplay => $"{StartTime} - {EndTime}";
 
     }
 }

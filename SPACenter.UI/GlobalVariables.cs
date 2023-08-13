@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using SPACenter.Entities.Database;
 using SPACenter.Entities.Enums;
 using SPACenter.Entities.Models;
 using SPACenter.UI.Properties;
@@ -14,6 +15,7 @@ namespace SPACenter.UI
     //static sınıf olusturma nedenimiz bu sınıf ıcındeki propertylerı kullanabilmek ıcın her defasında yeni bir nesne olusturmamak. yanı ortak olan tum ozellıkler bu sınıf ıcınde tutulacak.
     public static class GlobalVariables
     { 
+        public static User User { get; set; }
         private static ConnectInfo connectInfo { get; set; }
         //burada connectInfodan gıdecegız sınıf dısında da asagıdakı yapıyı kullnacagız.
         public static ConnectInfo ConnectInfo

@@ -53,6 +53,7 @@
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Ninject\NinjectModules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Cryptography.cs" />
     <Compile Include="Validations\ObjectValidator.cs" />
   </ItemGroup>
   <ItemGroup>

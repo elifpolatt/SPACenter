@@ -17,9 +17,13 @@ namespace SPACenter.UI.Forms
 {
     public partial class XtraFormUserDetails : DevExpress.XtraEditors.XtraForm
     {
+        //Fields
         public bool Result { get; set; }
+
         private UserManager userManager;
         public User User { get; set; }
+
+        //Ctors
         public XtraFormUserDetails()
         {
             InitializeComponent();
@@ -35,6 +39,7 @@ namespace SPACenter.UI.Forms
             User = userManager.Get(id);
             userBindingSource.DataSource = User;
         }
+        //Methods
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Tuple<bool, List<string>, User> operationResult;

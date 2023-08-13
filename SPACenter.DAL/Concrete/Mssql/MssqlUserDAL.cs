@@ -91,6 +91,8 @@ namespace SPACenter.DAL.Concrete.Mssql
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
                 List<User> users = context.Users.Where(x => deleted == null || x.DelFlag == deleted).ToList();
+                //List<User> users = context.Users.ToList(); // Tüm kullanıcıları çek
+                //users = users.Where(x => deleted == null || x.DelFlag == deleted).ToList(); // Filtreleme
                 return users;
             }
         }

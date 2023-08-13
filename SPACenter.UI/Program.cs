@@ -38,6 +38,11 @@ namespace SPACenter.UI
             Application.Run(mainForm);
 
             SplashScreenManager.CloseForm(false);
+
+            //if (GlobalVariables.User != null)
+            //{
+            //    Application.Run(new FormMain());
+            //}
         }
 
      

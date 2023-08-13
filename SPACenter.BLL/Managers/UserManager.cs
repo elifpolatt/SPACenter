@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject;
 using SPACenter.BLL.Ninject;
+using SPACenter.BLL.Security;
 using SPACenter.DAL.Abstracts;
 using SPACenter.Entities.Database;
 using SPACenter.Entities.Messages;
@@ -25,6 +26,10 @@ namespace SPACenter.BLL.Managers
 
         public Tuple<bool, List<string>, User> Add(User c)
         {
+
+            c.Password = new Cryptography().TextCoding(c.PasswordTemp);
+            //şifremiz 123 olsun. bu şifreyi alıp passwordtempe atıyoruz. Cryptography ile şifreleyerek de passworde atıyoruz(asıl veri tabanında bu tutuluyor cunku). Bununla birlikte de şifreler veri tabanında açık sekılde kalmamıs oluyor
+
             Tuple<bool, List<string>, User> validate = Validations.ObjectValidator.Validate(c);
 
             if (!validate.Item1)
@@ -41,6 +46,7 @@ namespace SPACenter.BLL.Managers
 
         public Tuple<bool, List<string>, User> Update(User c)
         {
+            c.Password = new Cryptography().TextCoding(c.PasswordTemp);
             Tuple<bool, List<string>, User> validate = Validations.ObjectValidator.Validate(c);
             if (!validate.Item1)
             {
@@ -64,12 +70,22 @@ namespace SPACenter.BLL.Managers
 
         public User Get(int id)
         {
-            return _IUserDal.Get(id);
+
+            User user = _IUserDal.Get(id);
+            Cryptography cryptography = new Cryptography();
+            user.PasswordTemp = cryptography.TextEnCoding(user.Password); //şifrelenmiş şifreler passwordtempe atanır.
+            return user;
         }
 
         public List<User> GetAll(bool? deleted = false)
         {
-            return _IUserDal.GetAll(deleted);
+            Cryptography cryptography = new Cryptography();
+            List<User> users = _IUserDal.GetAll(deleted);
+            users.ForEach(u =>
+            {
+                u.PasswordTemp = cryptography.TextEnCoding(u.Password);
+            });
+            return users;  //şifrelenmıs kullanıcı lıstesı döndürlür
         }
     }
 }

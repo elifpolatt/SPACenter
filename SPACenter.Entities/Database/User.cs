@@ -26,6 +26,12 @@ namespace SPACenter.Entities.Database
 
         [Required]
         public string Password { get; set; }
+
+        [NotMapped]
+        [DisplayName("Şifre")]
+        [Required(ErrorMessage = "Şifre boş geçilemez.")]
+        public string PasswordTemp { get; set; }
+        
         public bool DelFlag { get; set; }
 
         [DisplayName("Yönetici")]
@@ -44,6 +50,11 @@ namespace SPACenter.Entities.Database
 
         [NotMapped]
         public Image Image { get; set; } //MemoryStream uygulanacak
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname}";
+        }
     }
 
 }

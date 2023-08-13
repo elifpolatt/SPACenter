@@ -43,8 +43,10 @@
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPasswordTemp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSystemAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAccountType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImageBytes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -133,8 +135,10 @@
             this.colName,
             this.colSurname,
             this.colPassword,
+            this.colPasswordTemp,
             this.colDelFlag,
             this.colSystemAdmin,
+            this.colAccountType,
             this.colImageBytes,
             this.colImage});
             this.gridView1.GridControl = this.userGridControl;
@@ -172,6 +176,13 @@
             this.colPassword.Name = "colPassword";
             this.colPassword.Width = 94;
             // 
+            // colPasswordTemp
+            // 
+            this.colPasswordTemp.FieldName = "PasswordTemp";
+            this.colPasswordTemp.MinWidth = 25;
+            this.colPasswordTemp.Name = "colPasswordTemp";
+            this.colPasswordTemp.Width = 94;
+            // 
             // colDelFlag
             // 
             this.colDelFlag.FieldName = "DelFlag";
@@ -184,9 +195,17 @@
             this.colSystemAdmin.FieldName = "SystemAdmin";
             this.colSystemAdmin.MinWidth = 25;
             this.colSystemAdmin.Name = "colSystemAdmin";
-            this.colSystemAdmin.Visible = true;
-            this.colSystemAdmin.VisibleIndex = 2;
             this.colSystemAdmin.Width = 94;
+            // 
+            // colAccountType
+            // 
+            this.colAccountType.FieldName = "AccountType";
+            this.colAccountType.MinWidth = 25;
+            this.colAccountType.Name = "colAccountType";
+            this.colAccountType.OptionsColumn.ReadOnly = true;
+            this.colAccountType.Visible = true;
+            this.colAccountType.VisibleIndex = 2;
+            this.colAccountType.Width = 94;
             // 
             // colImageBytes
             // 
@@ -236,8 +255,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSurname;
         private DevExpress.XtraGrid.Columns.GridColumn colPassword;
+        private DevExpress.XtraGrid.Columns.GridColumn colPasswordTemp;
         private DevExpress.XtraGrid.Columns.GridColumn colDelFlag;
         private DevExpress.XtraGrid.Columns.GridColumn colSystemAdmin;
+        private DevExpress.XtraGrid.Columns.GridColumn colAccountType;
         private DevExpress.XtraGrid.Columns.GridColumn colImageBytes;
         private DevExpress.XtraGrid.Columns.GridColumn colImage;
     }

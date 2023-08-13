@@ -164,7 +164,7 @@
             // 
             // textEditPassword
             // 
-            this.textEditPassword.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.userBindingSource, "Password", true));
+            this.textEditPassword.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.userBindingSource, "PasswordTemp", true));
             this.textEditPassword.Location = new System.Drawing.Point(321, 356);
             this.textEditPassword.MenuManager = this.ribbonControl1;
             this.textEditPassword.Name = "textEditPassword";
