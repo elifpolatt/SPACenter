@@ -4,18 +4,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.Xpo;
 
 namespace SPACenter.Entities.Database
 {
     public class ServerSetting
     {
-        [Key]
+        [System.ComponentModel.DataAnnotations.Key]
         [Required]
         [StringLength(20)]
         public string TagName { get; set; }
 
         [Required(ErrorMessage = "Değeri boş bırakamazsınız.")]
-        //[DisplayName("Değer")]
+        [DisplayName("Değer")]
         public string Value { get; set; }
         public string Descripton { get; set; }
 

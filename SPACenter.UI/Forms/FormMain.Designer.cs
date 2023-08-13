@@ -115,7 +115,7 @@
             this.accordionControlElemenDB,
             this.accordionControlElementSettings});
             this.accordionControlElementSystem.Expanded = true;
-            this.accordionControlElementSystem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
+            this.accordionControlElementSystem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementSystem.ImageOptions.Image")));
             this.accordionControlElementSystem.Name = "accordionControlElementSystem";
             this.accordionControlElementSystem.Text = "Admin İşlemleri";
             // 
@@ -156,6 +156,7 @@
             this.accordionControlElementSettings.Name = "accordionControlElementSettings";
             this.accordionControlElementSettings.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementSettings.Text = "Sistem Ayarları";
+            this.accordionControlElementSettings.Click += new System.EventHandler(this.accordionControlElementSettings_Click);
             // 
             // FormMain
             // 

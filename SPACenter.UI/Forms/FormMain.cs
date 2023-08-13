@@ -17,7 +17,7 @@ namespace SPACenter.UI
         public FormMain()
         {
             InitializeComponent();
-       //     accordionControlElementSystem.Visible = GlobalVariables.User.SystemAdmin;
+         // accordionControlElementSystem.Visible = GlobalVariables.User.SystemAdmin;
             //Sistem admin yetkisine sahip kullanıcılara bu admin islemleri kısmınını görünürlüğüne sahip olabilir
         }
 
@@ -83,6 +83,13 @@ namespace SPACenter.UI
             WaitForm.ShowWaitForm();
             Form rendezvousForm = new XtraFormRendezvousTime();
             OpenFormSingle(ref rendezvousForm);
+        }
+
+        private void accordionControlElementSettings_Click(object sender, EventArgs e)
+        {
+            WaitForm.ShowWaitForm();
+            Form settingForm = new XtraFormSettings();
+            OpenFormSingle(ref settingForm);
         }
     }
 }

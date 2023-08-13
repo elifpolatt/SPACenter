@@ -34,8 +34,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.serverSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.serverSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serverSettingBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -74,10 +74,6 @@
             this.textBox1.Size = new System.Drawing.Size(346, 106);
             this.textBox1.TabIndex = 3;
             // 
-            // serverSettingBindingSource
-            // 
-            this.serverSettingBindingSource.DataSource = typeof(SPACenter.Entities.Database.ServerSetting);
-            // 
             // simpleButtonSave
             // 
             this.simpleButtonSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
@@ -86,6 +82,11 @@
             this.simpleButtonSave.Size = new System.Drawing.Size(94, 29);
             this.simpleButtonSave.TabIndex = 4;
             this.simpleButtonSave.Text = "Kaydet";
+            this.simpleButtonSave.Click += new System.EventHandler(this.simpleButtonSave_Click);
+            // 
+            // serverSettingBindingSource
+            // 
+            this.serverSettingBindingSource.DataSource = typeof(SPACenter.Entities.Database.ServerSetting);
             // 
             // XtraUserControlServerSettings
             // 

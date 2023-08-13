@@ -109,6 +109,7 @@
     <Compile Include="Abstracts\IDepartmentDAL.cs" />
     <Compile Include="Abstracts\IPaymentDAL.cs" />
     <Compile Include="Abstracts\IRendezvousTimeDAL.cs" />
+    <Compile Include="Abstracts\IServerSettingDAL.cs" />
     <Compile Include="Abstracts\IUserDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlAppointmentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlCustomerDAL.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Concrete\Mssql\MssqlPaymentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlRendezvousTimeDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlSaunaContext.cs" />
+    <Compile Include="Concrete\Mssql\MssqlServerSettingDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlUserDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlAppointmentDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlCustomerDAL.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Concrete\Mysql\MysqlPaymentDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlRezdezvousTimeDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlSaunaContext.cs" />
+    <Compile Include="Concrete\Mysql\MysqlServerSettingDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlUserDAL.cs" />
     <Compile Include="Migrations.Mssql\Configuration.cs" />
     <Compile Include="Migrations.Mysql\Configuration.cs" />
