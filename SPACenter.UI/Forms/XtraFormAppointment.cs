@@ -83,5 +83,10 @@ namespace SPACenter.UI.Forms
                 GetAppointments();
             }
         }
+
+        private void departmentGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

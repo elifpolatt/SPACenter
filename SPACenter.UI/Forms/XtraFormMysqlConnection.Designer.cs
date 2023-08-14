@@ -88,7 +88,6 @@
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -200,7 +199,6 @@
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormMysqlConnection";
             this.Text = "Veri Tabanı Bağlantı Ayarları";
-            this.Load += new System.EventHandler(this.XtraFormMysqlConnection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPort.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUser.Properties)).EndInit();

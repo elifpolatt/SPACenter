@@ -106,7 +106,6 @@
   <ItemGroup>
     <Compile Include="Abstracts\IAppointmentDAL.cs" />
     <Compile Include="Abstracts\ICustomerDAL.cs" />
-    <Compile Include="Abstracts\IDatabaseDAL.cs" />
     <Compile Include="Abstracts\IDepartmentDAL.cs" />
     <Compile Include="Abstracts\IPaymentDAL.cs" />
     <Compile Include="Abstracts\IRendezvousTimeDAL.cs" />
@@ -114,7 +113,6 @@
     <Compile Include="Abstracts\IUserDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlAppointmentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlCustomerDAL.cs" />
-    <Compile Include="Concrete\Mssql\MssqlDatabaseDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlDepartmentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlPaymentDAL.cs" />
     <Compile Include="Concrete\Mssql\MssqlRendezvousTimeDAL.cs" />
@@ -123,7 +121,6 @@
     <Compile Include="Concrete\Mssql\MssqlUserDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlAppointmentDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlCustomerDAL.cs" />
-    <Compile Include="Concrete\Mysql\MysqlDatabaseDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlDepartmentDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlPaymentDAL.cs" />
     <Compile Include="Concrete\Mysql\MysqlRezdezvousTimeDAL.cs" />

@@ -40,16 +40,16 @@ namespace SPACenter.DAL.Concrete.Mssql
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                Payment payment = context.Payments.FirstOrDefault(x => x.Id == id);
-                if (payment == null)
+                Payment Payment = context.Payments.FirstOrDefault(x => x.Id == id);
+                if (Payment == null)
                 {
                     return null;
                 }
 
-                context.Payments.Remove(payment);
+                context.Payments.Remove(Payment);
                 if (context.SaveChanges())
                 {
-                    return payment;
+                    return Payment;
                 }
                 else
                 {

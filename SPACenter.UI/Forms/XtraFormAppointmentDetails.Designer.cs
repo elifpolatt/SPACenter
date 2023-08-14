@@ -39,7 +39,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEditCustomer = new DevExpress.XtraEditors.GridLookUpEdit();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,8 +50,8 @@
             this.colRendevousTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEditDepartment = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerId1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,9 +61,7 @@
             this.colRendevousTime1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartment1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridLookUpEdit3 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEdit4 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEditSeances = new DevExpress.XtraEditors.GridLookUpEdit();
             this.rendezvousTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,18 +70,19 @@
             this.colDepartmentId2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartment2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateEditDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDepartment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditSeances.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rendezvousTimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditDate.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -98,7 +97,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(764, 183);
+            this.ribbonControl1.Size = new System.Drawing.Size(699, 183);
             // 
             // barButtonItemSave
             // 
@@ -107,6 +106,7 @@
             this.barButtonItemSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemSave.ImageOptions.Image")));
             this.barButtonItemSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSave.ImageOptions.LargeImage")));
             this.barButtonItemSave.Name = "barButtonItemSave";
+            this.barButtonItemSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSave_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -168,21 +168,19 @@
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Randevu Verilecek Saatler:";
             // 
-            // gridLookUpEdit1
+            // gridLookUpEditCustomer
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(347, 237);
-            this.gridLookUpEdit1.MenuManager = this.ribbonControl1;
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridLookUpEditCustomer.Location = new System.Drawing.Point(347, 237);
+            this.gridLookUpEditCustomer.MenuManager = this.ribbonControl1;
+            this.gridLookUpEditCustomer.Name = "gridLookUpEditCustomer";
+            this.gridLookUpEditCustomer.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridLookUpEditCustomer.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.DataSource = this.customerBindingSource;
-            this.gridLookUpEdit1.Properties.DisplayMember = "Name";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Properties.ValueMember = "Id";
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(229, 28);
-            this.gridLookUpEdit1.TabIndex = 5;
+            this.gridLookUpEditCustomer.Properties.DataSource = this.customerBindingSource;
+            this.gridLookUpEditCustomer.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEditCustomer.Size = new System.Drawing.Size(229, 28);
+            this.gridLookUpEditCustomer.TabIndex = 5;
             // 
             // customerBindingSource
             // 
@@ -246,23 +244,24 @@
             this.colDepartment.FieldName = "Department";
             this.colDepartment.Name = "colDepartment";
             // 
-            // appointmentBindingSource
+            // gridLookUpEditDepartment
             // 
-            this.appointmentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Appointment);
-            // 
-            // gridLookUpEdit2
-            // 
-            this.gridLookUpEdit2.Location = new System.Drawing.Point(347, 274);
-            this.gridLookUpEdit2.MenuManager = this.ribbonControl1;
-            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
-            this.gridLookUpEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEdit2.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridLookUpEditDepartment.Location = new System.Drawing.Point(347, 274);
+            this.gridLookUpEditDepartment.MenuManager = this.ribbonControl1;
+            this.gridLookUpEditDepartment.Name = "gridLookUpEditDepartment";
+            this.gridLookUpEditDepartment.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridLookUpEditDepartment.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditDepartment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit2.Properties.DataSource = this.appointmentBindingSource;
-            this.gridLookUpEdit2.Properties.PopupView = this.gridLookUpEdit2View;
-            this.gridLookUpEdit2.Size = new System.Drawing.Size(229, 28);
-            this.gridLookUpEdit2.TabIndex = 6;
+            this.gridLookUpEditDepartment.Properties.DataSource = this.departmentBindingSource;
+            this.gridLookUpEditDepartment.Properties.PopupView = this.gridLookUpEdit2View;
+            this.gridLookUpEditDepartment.Size = new System.Drawing.Size(229, 28);
+            this.gridLookUpEditDepartment.TabIndex = 6;
+            this.gridLookUpEditDepartment.EditValueChanged += new System.EventHandler(this.gridLookUpEditDepartment_EditValueChanged);
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(SPACenter.Entities.Database.Department);
             // 
             // gridLookUpEdit2View
             // 
@@ -322,40 +321,20 @@
             this.colDepartment1.Visible = true;
             this.colDepartment1.VisibleIndex = 0;
             // 
-            // gridLookUpEdit3
+            // gridLookUpEditSeances
             // 
-            this.gridLookUpEdit3.Location = new System.Drawing.Point(347, 310);
-            this.gridLookUpEdit3.MenuManager = this.ribbonControl1;
-            this.gridLookUpEdit3.Name = "gridLookUpEdit3";
-            this.gridLookUpEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEdit3.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridLookUpEditSeances.Location = new System.Drawing.Point(347, 350);
+            this.gridLookUpEditSeances.MenuManager = this.ribbonControl1;
+            this.gridLookUpEditSeances.Name = "gridLookUpEditSeances";
+            this.gridLookUpEditSeances.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridLookUpEditSeances.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditSeances.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit3.Properties.PopupView = this.gridLookUpEdit3View;
-            this.gridLookUpEdit3.Size = new System.Drawing.Size(229, 28);
-            this.gridLookUpEdit3.TabIndex = 7;
-            // 
-            // gridLookUpEdit3View
-            // 
-            this.gridLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit3View.Name = "gridLookUpEdit3View";
-            this.gridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridLookUpEdit4
-            // 
-            this.gridLookUpEdit4.Location = new System.Drawing.Point(347, 350);
-            this.gridLookUpEdit4.MenuManager = this.ribbonControl1;
-            this.gridLookUpEdit4.Name = "gridLookUpEdit4";
-            this.gridLookUpEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEdit4.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit4.Properties.DataSource = this.rendezvousTimeBindingSource;
-            this.gridLookUpEdit4.Properties.PopupView = this.gridLookUpEdit4View;
-            this.gridLookUpEdit4.Properties.ValueMember = "Id";
-            this.gridLookUpEdit4.Size = new System.Drawing.Size(229, 28);
-            this.gridLookUpEdit4.TabIndex = 8;
+            this.gridLookUpEditSeances.Properties.DataSource = this.rendezvousTimeBindingSource;
+            this.gridLookUpEditSeances.Properties.PopupView = this.gridLookUpEdit4View;
+            this.gridLookUpEditSeances.Properties.ValueMember = "Id";
+            this.gridLookUpEditSeances.Size = new System.Drawing.Size(229, 28);
+            this.gridLookUpEditSeances.TabIndex = 8;
             // 
             // rendezvousTimeBindingSource
             // 
@@ -409,15 +388,30 @@
             this.colActive.FieldName = "Active";
             this.colActive.Name = "colActive";
             // 
+            // dateEditDate
+            // 
+            this.dateEditDate.EditValue = null;
+            this.dateEditDate.Location = new System.Drawing.Point(347, 310);
+            this.dateEditDate.MenuManager = this.ribbonControl1;
+            this.dateEditDate.Name = "dateEditDate";
+            this.dateEditDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateEditDate.Properties.Appearance.Options.UseFont = true;
+            this.dateEditDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditDate.Size = new System.Drawing.Size(229, 28);
+            this.dateEditDate.TabIndex = 10;
+            // 
             // XtraFormAppointmentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 477);
-            this.Controls.Add(this.gridLookUpEdit4);
-            this.Controls.Add(this.gridLookUpEdit3);
-            this.Controls.Add(this.gridLookUpEdit2);
-            this.Controls.Add(this.gridLookUpEdit1);
+            this.ClientSize = new System.Drawing.Size(699, 595);
+            this.Controls.Add(this.dateEditDate);
+            this.Controls.Add(this.gridLookUpEditSeances);
+            this.Controls.Add(this.gridLookUpEditDepartment);
+            this.Controls.Add(this.gridLookUpEditCustomer);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -427,17 +421,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Randevu Detayları";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDepartment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditSeances.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rendezvousTimeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditDate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,14 +448,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
-        private System.Windows.Forms.BindingSource appointmentBindingSource;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditDepartment;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit3View;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit4;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditSeances;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit4View;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -487,5 +478,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId2;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartment2;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
+        private DevExpress.XtraEditors.DateEdit dateEditDate;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
     }
 }

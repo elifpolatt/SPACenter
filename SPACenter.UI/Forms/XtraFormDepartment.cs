@@ -63,7 +63,7 @@ namespace SPACenter.UI.Forms
                 return;
             }
 
-            if (MessageBoxes.DeleteConfirmationDialog(name: department.Name) != DialogResult.OK)
+            if (MessageBoxes.DeleteConfirmationDialog(name: department.Name) != DialogResult.Yes)
             {
                 return;
             }

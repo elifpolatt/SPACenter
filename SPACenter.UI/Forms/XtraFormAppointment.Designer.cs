@@ -135,6 +135,7 @@
             this.departmentGridControl.TabIndex = 2;
             this.departmentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.departmentGridControl.Click += new System.EventHandler(this.departmentGridControl_Click);
             // 
             // appointmentBindingSource
             // 

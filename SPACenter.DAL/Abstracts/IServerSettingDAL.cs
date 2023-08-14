@@ -15,6 +15,6 @@ namespace SPACenter.DAL.Abstracts
 
         List<ServerSetting> GetAll();
         T Get<T>(string tagName);
-        //, bu metot çağrıldığında dönen değer, çağrıldığı yerdeki kullanılan türe göre belirlenir.
+        // bu metot çağrıldığında dönen değer, çağrıldığı yerdeki kullanılan türe göre belirlenir.
     }
 }

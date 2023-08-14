@@ -82,7 +82,6 @@
             this.simpleButtonSave.Size = new System.Drawing.Size(94, 29);
             this.simpleButtonSave.TabIndex = 4;
             this.simpleButtonSave.Text = "Kaydet";
-            this.simpleButtonSave.Click += new System.EventHandler(this.simpleButtonSave_Click);
             // 
             // serverSettingBindingSource
             // 

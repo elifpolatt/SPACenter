@@ -46,6 +46,7 @@ namespace SPACenter.DAL.Concrete.Mssql
                 }
 
                 department.DelFlag = true;
+               // department.Name = $"{department.Name}++{DateTime.Now}++";
                 if (context.SaveChanges())
                 {
                     return department;

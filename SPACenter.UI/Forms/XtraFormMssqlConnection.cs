@@ -15,7 +15,6 @@ namespace SPACenter.UI.Forms
 {
     public partial class XtraFormMssqlConnection : DevExpress.XtraEditors.XtraForm
     {
-        public bool Result { get; set; }
         public XtraFormMssqlConnection()
         {
             InitializeComponent();
@@ -40,7 +39,7 @@ namespace SPACenter.UI.Forms
             }
            // textEditServer.Text = sqlConnectionStringBuilder.DataSource;
             textEditDatabase.Text = sqlConnectionStringBuilder.InitialCatalog;
-
+      
             if (!sqlConnectionStringBuilder.IntegratedSecurity)
             {
                 textEditUser.Text = sqlConnectionStringBuilder.UserID;

@@ -36,6 +36,7 @@ namespace SPACenter.Entities.Database
             return $"{StartTime} - {EndTime}";
         }
 
+        [NotMapped]
         public DateTime StartTimeTemp
         {
             get
@@ -46,7 +47,7 @@ namespace SPACenter.Entities.Database
                 StartTime = value.TimeOfDay;
             }
         }
-
+        [NotMapped]
         public DateTime EndTimeTemp
         {
             get

@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Managers\AppointmentManager.cs" />
     <Compile Include="Managers\CustomerManager.cs" />
-    <Compile Include="Managers\DatabaseManager.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />
     <Compile Include="Managers\PaymentManager.cs" />
     <Compile Include="Managers\RendezvousTimeManager.cs" />

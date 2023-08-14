@@ -58,14 +58,14 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(789, 183);
+            this.ribbonControl1.Size = new System.Drawing.Size(590, 183);
             // 
             // barButtonItemSave
             // 
             this.barButtonItemSave.Caption = "Kaydet";
             this.barButtonItemSave.Id = 1;
-            this.barButtonItemSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItemSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItemSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemSave.ImageOptions.Image")));
+            this.barButtonItemSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSave.ImageOptions.LargeImage")));
             this.barButtonItemSave.Name = "barButtonItemSave";
             this.barButtonItemSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSave_ItemClick);
             // 
@@ -112,6 +112,7 @@
             // 
             // timeEditStartTime
             // 
+            this.timeEditStartTime.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.rendezvousTimeBindingSource, "StartTimeTemp", true));
             this.timeEditStartTime.EditValue = new System.DateTime(2023, 8, 12, 0, 0, 0, 0);
             this.timeEditStartTime.Location = new System.Drawing.Point(314, 257);
             this.timeEditStartTime.MenuManager = this.ribbonControl1;
@@ -125,6 +126,7 @@
             // 
             // timeEditEndTime
             // 
+            this.timeEditEndTime.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.rendezvousTimeBindingSource, "EndTimeTemp", true));
             this.timeEditEndTime.EditValue = new System.DateTime(2023, 8, 12, 0, 0, 0, 0);
             this.timeEditEndTime.Location = new System.Drawing.Point(314, 301);
             this.timeEditEndTime.MenuManager = this.ribbonControl1;
@@ -144,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 600);
+            this.ClientSize = new System.Drawing.Size(590, 456);
             this.Controls.Add(this.timeEditEndTime);
             this.Controls.Add(this.timeEditStartTime);
             this.Controls.Add(this.labelControl2);

@@ -21,6 +21,7 @@ namespace SPACenter.UI.Forms
         {
             InitializeComponent();
             rendezvousTimeManager = new RendezvousTimeManager(GlobalVariables.ConnectInfo);
+            GetRendevousTime();
         }
 
         void GetRendevousTime()

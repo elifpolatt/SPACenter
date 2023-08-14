@@ -64,7 +64,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(952, 183);
+            this.ribbonControl1.Size = new System.Drawing.Size(1110, 183);
             // 
             // barButtonItemAdd
             // 
@@ -119,7 +119,7 @@
             this.rendezvousTimeGridControl.MainView = this.gridView1;
             this.rendezvousTimeGridControl.MenuManager = this.ribbonControl1;
             this.rendezvousTimeGridControl.Name = "rendezvousTimeGridControl";
-            this.rendezvousTimeGridControl.Size = new System.Drawing.Size(952, 379);
+            this.rendezvousTimeGridControl.Size = new System.Drawing.Size(1110, 379);
             this.rendezvousTimeGridControl.TabIndex = 2;
             this.rendezvousTimeGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 562);
+            this.ClientSize = new System.Drawing.Size(1110, 562);
             this.Controls.Add(this.rendezvousTimeGridControl);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormRendezvousTime";

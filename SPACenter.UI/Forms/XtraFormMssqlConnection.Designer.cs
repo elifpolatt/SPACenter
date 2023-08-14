@@ -63,7 +63,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(608, 183);
+            this.ribbonControl1.Size = new System.Drawing.Size(667, 183);
             // 
             // barButtonItemSave
             // 
@@ -80,7 +80,6 @@
             this.barButtonItemTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemTest.ImageOptions.Image")));
             this.barButtonItemTest.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemTest.ImageOptions.LargeImage")));
             this.barButtonItemTest.Name = "barButtonItemTest";
-            this.barButtonItemTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTest_ItemClick);
             // 
             // barButtonItemCancel
             // 
@@ -89,7 +88,6 @@
             this.barButtonItemCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemCancel.ImageOptions.Image")));
             this.barButtonItemCancel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemCancel.ImageOptions.LargeImage")));
             this.barButtonItemCancel.Name = "barButtonItemCancel";
-            this.barButtonItemCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCancel_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -152,7 +150,7 @@
             this.textEditDatabase.Name = "textEditDatabase";
             this.textEditDatabase.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textEditDatabase.Properties.Appearance.Options.UseFont = true;
-            this.textEditDatabase.Size = new System.Drawing.Size(199, 28);
+            this.textEditDatabase.Size = new System.Drawing.Size(271, 28);
             this.textEditDatabase.TabIndex = 5;
             // 
             // textEditUser
@@ -162,7 +160,7 @@
             this.textEditUser.Name = "textEditUser";
             this.textEditUser.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textEditUser.Properties.Appearance.Options.UseFont = true;
-            this.textEditUser.Size = new System.Drawing.Size(199, 28);
+            this.textEditUser.Size = new System.Drawing.Size(271, 28);
             this.textEditUser.TabIndex = 6;
             // 
             // textEditPassword
@@ -172,11 +170,12 @@
             this.textEditPassword.Name = "textEditPassword";
             this.textEditPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textEditPassword.Properties.Appearance.Options.UseFont = true;
-            this.textEditPassword.Size = new System.Drawing.Size(199, 28);
+            this.textEditPassword.Size = new System.Drawing.Size(271, 28);
             this.textEditPassword.TabIndex = 7;
             // 
             // comboBoxEditAuth
             // 
+            this.comboBoxEditAuth.EditValue = "Windows Doğrulama";
             this.comboBoxEditAuth.Location = new System.Drawing.Point(240, 291);
             this.comboBoxEditAuth.MenuManager = this.ribbonControl1;
             this.comboBoxEditAuth.Name = "comboBoxEditAuth";
@@ -184,15 +183,17 @@
             this.comboBoxEditAuth.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEditAuth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditAuth.Size = new System.Drawing.Size(199, 28);
+            this.comboBoxEditAuth.Properties.Items.AddRange(new object[] {
+            "Windows Doğrulama\t",
+            "SQL Server Doğrulama"});
+            this.comboBoxEditAuth.Size = new System.Drawing.Size(271, 28);
             this.comboBoxEditAuth.TabIndex = 8;
-            this.comboBoxEditAuth.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditAuth_SelectedIndexChanged);
             // 
             // XtraFormMssqlConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 476);
+            this.ClientSize = new System.Drawing.Size(667, 464);
             this.Controls.Add(this.comboBoxEditAuth);
             this.Controls.Add(this.textEditPassword);
             this.Controls.Add(this.textEditUser);
@@ -204,7 +205,6 @@
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormMssqlConnection";
             this.Text = "Veri Tabanı Bağlantı Ayarları";
-            this.Load += new System.EventHandler(this.XtraFormMssqlConnection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDatabase.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUser.Properties)).EndInit();

@@ -70,14 +70,14 @@ namespace SPACenter.UI.Forms
 
         private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Payment payment = paymentBindingSource.DataSource as Payment;
+            Payment payment = paymentBindingSource.Current as Payment;
             if (payment == null)
             {
                 return;
             }
 
             //messageboxtaki {name} silinecek onaylıyor musunuz mesajını alıyoruz. Ödeme silinecek onaylıyor musunuz seklinde popup cıkacak
-            if (MessageBoxes.DeleteConfirmationDialog(name: "Ödeme") != DialogResult.OK)
+            if (MessageBoxes.DeleteConfirmationDialog(name: "Ödeme") != DialogResult.Yes)
             {
                 return;
             }
