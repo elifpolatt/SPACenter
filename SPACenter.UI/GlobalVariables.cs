@@ -52,10 +52,12 @@ namespace SPACenter.UI
                 return connectInfo;
                     
             }
+
+            //Veri tabanı bağlantı ayarlarında kullanılacak
            
-
-        }
-
+    }
+        public static string MssqlConnectionString => ConfigurationManager.ConnectionStrings["MssqlSaunaContext"]?.ConnectionString; // ? -> baglantı olmadıysa null 
+        public static string MysqlConnectionString => ConfigurationManager.ConnectionStrings["MysqlSaunaContext"]?.ConnectionString;
 
     }
 

@@ -13,10 +13,13 @@ namespace SPACenter.BLL.Ninject
 
     public class NinjectModules : NinjectModule
     {
+
+        //fields
         private DatabaseType DatabaseType;
         private string ConString { get; set; }
         public IKernel StandardKernel { get; set; }
 
+        //ctor
         public NinjectModules(ConnectInfo connect)
         {
             ConString = connect.ConnectionString;
@@ -30,6 +33,7 @@ namespace SPACenter.BLL.Ninject
             //    Load Metodu Çağrısı: Load metodu, Ninject modüllerini yüklemek ve bağımlılıkları çözmek için kullanılır.Bu metotun çağrılması, belirli bir modülün bağımlılıklarını çözmeye başlaması anlamına gelir. NinjectModules sınıfının kurucusunda Load metodu çağrılıyor çünkü sınıfın örneği oluşturulduğunda bağımlılıkları hemen çözmek ve modülleri yüklemek isteniyor olabilir.
         }
 
+        //methods
         public override void Load()
         {
             //tercihe gore mysqlde veya mssqlde olusturulabılecek

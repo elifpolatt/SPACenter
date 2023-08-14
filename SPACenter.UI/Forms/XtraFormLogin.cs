@@ -34,7 +34,7 @@ namespace SPACenter.UI.Forms
 
             //user null değilse ve girilen şifre ile kullanıcının geçici şifresi karsılastırılıyor şifreler aynı değilse veya boşsa hata mesajı alacagız.
             //StringComparison.Ordinal, dil veya kültüre bağlı olmayan sıralama yapmak için kullanılır ve genellikle metinleri karşılaştırmak için güvenli bir seçenektir.
-            if (user != null || String.Compare(user.PasswordTemp, textEditPassword.Text, StringComparison.Ordinal) != 0)
+            if (user == null || String.Compare(user.PasswordTemp, textEditPassword.Text, StringComparison.Ordinal) != 0)
             {
                 XtraMessageBox.Show("Kullanıcı seçilmedi veya şifre hatalı girildi. Yeniden deneyiniz.","Hata" , MessageBoxButtons.OK , MessageBoxIcon.Stop);
                 return;

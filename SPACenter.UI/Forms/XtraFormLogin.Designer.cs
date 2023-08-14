@@ -38,6 +38,16 @@
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPasswordTemp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSystemAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAccountType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImageBytes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
@@ -72,12 +82,26 @@
             this.gridLookUpEdit1.Properties.Appearance.Options.UseFont = true;
             this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit1.Properties.DataSource = this.userBindingSource;
+            this.gridLookUpEdit1.Properties.DisplayMember = "Name";
             this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEdit1.Properties.ValueMember = "Id";
             this.gridLookUpEdit1.Size = new System.Drawing.Size(247, 28);
             this.gridLookUpEdit1.TabIndex = 2;
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colName,
+            this.colSurname,
+            this.colPassword,
+            this.colPasswordTemp,
+            this.colDelFlag,
+            this.colSystemAdmin,
+            this.colAccountType,
+            this.colImageBytes,
+            this.colImage});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -98,7 +122,7 @@
             // 
             // simpleButtonCancel
             // 
-            this.simpleButtonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButtonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonCancel.ImageOptions.Image")));
             this.simpleButtonCancel.Location = new System.Drawing.Point(332, 158);
             this.simpleButtonCancel.Name = "simpleButtonCancel";
             this.simpleButtonCancel.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -110,7 +134,7 @@
             // 
             this.simpleButtonLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.simpleButtonLogin.Appearance.Options.UseFont = true;
-            this.simpleButtonLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButtonLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonLogin.ImageOptions.Image")));
             this.simpleButtonLogin.Location = new System.Drawing.Point(376, 158);
             this.simpleButtonLogin.Name = "simpleButtonLogin";
             this.simpleButtonLogin.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
@@ -118,6 +142,61 @@
             this.simpleButtonLogin.TabIndex = 5;
             this.simpleButtonLogin.Text = "Giriş Yap";
             this.simpleButtonLogin.Click += new System.EventHandler(this.simpleButtonLogin_Click);
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colSurname
+            // 
+            this.colSurname.FieldName = "Surname";
+            this.colSurname.Name = "colSurname";
+            this.colSurname.Visible = true;
+            this.colSurname.VisibleIndex = 1;
+            // 
+            // colPassword
+            // 
+            this.colPassword.FieldName = "Password";
+            this.colPassword.Name = "colPassword";
+            // 
+            // colPasswordTemp
+            // 
+            this.colPasswordTemp.FieldName = "PasswordTemp";
+            this.colPasswordTemp.Name = "colPasswordTemp";
+            // 
+            // colDelFlag
+            // 
+            this.colDelFlag.FieldName = "DelFlag";
+            this.colDelFlag.Name = "colDelFlag";
+            // 
+            // colSystemAdmin
+            // 
+            this.colSystemAdmin.FieldName = "SystemAdmin";
+            this.colSystemAdmin.Name = "colSystemAdmin";
+            // 
+            // colAccountType
+            // 
+            this.colAccountType.FieldName = "AccountType";
+            this.colAccountType.Name = "colAccountType";
+            this.colAccountType.OptionsColumn.ReadOnly = true;
+            // 
+            // colImageBytes
+            // 
+            this.colImageBytes.FieldName = "ImageBytes";
+            this.colImageBytes.Name = "colImageBytes";
+            // 
+            // colImage
+            // 
+            this.colImage.FieldName = "Image";
+            this.colImage.Name = "colImage";
             // 
             // XtraFormLogin
             // 
@@ -131,6 +210,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "XtraFormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Yap";
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
@@ -151,5 +231,15 @@
         private System.Windows.Forms.BindingSource userBindingSource;
         private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
         private DevExpress.XtraEditors.SimpleButton simpleButtonLogin;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSurname;
+        private DevExpress.XtraGrid.Columns.GridColumn colPassword;
+        private DevExpress.XtraGrid.Columns.GridColumn colPasswordTemp;
+        private DevExpress.XtraGrid.Columns.GridColumn colDelFlag;
+        private DevExpress.XtraGrid.Columns.GridColumn colSystemAdmin;
+        private DevExpress.XtraGrid.Columns.GridColumn colAccountType;
+        private DevExpress.XtraGrid.Columns.GridColumn colImageBytes;
+        private DevExpress.XtraGrid.Columns.GridColumn colImage;
     }
 }

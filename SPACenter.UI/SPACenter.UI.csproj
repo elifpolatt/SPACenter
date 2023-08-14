@@ -194,6 +194,18 @@
     <Compile Include="Forms\XtraFormLogin.Designer.cs">
       <DependentUpon>XtraFormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\XtraFormMssqlConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormMssqlConnection.Designer.cs">
+      <DependentUpon>XtraFormMssqlConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XtraFormMysqlConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormMysqlConnection.Designer.cs">
+      <DependentUpon>XtraFormMysqlConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XtraFormPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +235,12 @@
     </Compile>
     <Compile Include="Forms\XtraFormRendezvousTime.Designer.cs">
       <DependentUpon>XtraFormRendezvousTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\XtraFormSetDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XtraFormSetDatabase.Designer.cs">
+      <DependentUpon>XtraFormSetDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\XtraFormSettings.cs">
       <SubType>Form</SubType>
@@ -300,6 +318,12 @@
     <EmbeddedResource Include="Forms\XtraFormLogin.resx">
       <DependentUpon>XtraFormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormMssqlConnection.resx">
+      <DependentUpon>XtraFormMssqlConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormMysqlConnection.resx">
+      <DependentUpon>XtraFormMysqlConnection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormPayment.resx">
       <DependentUpon>XtraFormPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormRendezvousTime.resx">
       <DependentUpon>XtraFormRendezvousTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\XtraFormSetDatabase.resx">
+      <DependentUpon>XtraFormSetDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormSettings.resx">
       <DependentUpon>XtraFormSettings.cs</DependentUpon>
