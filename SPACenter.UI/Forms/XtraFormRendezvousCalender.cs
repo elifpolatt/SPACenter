@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SPACenter.Entities.Database;
 
 namespace SPACenter.UI.Forms
 {
-    public partial class XtraFormRandevu : DevExpress.XtraEditors.XtraForm
+    public partial class XtraFormRendezvousCalender : DevExpress.XtraEditors.XtraForm
     {
-        public XtraFormRandevu()
+  
+        public XtraFormRendezvousCalender()
         {
             InitializeComponent();
         }

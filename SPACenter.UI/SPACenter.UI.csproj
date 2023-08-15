@@ -218,11 +218,11 @@
     <Compile Include="Forms\XtraFormPaymentDetails.Designer.cs">
       <DependentUpon>XtraFormPaymentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\XtraFormRandevu.cs">
+    <Compile Include="Forms\XtraFormRendezvousCalender.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\XtraFormRandevu.Designer.cs">
-      <DependentUpon>XtraFormRandevu.cs</DependentUpon>
+    <Compile Include="Forms\XtraFormRendezvousCalender.Designer.cs">
+      <DependentUpon>XtraFormRendezvousCalender.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\XtraFormRendezvousTimeDetails.cs">
       <SubType>Form</SubType>
@@ -330,8 +330,8 @@
     <EmbeddedResource Include="Forms\XtraFormPaymentDetails.resx">
       <DependentUpon>XtraFormPaymentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\XtraFormRandevu.resx">
-      <DependentUpon>XtraFormRandevu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\XtraFormRendezvousCalender.resx">
+      <DependentUpon>XtraFormRendezvousCalender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XtraFormRendezvousTimeDetails.resx">
       <DependentUpon>XtraFormRendezvousTimeDetails.cs</DependentUpon>

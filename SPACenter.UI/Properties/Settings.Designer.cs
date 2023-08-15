@@ -25,7 +25,7 @@ namespace SPACenter.UI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mssql\r\n")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mssql")]
         public global::SPACenter.Entities.Enums.DatabaseType DatabaseType {
             get {
                 return ((global::SPACenter.Entities.Enums.DatabaseType)(this["DatabaseType"]));

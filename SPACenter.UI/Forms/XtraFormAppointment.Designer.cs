@@ -51,6 +51,11 @@
             this.colRendevousTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemRendezvous = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemCalender = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -64,12 +69,15 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.barButtonItemAdd,
             this.barButtonItemUpdate,
-            this.barButtonItemDelete});
+            this.barButtonItemDelete,
+            this.barButtonItemRendezvous,
+            this.barButtonItemCalender});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.ribbonPage1,
+            this.ribbonPage2});
             this.ribbonControl1.Size = new System.Drawing.Size(1204, 183);
             // 
             // barButtonItemAdd
@@ -102,7 +110,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Randevular";
             // 
@@ -135,7 +144,6 @@
             this.departmentGridControl.TabIndex = 2;
             this.departmentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.departmentGridControl.Click += new System.EventHandler(this.departmentGridControl_Click);
             // 
             // appointmentBindingSource
             // 
@@ -219,6 +227,22 @@
             this.colDepartment.VisibleIndex = 3;
             this.colDepartment.Width = 94;
             // 
+          
+          
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItemCalender);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // barButtonItemCalender
+            // 
+            this.barButtonItemCalender.Caption = "Randevu Takvimi";
+            this.barButtonItemCalender.Id = 5;
+            this.barButtonItemCalender.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
+            this.barButtonItemCalender.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
+            this.barButtonItemCalender.Name = "barButtonItemCalender";
+            this.barButtonItemCalender.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCalender_ItemClick);
+            // 
             // XtraFormAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -257,5 +281,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartment;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemRendezvous;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemCalender;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

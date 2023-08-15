@@ -84,9 +84,12 @@ namespace SPACenter.UI.Forms
             }
         }
 
-        private void departmentGridControl_Click(object sender, EventArgs e)
-        {
+      
 
+        private void barButtonItemCalender_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraFormRendezvousCalender appointment = new XtraFormRendezvousCalender();
+            appointment.ShowDialog();
         }
     }
 }

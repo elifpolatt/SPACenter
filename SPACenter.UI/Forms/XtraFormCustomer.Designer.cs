@@ -49,6 +49,7 @@
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -149,7 +150,8 @@
             this.colPhoto,
             this.colImage,
             this.colMail,
-            this.colDelFlag});
+            this.colDelFlag,
+            this.colFullName});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -158,7 +160,6 @@
             this.colId.FieldName = "Id";
             this.colId.MinWidth = 25;
             this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowEdit = false;
             this.colId.Width = 94;
             // 
             // colName
@@ -216,8 +217,15 @@
             this.colDelFlag.FieldName = "DelFlag";
             this.colDelFlag.MinWidth = 25;
             this.colDelFlag.Name = "colDelFlag";
-            this.colDelFlag.OptionsColumn.AllowEdit = false;
             this.colDelFlag.Width = 94;
+            // 
+            // colFullName
+            // 
+            this.colFullName.FieldName = "FullName";
+            this.colFullName.MinWidth = 25;
+            this.colFullName.Name = "colFullName";
+            this.colFullName.OptionsColumn.ReadOnly = true;
+            this.colFullName.Width = 94;
             // 
             // XtraFormCustomer
             // 
@@ -249,6 +257,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemDelete;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource customerBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSurname;
@@ -257,6 +266,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colImage;
         private DevExpress.XtraGrid.Columns.GridColumn colMail;
         private DevExpress.XtraGrid.Columns.GridColumn colDelFlag;
-        private System.Windows.Forms.BindingSource customerBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colFullName;
     }
 }

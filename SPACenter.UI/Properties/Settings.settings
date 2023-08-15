@@ -3,8 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DatabaseType" Type="SPACenter.Entities.Enums.DatabaseType" Scope="User">
-      <Value Profile="(Default)">Mssql
-</Value>
+      <Value Profile="(Default)">Mssql</Value>
     </Setting>
   </Settings>
 </SettingsFile>
