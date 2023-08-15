@@ -55,16 +55,16 @@
             this.gridLookUpEditSeances = new DevExpress.XtraEditors.GridLookUpEdit();
             this.rendezvousTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dateEditDate = new DevExpress.XtraEditors.DateEdit();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStartTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colToDisplay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStartTimeTemp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndTimeTemp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colToDisplay = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateEditDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -234,15 +234,13 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // colName
             // 
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
+            this.colName.VisibleIndex = 0;
             // 
             // colQuotaPerSeance
             // 
@@ -299,21 +297,6 @@
             this.gridLookUpEdit4View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit4View.OptionsView.ShowGroupPanel = false;
             // 
-            // dateEditDate
-            // 
-            this.dateEditDate.EditValue = null;
-            this.dateEditDate.Location = new System.Drawing.Point(347, 310);
-            this.dateEditDate.MenuManager = this.ribbonControl1;
-            this.dateEditDate.Name = "dateEditDate";
-            this.dateEditDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateEditDate.Properties.Appearance.Options.UseFont = true;
-            this.dateEditDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditDate.Size = new System.Drawing.Size(229, 28);
-            this.dateEditDate.TabIndex = 10;
-            // 
             // colId1
             // 
             this.colId1.FieldName = "Id";
@@ -338,6 +321,12 @@
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
             // 
+            // colToDisplay
+            // 
+            this.colToDisplay.FieldName = "ToDisplay";
+            this.colToDisplay.Name = "colToDisplay";
+            this.colToDisplay.OptionsColumn.ReadOnly = true;
+            // 
             // colDepartment
             // 
             this.colDepartment.FieldName = "Department";
@@ -358,11 +347,20 @@
             this.colEndTimeTemp.FieldName = "EndTimeTemp";
             this.colEndTimeTemp.Name = "colEndTimeTemp";
             // 
-            // colToDisplay
+            // dateEditDate
             // 
-            this.colToDisplay.FieldName = "ToDisplay";
-            this.colToDisplay.Name = "colToDisplay";
-            this.colToDisplay.OptionsColumn.ReadOnly = true;
+            this.dateEditDate.EditValue = null;
+            this.dateEditDate.Location = new System.Drawing.Point(347, 310);
+            this.dateEditDate.MenuManager = this.ribbonControl1;
+            this.dateEditDate.Name = "dateEditDate";
+            this.dateEditDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateEditDate.Properties.Appearance.Options.UseFont = true;
+            this.dateEditDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditDate.Size = new System.Drawing.Size(229, 28);
+            this.dateEditDate.TabIndex = 10;
             // 
             // XtraFormAppointmentDetails
             // 

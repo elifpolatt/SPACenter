@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SPACenter.DAL.Abstracts;
+using SPACenter.DAL.Concrete.Mysql;
 using SPACenter.Entities.Database;
 
 namespace SPACenter.DAL.Concrete.Mssql
@@ -59,15 +60,19 @@ namespace SPACenter.DAL.Concrete.Mssql
 
         public Appointment Get(int id)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                Appointment Appointment = context.Appointments.FirstOrDefault(d => d.Id == id);
+                return Appointment;
+            }
         }
 
         public List<Appointment> GetAll()
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                List<Appointment> appointments = context.Appointments.Include(x=>x.Customer).Include(x=>x.Department).Include(x=>x.RendevousTime).ToList();
-                return appointments;
+                List<Appointment> Appointments = context.Appointments.Include(x=>x.Customer).Include(x=>x.Department).Include(x=>x.RendevousTime).ToList();
+                return Appointments;
             }
         }
 
@@ -75,7 +80,12 @@ namespace SPACenter.DAL.Concrete.Mssql
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                context.Entry(c).State = EntityState.Modified;
+                Appointment appointment = context.Appointments.FirstOrDefault(x => x.Id == c.Id);
+                //appointment.RendevousDate = c.RendevousDate;
+                //appointment.RendezvousTimeId = c.RendezvousTimeId;
+                //appointment.CustomerId = c.CustomerId;
+                //appointment.DepartmentId = c.DepartmentId;
+              context.Entry(c).State = EntityState.Modified;
                 if (context.SaveChanges())
                 {
                     return c;

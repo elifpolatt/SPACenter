@@ -163,6 +163,10 @@ namespace SPACenter.UI.Forms
         {
             dateEditDate.Properties.MinValue = DateTime.Today;
             //bugunun tarihini min deger olarak alacak ve bugunden oncekı tarıhler gorunmeyecek
+
+            gridLookUpEditCustomer.Properties.NullText = "Müşteri seçiniz.";
+            gridLookUpEditDepartment.Properties.NullText = "Bölüm seçiniz.";
+            gridLookUpEditSeances.Properties.NullText = "Seasns saati seçiniz.";
         }
     }
 }

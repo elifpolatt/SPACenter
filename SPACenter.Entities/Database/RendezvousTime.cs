@@ -33,7 +33,7 @@ namespace SPACenter.Entities.Database
         
         public override string ToString()
         {
-            return $"{StartTime} - {EndTime}";
+            return $"{StartTime:hh\\:mm} - {EndTime:hh\\:mm}";
         }
 
         [NotMapped]
@@ -62,7 +62,7 @@ namespace SPACenter.Entities.Database
 
 
         [NotMapped]
-        [DisplayName("Randevu Saatleri")] public string ToDisplay => $"{StartTime} - {EndTime}";
+        [DisplayName("Randevu Saatleri")] public string ToDisplay => $"{StartTime:hh\\:mm} - {EndTime:hh\\:mm}";   //format 00:00:00 olmasın 00:00 seklinde olsun dıye bu sekılde saat ve dakikayı alacagımızı belırtıyoruz
 
     }
 }
