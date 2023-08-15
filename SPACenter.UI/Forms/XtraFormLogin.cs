@@ -45,15 +45,32 @@ namespace SPACenter.UI.Forms
             //Close();
 
 
-            int userId = (int)gridLookUpEditCustomer.EditValue; // Burada gridLookUpEdit'ten seçilen kullanıcı ID'sini alıyoruz
-            UserManager userManager = new UserManager(GlobalVariables.ConnectInfo);
-            User user = userManager.LoginUser(userId);
-            string enterPassword = textEditPassword.Text;
+            //int userId = (int)gridLookUpEditUser.EditValue; // Burada gridLookUpEdit'ten seçilen kullanıcı ID'sini alıyoruz
+            //UserManager userManager = new UserManager(GlobalVariables.ConnectInfo);
+            //User user = userManager.LoginUser(userId);
+            //string enterPassword = textEditPassword.Text;
 
+            //if (user == null || user.PasswordTemp != enterPassword)
+            //{
+            //    XtraMessageBox.Show("Kullanıcı seçilmedi veya şifre hatalı girildi. Yeniden deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //}
+            //else
+            //{
+            //    GlobalVariables.User = user;
+            //    Close();
+            //}
+           
+            int userId = (int)gridLookUpEditUser.EditValue; // Burada gridLookUpEdit'ten seçilen kullanıcı ID'sini alıyoruz
+
+            UserManager userManager = new UserManager(GlobalVariables.ConnectInfo);
+            User user = userManager.Get(userId); // Kullanıcıyı direkt olarak Get metodundan alıyoruz
+            string enterPassword = textEditPassword.Text;
             if (user == null || user.PasswordTemp != enterPassword)
             {
                 XtraMessageBox.Show("Kullanıcı seçilmedi veya şifre hatalı girildi. Yeniden deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
             }
+
             else
             {
                 GlobalVariables.User = user;
@@ -61,13 +78,13 @@ namespace SPACenter.UI.Forms
             }
 
 
-
         }
 
         private void XtraFormLogin_Load(object sender, EventArgs e)
         {
             //login formunda gridlookupeditcustomer editvalue is null gelmesin diye bunu yaptım
-            gridLookUpEditCustomer.Properties.NullText = " ";
+            gridLookUpEditUser.Properties.NullText = " ";
+            textEditPassword.Text = "";
         }
     }
 }

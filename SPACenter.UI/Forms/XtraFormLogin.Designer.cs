@@ -32,8 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormLogin));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEditCustomer = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEditUser = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,12 +45,13 @@
             this.colImageBytes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonLogin = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -74,24 +74,20 @@
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Şifre:";
             // 
-            // gridLookUpEditCustomer
+            // gridLookUpEditUser
             // 
-            this.gridLookUpEditCustomer.Location = new System.Drawing.Point(232, 69);
-            this.gridLookUpEditCustomer.Name = "gridLookUpEditCustomer";
-            this.gridLookUpEditCustomer.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEditCustomer.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEditCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridLookUpEditUser.Location = new System.Drawing.Point(232, 66);
+            this.gridLookUpEditUser.Name = "gridLookUpEditUser";
+            this.gridLookUpEditUser.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridLookUpEditUser.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEditCustomer.Properties.DataSource = this.userBindingSource;
-            this.gridLookUpEditCustomer.Properties.DisplayMember = "Name";
-            this.gridLookUpEditCustomer.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEditCustomer.Properties.ValueMember = "Id";
-            this.gridLookUpEditCustomer.Size = new System.Drawing.Size(247, 28);
-            this.gridLookUpEditCustomer.TabIndex = 2;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(SPACenter.Entities.Database.User);
+            this.gridLookUpEditUser.Properties.DataSource = this.userBindingSource;
+            this.gridLookUpEditUser.Properties.DisplayMember = "Name";
+            this.gridLookUpEditUser.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEditUser.Properties.ValueMember = "Id";
+            this.gridLookUpEditUser.Size = new System.Drawing.Size(247, 28);
+            this.gridLookUpEditUser.TabIndex = 2;
             // 
             // gridLookUpEdit1View
             // 
@@ -176,6 +172,10 @@
             this.textEditPassword.Size = new System.Drawing.Size(247, 28);
             this.textEditPassword.TabIndex = 3;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(SPACenter.Entities.Database.User);
+            // 
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonCancel.ImageOptions.Image")));
@@ -207,17 +207,17 @@
             this.Controls.Add(this.simpleButtonLogin);
             this.Controls.Add(this.simpleButtonCancel);
             this.Controls.Add(this.textEditPassword);
-            this.Controls.Add(this.gridLookUpEditCustomer);
+            this.Controls.Add(this.gridLookUpEditUser);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "XtraFormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Yap";
             this.Load += new System.EventHandler(this.XtraFormLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,7 +227,7 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditCustomer;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditUser;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.TextEdit textEditPassword;
         private System.Windows.Forms.BindingSource userBindingSource;

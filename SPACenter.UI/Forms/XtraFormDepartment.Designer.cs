@@ -39,7 +39,6 @@
             this.gridControlDepartment = new DevExpress.XtraGrid.GridControl();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuotaPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaymentPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -127,7 +126,6 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
             this.colName,
             this.colQuotaPerSeance,
             this.colPaymentPerSeance,
@@ -135,13 +133,6 @@
             this.colDelFlag});
             this.gridView1.GridControl = this.gridControlDepartment;
             this.gridView1.Name = "gridView1";
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.MinWidth = 25;
-            this.colId.Name = "colId";
-            this.colId.Width = 94;
             // 
             // colName
             // 
@@ -175,8 +166,6 @@
             this.colSessionLength.FieldName = "SessionLength";
             this.colSessionLength.MinWidth = 25;
             this.colSessionLength.Name = "colSessionLength";
-            this.colSessionLength.Visible = true;
-            this.colSessionLength.VisibleIndex = 3;
             this.colSessionLength.Width = 94;
             // 
             // colDelFlag
@@ -216,7 +205,6 @@
         private DevExpress.XtraGrid.GridControl gridControlDepartment;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colQuotaPerSeance;
         private DevExpress.XtraGrid.Columns.GridColumn colPaymentPerSeance;

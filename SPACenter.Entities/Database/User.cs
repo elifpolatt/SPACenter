@@ -55,6 +55,11 @@ namespace SPACenter.Entities.Database
         {
             return $"{Name} {Surname}";
         }
+
+
+        [NotMapped]
+        [DisplayName("Adı Soyadı")]
+        public string FullName => $"{Name} {Surname}";
     }
 
 }
