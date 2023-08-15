@@ -42,35 +42,29 @@
             this.gridLookUpEditCustomer = new DevExpress.XtraEditors.GridLookUpEdit();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRendevousDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRendezvousTimeId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRendevousTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepartment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpEditDepartment = new DevExpress.XtraEditors.GridLookUpEdit();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomer1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRendevousDate1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRendezvousTimeId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRendevousTime1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepartmentId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepartment1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuotaPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaymentPerSeance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSessionLength = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDelFlag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpEditSeances = new DevExpress.XtraEditors.GridLookUpEdit();
             this.rendezvousTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dateEditDate = new DevExpress.XtraEditors.DateEdit();
+            this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStartTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepartmentId2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDepartment2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDepartment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dateEditDate = new DevExpress.XtraEditors.DateEdit();
+            this.colStartTimeTemp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEndTimeTemp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colToDisplay = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -189,60 +183,19 @@
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colCustomerId,
-            this.colCustomer,
-            this.colRendevousDate,
-            this.colRendezvousTimeId,
-            this.colRendevousTime,
-            this.colDepartmentId,
-            this.colDepartment});
+            this.colFullName});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // colId
+            // colFullName
             // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            // 
-            // colCustomerId
-            // 
-            this.colCustomerId.FieldName = "CustomerId";
-            this.colCustomerId.Name = "colCustomerId";
-            // 
-            // colCustomer
-            // 
-            this.colCustomer.FieldName = "Customer";
-            this.colCustomer.Name = "colCustomer";
-            this.colCustomer.Visible = true;
-            this.colCustomer.VisibleIndex = 0;
-            // 
-            // colRendevousDate
-            // 
-            this.colRendevousDate.FieldName = "RendevousDate";
-            this.colRendevousDate.Name = "colRendevousDate";
-            // 
-            // colRendezvousTimeId
-            // 
-            this.colRendezvousTimeId.FieldName = "RendezvousTimeId";
-            this.colRendezvousTimeId.Name = "colRendezvousTimeId";
-            // 
-            // colRendevousTime
-            // 
-            this.colRendevousTime.FieldName = "RendevousTime";
-            this.colRendevousTime.Name = "colRendevousTime";
-            // 
-            // colDepartmentId
-            // 
-            this.colDepartmentId.FieldName = "DepartmentId";
-            this.colDepartmentId.Name = "colDepartmentId";
-            // 
-            // colDepartment
-            // 
-            this.colDepartment.FieldName = "Department";
-            this.colDepartment.Name = "colDepartment";
+            this.colFullName.FieldName = "FullName";
+            this.colFullName.Name = "colFullName";
+            this.colFullName.OptionsColumn.ReadOnly = true;
+            this.colFullName.Visible = true;
+            this.colFullName.VisibleIndex = 0;
             // 
             // gridLookUpEditDepartment
             // 
@@ -266,60 +219,50 @@
             // gridLookUpEdit2View
             // 
             this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId1,
-            this.colCustomerId1,
-            this.colCustomer1,
-            this.colRendevousDate1,
-            this.colRendezvousTimeId1,
-            this.colRendevousTime1,
-            this.colDepartmentId1,
-            this.colDepartment1});
+            this.colId,
+            this.colName,
+            this.colQuotaPerSeance,
+            this.colPaymentPerSeance,
+            this.colSessionLength,
+            this.colDelFlag});
             this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
             this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
-            // colId1
+            // colId
             // 
-            this.colId1.FieldName = "Id";
-            this.colId1.Name = "colId1";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
             // 
-            // colCustomerId1
+            // colName
             // 
-            this.colCustomerId1.FieldName = "CustomerId";
-            this.colCustomerId1.Name = "colCustomerId1";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
             // 
-            // colCustomer1
+            // colQuotaPerSeance
             // 
-            this.colCustomer1.FieldName = "Customer";
-            this.colCustomer1.Name = "colCustomer1";
+            this.colQuotaPerSeance.FieldName = "QuotaPerSeance";
+            this.colQuotaPerSeance.Name = "colQuotaPerSeance";
             // 
-            // colRendevousDate1
+            // colPaymentPerSeance
             // 
-            this.colRendevousDate1.FieldName = "RendevousDate";
-            this.colRendevousDate1.Name = "colRendevousDate1";
+            this.colPaymentPerSeance.FieldName = "PaymentPerSeance";
+            this.colPaymentPerSeance.Name = "colPaymentPerSeance";
             // 
-            // colRendezvousTimeId1
+            // colSessionLength
             // 
-            this.colRendezvousTimeId1.FieldName = "RendezvousTimeId";
-            this.colRendezvousTimeId1.Name = "colRendezvousTimeId1";
+            this.colSessionLength.FieldName = "SessionLength";
+            this.colSessionLength.Name = "colSessionLength";
             // 
-            // colRendevousTime1
+            // colDelFlag
             // 
-            this.colRendevousTime1.FieldName = "RendevousTime";
-            this.colRendevousTime1.Name = "colRendevousTime1";
-            // 
-            // colDepartmentId1
-            // 
-            this.colDepartmentId1.FieldName = "DepartmentId";
-            this.colDepartmentId1.Name = "colDepartmentId1";
-            // 
-            // colDepartment1
-            // 
-            this.colDepartment1.FieldName = "Department";
-            this.colDepartment1.Name = "colDepartment1";
-            this.colDepartment1.Visible = true;
-            this.colDepartment1.VisibleIndex = 0;
+            this.colDelFlag.FieldName = "DelFlag";
+            this.colDelFlag.Name = "colDelFlag";
             // 
             // gridLookUpEditSeances
             // 
@@ -332,7 +275,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEditSeances.Properties.DataSource = this.rendezvousTimeBindingSource;
             this.gridLookUpEditSeances.Properties.PopupView = this.gridLookUpEdit4View;
-            this.gridLookUpEditSeances.Properties.ValueMember = "Id";
             this.gridLookUpEditSeances.Size = new System.Drawing.Size(229, 28);
             this.gridLookUpEditSeances.TabIndex = 8;
             // 
@@ -343,50 +285,19 @@
             // gridLookUpEdit4View
             // 
             this.gridLookUpEdit4View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId2,
+            this.colId1,
             this.colStartTime,
             this.colEndTime,
-            this.colDepartmentId2,
-            this.colDepartment2,
-            this.colActive});
+            this.colDepartmentId,
+            this.colToDisplay,
+            this.colDepartment,
+            this.colActive,
+            this.colStartTimeTemp,
+            this.colEndTimeTemp});
             this.gridLookUpEdit4View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit4View.Name = "gridLookUpEdit4View";
             this.gridLookUpEdit4View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit4View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colId2
-            // 
-            this.colId2.FieldName = "Id";
-            this.colId2.Name = "colId2";
-            // 
-            // colStartTime
-            // 
-            this.colStartTime.FieldName = "StartTime";
-            this.colStartTime.Name = "colStartTime";
-            this.colStartTime.Visible = true;
-            this.colStartTime.VisibleIndex = 0;
-            // 
-            // colEndTime
-            // 
-            this.colEndTime.FieldName = "EndTime";
-            this.colEndTime.Name = "colEndTime";
-            this.colEndTime.Visible = true;
-            this.colEndTime.VisibleIndex = 1;
-            // 
-            // colDepartmentId2
-            // 
-            this.colDepartmentId2.FieldName = "DepartmentId";
-            this.colDepartmentId2.Name = "colDepartmentId2";
-            // 
-            // colDepartment2
-            // 
-            this.colDepartment2.FieldName = "Department";
-            this.colDepartment2.Name = "colDepartment2";
-            // 
-            // colActive
-            // 
-            this.colActive.FieldName = "Active";
-            this.colActive.Name = "colActive";
             // 
             // dateEditDate
             // 
@@ -402,6 +313,56 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditDate.Size = new System.Drawing.Size(229, 28);
             this.dateEditDate.TabIndex = 10;
+            // 
+            // colId1
+            // 
+            this.colId1.FieldName = "Id";
+            this.colId1.Name = "colId1";
+            // 
+            // colStartTime
+            // 
+            this.colStartTime.FieldName = "StartTime";
+            this.colStartTime.Name = "colStartTime";
+            this.colStartTime.Visible = true;
+            this.colStartTime.VisibleIndex = 0;
+            // 
+            // colEndTime
+            // 
+            this.colEndTime.FieldName = "EndTime";
+            this.colEndTime.Name = "colEndTime";
+            this.colEndTime.Visible = true;
+            this.colEndTime.VisibleIndex = 1;
+            // 
+            // colDepartmentId
+            // 
+            this.colDepartmentId.FieldName = "DepartmentId";
+            this.colDepartmentId.Name = "colDepartmentId";
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.FieldName = "Department";
+            this.colDepartment.Name = "colDepartment";
+            // 
+            // colActive
+            // 
+            this.colActive.FieldName = "Active";
+            this.colActive.Name = "colActive";
+            // 
+            // colStartTimeTemp
+            // 
+            this.colStartTimeTemp.FieldName = "StartTimeTemp";
+            this.colStartTimeTemp.Name = "colStartTimeTemp";
+            // 
+            // colEndTimeTemp
+            // 
+            this.colEndTimeTemp.FieldName = "EndTimeTemp";
+            this.colEndTimeTemp.Name = "colEndTimeTemp";
+            // 
+            // colToDisplay
+            // 
+            this.colToDisplay.FieldName = "ToDisplay";
+            this.colToDisplay.Name = "colToDisplay";
+            this.colToDisplay.OptionsColumn.ReadOnly = true;
             // 
             // XtraFormAppointmentDetails
             // 
@@ -420,6 +381,7 @@
             this.Name = "XtraFormAppointmentDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Randevu Detayları";
+            this.Load += new System.EventHandler(this.XtraFormAppointmentDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
@@ -455,30 +417,24 @@
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditSeances;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit4View;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomer;
-        private DevExpress.XtraGrid.Columns.GridColumn colRendevousDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colRendezvousTimeId;
-        private DevExpress.XtraGrid.Columns.GridColumn colRendevousTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
-        private DevExpress.XtraGrid.Columns.GridColumn colDepartment;
-        private DevExpress.XtraGrid.Columns.GridColumn colId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomer1;
-        private DevExpress.XtraGrid.Columns.GridColumn colRendevousDate1;
-        private DevExpress.XtraGrid.Columns.GridColumn colRendezvousTimeId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colRendevousTime1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDepartment1;
         private System.Windows.Forms.BindingSource rendezvousTimeBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colId2;
-        private DevExpress.XtraGrid.Columns.GridColumn colStartTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colEndTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId2;
-        private DevExpress.XtraGrid.Columns.GridColumn colDepartment2;
-        private DevExpress.XtraGrid.Columns.GridColumn colActive;
         private DevExpress.XtraEditors.DateEdit dateEditDate;
         private System.Windows.Forms.BindingSource departmentBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colFullName;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuotaPerSeance;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaymentPerSeance;
+        private DevExpress.XtraGrid.Columns.GridColumn colSessionLength;
+        private DevExpress.XtraGrid.Columns.GridColumn colDelFlag;
+        private DevExpress.XtraGrid.Columns.GridColumn colId1;
+        private DevExpress.XtraGrid.Columns.GridColumn colStartTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colEndTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
+        private DevExpress.XtraGrid.Columns.GridColumn colToDisplay;
+        private DevExpress.XtraGrid.Columns.GridColumn colDepartment;
+        private DevExpress.XtraGrid.Columns.GridColumn colActive;
+        private DevExpress.XtraGrid.Columns.GridColumn colStartTimeTemp;
+        private DevExpress.XtraGrid.Columns.GridColumn colEndTimeTemp;
     }
 }

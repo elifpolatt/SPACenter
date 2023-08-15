@@ -63,6 +63,11 @@ namespace SPACenter.UI.Forms
 
 
         }
-       
+
+        private void XtraFormLogin_Load(object sender, EventArgs e)
+        {
+            //login formunda gridlookupeditcustomer editvalue is null gelmesin diye bunu yaptım
+            gridLookUpEditCustomer.Properties.NullText = " ";
+        }
     }
 }

@@ -37,7 +37,24 @@ namespace SPACenter.DAL.Concrete.Mssql
        
         public Appointment Delete(int id)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                Appointment Appointment = context.Appointments.FirstOrDefault(x => x.Id == id);
+                if (Appointment == null)
+                {
+                    return null;
+                }
+
+                context.Appointments.Remove(Appointment);
+                if (context.SaveChanges())
+                {
+                    return Appointment;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         public Appointment Get(int id)

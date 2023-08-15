@@ -42,7 +42,14 @@ namespace SPACenter.UI.Forms
             gridLookUpEditCustomer.ReadOnly = true;
             GetValues();
         }
+        public XtraFormAppointmentDetails()
+        {
+            InitializeComponent();
+            Appointment = new Appointment();
+            dateEditDate.DateTime = DateTime.Today;
+            GetValues();
 
+        }
         public XtraFormAppointmentDetails(int customerId)
         {
             InitializeComponent();
@@ -54,14 +61,7 @@ namespace SPACenter.UI.Forms
             GetValues();
         }
 
-        public XtraFormAppointmentDetails()
-        {
-            InitializeComponent();
-            Appointment = new Appointment();
-            dateEditDate.DateTime = DateTime.Today;
-            GetValues();
-
-        }
+       
         private void GetValues()
         {
             customerManager = new CustomerManager(GlobalVariables.ConnectInfo);
@@ -85,6 +85,7 @@ namespace SPACenter.UI.Forms
 
             if (department != null)
             {
+                //departman secildiyse sadece o bolume ait randevular görünsün
                 rendezvousTimeBindingSource.DataSource = rendezvousTimes.Where(x => x.DepartmentId == department.Id).ToList();
                 
             }
@@ -103,23 +104,28 @@ namespace SPACenter.UI.Forms
             }
 
             Appointment.CustomerId = (gridLookUpEditCustomer.EditValue as Customer).Id;
-            Appointment.DepartmentId = (gridLookUpEditDepartment.EditValue as Department).Id;
             //Department department = gridLookUpEditDepartments.EditValue as Department;
             //Appointment.DepartmentId = department.Id;
-            Appointment.RendezvousTimeId = (gridLookUpEditSeances.EditValue as  RendezvousTime).Id;
-            Appointment.RendevousDate = dateEditDate.DateTime.Date;
-
+             
             if (gridLookUpEditDepartment.EditValue == null)
             {
                 XtraMessageBox.Show("Bölüm boş geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
+            //Appointment.DepartmentId = (gridLookUpEditDepartment.EditValue as Department).Id;
+            Department department = gridLookUpEditDepartment.EditValue as Department;
+            Appointment.DepartmentId = department.Id;
+           
 
             if (gridLookUpEditSeances.EditValue == null)
             {
                 XtraMessageBox.Show("Seans saatleri boş geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            Appointment.RendezvousTimeId = (gridLookUpEditSeances.EditValue as RendezvousTime).Id;
+
+            //rentimea ata 
+            Appointment.RendevousDate = dateEditDate.DateTime.Date;
 
             Tuple<bool, List<string>, Appointment> tuple;
             if (Appointment.Id > 0)
@@ -151,6 +157,12 @@ namespace SPACenter.UI.Forms
 
             rendezvousTimeBindingSource.DataSource =
                 rendezvousTimes.Where(x => x.DepartmentId == editValue.Id).ToList();
+        }
+
+        private void XtraFormAppointmentDetails_Load(object sender, EventArgs e)
+        {
+            dateEditDate.Properties.MinValue = DateTime.Today;
+            //bugunun tarihini min deger olarak alacak ve bugunden oncekı tarıhler gorunmeyecek
         }
     }
 }

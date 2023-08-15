@@ -213,6 +213,7 @@
             this.Name = "XtraFormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Yap";
+            this.Load += new System.EventHandler(this.XtraFormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
