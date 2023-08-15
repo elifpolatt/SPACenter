@@ -64,6 +64,9 @@ namespace SPACenter.BLL.Ninject
                    .WithConstructorArgument("dbConnectionString", ConString);
                StandardKernel.Bind<IServerSettingDAL>().To<MysqlServerSettingDAL>()
                    .WithConstructorArgument("dbConnectionString", ConString);
+               StandardKernel.Bind<IDatabaseDAL>().To<MssqlDatabaseDAL>()
+                   .WithConstructorArgument("dbConnectionString", ConString);
+
         }
 
         public void LoadMssql()
@@ -82,6 +85,8 @@ namespace SPACenter.BLL.Ninject
             StandardKernel.Bind<IRendezvousTimeDAL>().To<MssqlRendezvousTimeDAL>()
                 .WithConstructorArgument("dbConnectionString", ConString);
             StandardKernel.Bind<IServerSettingDAL>().To<MssqlServerSettingDAL>()
+                .WithConstructorArgument("dbConnectionString", ConString);
+            StandardKernel.Bind<IDatabaseDAL>().To<MysqlDatabaseDAL>()
                 .WithConstructorArgument("dbConnectionString", ConString);
         }
     }

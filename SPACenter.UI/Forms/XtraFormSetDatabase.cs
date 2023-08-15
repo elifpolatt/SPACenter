@@ -23,7 +23,7 @@ namespace SPACenter.UI.Forms
             User = new User();
             userBindingSource.DataSource = User;
         }
-
+           
         private void comboBoxEditDatabase_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonEditConnectionString.EditValue = null;
@@ -34,18 +34,18 @@ namespace SPACenter.UI.Forms
         {
             if (comboBoxEditDatabase.SelectedIndex == 0)
             {
-                XtraFormMssqlConnection xtraFormMsSqlConnection = new XtraFormMssqlConnection();
-                xtraFormMsSqlConnection.ShowDialog();
-                if (xtraFormMsSqlConnection.Result)
+                XtraFormMssqlConnection connection = new XtraFormMssqlConnection();
+                connection.ShowDialog();
+                if (connection.Result)
                 {
                     buttonEditConnectionString.EditValue = GlobalVariables.MssqlConnectionString;
                 }
             }
             else if (comboBoxEditDatabase.SelectedIndex == 1)
             {
-                XtraFormMysqlConnection formMySqlConnection = new XtraFormMysqlConnection();
-                formMySqlConnection.ShowDialog();
-                if (formMySqlConnection.Result)
+                XtraFormMysqlConnection connection = new XtraFormMysqlConnection();
+                connection.ShowDialog();
+                if (connection.Result)
                 {
                     buttonEditConnectionString.EditValue = GlobalVariables.MysqlConnectionString;
                 }
@@ -59,7 +59,7 @@ namespace SPACenter.UI.Forms
                 Result = false;
                 return;
             }
-
+       
             DatabaseType databaseType = (DatabaseType)comboBoxEditDatabase.SelectedIndex;
             Properties.Settings.Default.DatabaseType = databaseType;
             Properties.Settings.Default.Save();

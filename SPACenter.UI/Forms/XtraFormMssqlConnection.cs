@@ -15,6 +15,7 @@ namespace SPACenter.UI.Forms
 {
     public partial class XtraFormMssqlConnection : DevExpress.XtraEditors.XtraForm
     {
+        public bool Result { get; set; }
         public XtraFormMssqlConnection()
         {
             InitializeComponent();

@@ -32,12 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormLogin));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
+            this.gridLookUpEditCustomer = new DevExpress.XtraEditors.GridLookUpEdit();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,10 +45,13 @@
             this.colAccountType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImageBytes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonLogin = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -74,20 +74,24 @@
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Şifre:";
             // 
-            // gridLookUpEdit1
+            // gridLookUpEditCustomer
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(232, 69);
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridLookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridLookUpEditCustomer.Location = new System.Drawing.Point(232, 69);
+            this.gridLookUpEditCustomer.Name = "gridLookUpEditCustomer";
+            this.gridLookUpEditCustomer.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridLookUpEditCustomer.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.DataSource = this.userBindingSource;
-            this.gridLookUpEdit1.Properties.DisplayMember = "Name";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Properties.ValueMember = "Id";
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(247, 28);
-            this.gridLookUpEdit1.TabIndex = 2;
+            this.gridLookUpEditCustomer.Properties.DataSource = this.userBindingSource;
+            this.gridLookUpEditCustomer.Properties.DisplayMember = "Name";
+            this.gridLookUpEditCustomer.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEditCustomer.Properties.ValueMember = "Id";
+            this.gridLookUpEditCustomer.Size = new System.Drawing.Size(247, 28);
+            this.gridLookUpEditCustomer.TabIndex = 2;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(SPACenter.Entities.Database.User);
             // 
             // gridLookUpEdit1View
             // 
@@ -106,42 +110,6 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // textEditPassword
-            // 
-            this.textEditPassword.Location = new System.Drawing.Point(232, 109);
-            this.textEditPassword.Name = "textEditPassword";
-            this.textEditPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEditPassword.Properties.Appearance.Options.UseFont = true;
-            this.textEditPassword.Size = new System.Drawing.Size(247, 28);
-            this.textEditPassword.TabIndex = 3;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(SPACenter.Entities.Database.User);
-            // 
-            // simpleButtonCancel
-            // 
-            this.simpleButtonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonCancel.ImageOptions.Image")));
-            this.simpleButtonCancel.Location = new System.Drawing.Point(332, 158);
-            this.simpleButtonCancel.Name = "simpleButtonCancel";
-            this.simpleButtonCancel.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButtonCancel.Size = new System.Drawing.Size(38, 29);
-            this.simpleButtonCancel.TabIndex = 4;
-            this.simpleButtonCancel.Click += new System.EventHandler(this.simpleButtonCancel_Click);
-            // 
-            // simpleButtonLogin
-            // 
-            this.simpleButtonLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.simpleButtonLogin.Appearance.Options.UseFont = true;
-            this.simpleButtonLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonLogin.ImageOptions.Image")));
-            this.simpleButtonLogin.Location = new System.Drawing.Point(376, 158);
-            this.simpleButtonLogin.Name = "simpleButtonLogin";
-            this.simpleButtonLogin.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButtonLogin.Size = new System.Drawing.Size(103, 29);
-            this.simpleButtonLogin.TabIndex = 5;
-            this.simpleButtonLogin.Text = "Giriş Yap";
-            this.simpleButtonLogin.Click += new System.EventHandler(this.simpleButtonLogin_Click);
             // 
             // colId
             // 
@@ -198,6 +166,39 @@
             this.colImage.FieldName = "Image";
             this.colImage.Name = "colImage";
             // 
+            // textEditPassword
+            // 
+            this.textEditPassword.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.userBindingSource, "PasswordTemp", true));
+            this.textEditPassword.Location = new System.Drawing.Point(232, 109);
+            this.textEditPassword.Name = "textEditPassword";
+            this.textEditPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textEditPassword.Properties.Appearance.Options.UseFont = true;
+            this.textEditPassword.Size = new System.Drawing.Size(247, 28);
+            this.textEditPassword.TabIndex = 3;
+            // 
+            // simpleButtonCancel
+            // 
+            this.simpleButtonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonCancel.ImageOptions.Image")));
+            this.simpleButtonCancel.Location = new System.Drawing.Point(319, 158);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButtonCancel.Size = new System.Drawing.Size(38, 29);
+            this.simpleButtonCancel.TabIndex = 4;
+            this.simpleButtonCancel.Click += new System.EventHandler(this.simpleButtonCancel_Click);
+            // 
+            // simpleButtonLogin
+            // 
+            this.simpleButtonLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.simpleButtonLogin.Appearance.Options.UseFont = true;
+            this.simpleButtonLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonLogin.ImageOptions.Image")));
+            this.simpleButtonLogin.Location = new System.Drawing.Point(363, 158);
+            this.simpleButtonLogin.Name = "simpleButtonLogin";
+            this.simpleButtonLogin.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButtonLogin.Size = new System.Drawing.Size(119, 29);
+            this.simpleButtonLogin.TabIndex = 5;
+            this.simpleButtonLogin.Text = "Giriş Yap";
+            this.simpleButtonLogin.Click += new System.EventHandler(this.simpleButtonLogin_Click);
+            // 
             // XtraFormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -206,16 +207,16 @@
             this.Controls.Add(this.simpleButtonLogin);
             this.Controls.Add(this.simpleButtonCancel);
             this.Controls.Add(this.textEditPassword);
-            this.Controls.Add(this.gridLookUpEdit1);
+            this.Controls.Add(this.gridLookUpEditCustomer);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "XtraFormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Yap";
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,7 +226,7 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.TextEdit textEditPassword;
         private System.Windows.Forms.BindingSource userBindingSource;

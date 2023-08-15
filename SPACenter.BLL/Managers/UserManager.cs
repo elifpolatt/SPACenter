@@ -71,10 +71,10 @@ namespace SPACenter.BLL.Managers
         public User Get(int id)
         {
 
-            User user = _IUserDal.Get(id);
+            User User = _IUserDal.Get(id);
             Cryptography cryptography = new Cryptography();
-            user.PasswordTemp = cryptography.TextEnCoding(user.Password); //şifrelenmiş şifreler passwordtempe atanır.
-            return user;
+            User.PasswordTemp = cryptography.TextEnCoding(User.Password); //şifrelenmiş şifreler passwordtempe atanır.
+            return User;
         }
 
         public List<User> GetAll(bool? deleted = false)
@@ -87,5 +87,27 @@ namespace SPACenter.BLL.Managers
             });
             return users;  //şifrelenmıs kullanıcı lıstesı döndürlür
         }
+
+
+
+        public User LoginUser(int id)
+        {
+            User user = Get(id);
+            Cryptography cryptography = new Cryptography();
+
+            if (user != null && user.PasswordTemp == cryptography.TextEnCoding(user.Password))
+            {
+                return user;
+            }
+
+
+            else
+            {
+                return null;
+            }
+
+        }
+
+
     }
 }

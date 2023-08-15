@@ -83,5 +83,7 @@ namespace SPACenter.DAL.Concrete.Mysql
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

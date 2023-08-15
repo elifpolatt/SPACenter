@@ -81,8 +81,8 @@ namespace SPACenter.DAL.Concrete.Mssql
         {
             using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
-                User User = context.Users.FirstOrDefault(x => x.Id == id);
-                return User;
+                User user = context.Users.FirstOrDefault(x => x.Id == id);
+                return user;
             }
         }
 
@@ -96,5 +96,7 @@ namespace SPACenter.DAL.Concrete.Mssql
                 return users;
             }
         }
+
+       
     }
 }
