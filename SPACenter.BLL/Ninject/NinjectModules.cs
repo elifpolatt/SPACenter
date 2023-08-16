@@ -60,11 +60,11 @@ namespace SPACenter.BLL.Ninject
               .WithConstructorArgument("dbConnectionString", ConString);
                StandardKernel.Bind<IAppointmentDAL>().To<MysqlAppointmentDAL>()
                    .WithConstructorArgument("dbConnectionString", ConString);
-               StandardKernel.Bind<IRendezvousTimeDAL>().To<MysqlRezdezvousTimeDAL>()
+               StandardKernel.Bind<IRendezvousTimeDAL>().To<MysqlRendezvousTimeDAL>()
                    .WithConstructorArgument("dbConnectionString", ConString);
                StandardKernel.Bind<IServerSettingDAL>().To<MysqlServerSettingDAL>()
                    .WithConstructorArgument("dbConnectionString", ConString);
-               StandardKernel.Bind<IDatabaseDAL>().To<MssqlDatabaseDAL>()
+               StandardKernel.Bind<IDatabaseDAL>().To<MysqlDatabaseDAL>()
                    .WithConstructorArgument("dbConnectionString", ConString);
 
         }

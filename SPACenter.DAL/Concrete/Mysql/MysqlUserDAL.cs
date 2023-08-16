@@ -76,12 +76,22 @@ namespace SPACenter.DAL.Concrete.Mysql
 
         public User Get(int id)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                User user = context.Users.FirstOrDefault(x => x.Id == id);
+                return user;
+            }
         }
 
         public List<User> GetAll(bool? deleted = false)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                List<User> users = context.Users.Where(x => deleted == null || x.DelFlag == deleted).ToList();
+                //List<User> users = context.Users.ToList(); // Tüm kullanıcıları çek
+                //users = users.Where(x => deleted == null || x.DelFlag == deleted).ToList(); // Filtreleme
+                return users;
+            }
         }
 
        

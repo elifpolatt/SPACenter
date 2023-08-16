@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,14 +69,33 @@ namespace SPACenter.DAL.Concrete.Mysql
 
         public List<Appointment> GetAll()
         {
-            throw new NotImplementedException();
-
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                List<Appointment> Appointments = context.Appointments.Include(x => x.Customer).Include(x => x.Department).Include(x => x.RendevousTime).ToList();
+                return Appointments;
+            }
 
         }
 
         public Appointment Update(Appointment c)
         {
-            throw new NotImplementedException();
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
+            {
+                Appointment appointment = context.Appointments.FirstOrDefault(x => x.Id == c.Id);
+                //appointment.RendevousDate = c.RendevousDate;
+                //appointment.RendezvousTimeId = c.RendezvousTimeId;
+                //appointment.CustomerId = c.CustomerId;
+                //appointment.DepartmentId = c.DepartmentId;
+                context.Entry(c).State = EntityState.Modified;
+                if (context.SaveChanges())
+                {
+                    return c;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }

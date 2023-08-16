@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SPACenter.DAL.Abstracts;
+using MySql.Data.MySqlClient;
 
 namespace SPACenter.DAL.Concrete.Mysql
 {
@@ -44,7 +45,7 @@ namespace SPACenter.DAL.Concrete.Mysql
 
         public bool Test()
         {
-            SqlConnection conn = new SqlConnection(DbConnectionString);
+            MySqlConnection conn = new MySqlConnection(DbConnectionString);
             //veri tabanı stringini conna at 
             try
             {

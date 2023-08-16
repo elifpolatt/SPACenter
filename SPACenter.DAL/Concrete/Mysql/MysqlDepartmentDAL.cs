@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,27 +19,77 @@ namespace SPACenter.DAL.Concrete.Mysql
         }
         public Department Add(Department c)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                Department department = context.Departments.Add(c);
+                if (context.SaveChanges())
+                {
+                    return department;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
         }
 
         public Department Delete(int id)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                Department department = context.Departments.FirstOrDefault(x => x.Id == id);
+                if (department == null)
+                {
+                    return null;
+                }
+
+                department.DelFlag = true;
+                // department.Name = $"{department.Name}++{DateTime.Now}++";
+                if (context.SaveChanges())
+                {
+                    return department;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         public Department Get(int id)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                Department department = context.Departments.FirstOrDefault(x => x.Id == id);
+                return department;
+            }
         }
 
         public List<Department> GetAll(bool? deleted)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                List<Department> Departmens = context.Departments.Where(x => deleted == null || x.DelFlag == deleted).ToList();
+                return Departmens;
+
+            }
         }
 
         public Department Update(Department c)
         {
-            throw new NotImplementedException();
+            using (MysqlSaunaContext context = new MysqlSaunaContext(DbConnectionString))
+            {
+                context.Entry(c).State = EntityState.Modified;
+                if (context.SaveChanges())
+                {
+                    return c;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }

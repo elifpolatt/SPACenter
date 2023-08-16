@@ -20,7 +20,7 @@ namespace SPACenter.DAL.Concrete.Mssql
 
         public RendezvousTime Add(RendezvousTime c)
         {
-            using (MssqlSaunaContext context = new MssqlSaunaContext())
+            using (MssqlSaunaContext context = new MssqlSaunaContext(DbConnectionString))
             {
                 RendezvousTime RendezvousTime = context.RendezvousTime.Add(c);
 
