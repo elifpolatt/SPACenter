@@ -38,7 +38,7 @@ namespace SPACenter.UI
                     case DatabaseType.Mssql:
                         connectionString = connectionStringCol["MssqlSaunaContext"].ConnectionString;
                         break;
-                  case DatabaseType.Mysql:
+                    case DatabaseType.Mysql:
                         connectionString = connectionStringCol["MysqlSaunaContext"].ConnectionString;
                        break;
                     default:

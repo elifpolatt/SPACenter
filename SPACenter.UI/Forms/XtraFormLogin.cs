@@ -85,6 +85,8 @@ namespace SPACenter.UI.Forms
             //login formunda gridlookupeditcustomer editvalue is null gelmesin diye bunu yaptım
             gridLookUpEditUser.Properties.NullText = " ";
             textEditPassword.Text = "";
+            textEditPassword.Properties.PasswordChar = '*';
+
         }
     }
 }

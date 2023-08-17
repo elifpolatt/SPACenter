@@ -48,7 +48,8 @@ namespace SPACenter.UI.Forms
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Tuple<bool, List<string>, Customer> operationResult;
-             
+            Customer.PhoneNumber = textEditTel.Text;
+
             if (Customer.Id > 0)  //id sıfırdan buyukse yanı bır secim yapıldıysa save butonunda guncelleme islemi yap
             {
                 operationResult = customerManager.Update(Customer);

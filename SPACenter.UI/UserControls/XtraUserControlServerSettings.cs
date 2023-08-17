@@ -15,12 +15,32 @@ namespace SPACenter.UI.UserControls
 {
     public partial class XtraUserControlServerSettings : DevExpress.XtraEditors.XtraUserControl
     {
-        public XtraUserControlServerSettings()
+        public ServerSetting ServerSetting { get; private set; }
+
+        public XtraUserControlServerSettings(ServerSetting serverSetting)
         {
             InitializeComponent();
-           
+            ServerSetting = serverSetting;
+            serverSettingBindingSource.DataSource = ServerSetting;
+
         }
 
-      
+        private void simpleButtonSave_Click(object sender, EventArgs e)
+        {
+            ServerSettingManager serverSettingManager = new ServerSettingManager(GlobalVariables.ConnectInfo);
+            ServerSetting serverSetting = serverSettingManager.Update(ServerSetting);
+            if (serverSetting != null)
+            {
+                XtraMessageBox.Show("Ayar kaydedildi.", "Bilgilendirme",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("Ayar kaydedilemedi.", "Uyarı",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
     }
 }

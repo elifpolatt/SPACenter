@@ -39,17 +39,17 @@
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textEditPaymentPerSeance = new DevExpress.XtraEditors.TextEdit();
             this.textEditQuatoPerSeance = new DevExpress.XtraEditors.TextEdit();
-            this.textEditSessionLenght = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditSessionLength = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentPerSeance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditQuatoPerSeance.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditSessionLenght.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditSessionLength.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -98,7 +98,7 @@
             // textEditName
             // 
             this.textEditName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.departmentBindingSource, "Name", true));
-            this.textEditName.Location = new System.Drawing.Point(444, 253);
+            this.textEditName.Location = new System.Drawing.Point(440, 288);
             this.textEditName.MenuManager = this.ribbonControl1;
             this.textEditName.Name = "textEditName";
             this.textEditName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -113,7 +113,7 @@
             // textEditPaymentPerSeance
             // 
             this.textEditPaymentPerSeance.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.departmentBindingSource, "PaymentPerSeance", true));
-            this.textEditPaymentPerSeance.Location = new System.Drawing.Point(444, 299);
+            this.textEditPaymentPerSeance.Location = new System.Drawing.Point(440, 334);
             this.textEditPaymentPerSeance.MenuManager = this.ribbonControl1;
             this.textEditPaymentPerSeance.Name = "textEditPaymentPerSeance";
             this.textEditPaymentPerSeance.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -124,7 +124,7 @@
             // textEditQuatoPerSeance
             // 
             this.textEditQuatoPerSeance.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.departmentBindingSource, "QuotaPerSeance", true));
-            this.textEditQuatoPerSeance.Location = new System.Drawing.Point(444, 344);
+            this.textEditQuatoPerSeance.Location = new System.Drawing.Point(440, 379);
             this.textEditQuatoPerSeance.MenuManager = this.ribbonControl1;
             this.textEditQuatoPerSeance.Name = "textEditQuatoPerSeance";
             this.textEditQuatoPerSeance.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -132,22 +132,11 @@
             this.textEditQuatoPerSeance.Size = new System.Drawing.Size(224, 30);
             this.textEditQuatoPerSeance.TabIndex = 3;
             // 
-            // textEditSessionLenght
-            // 
-            this.textEditSessionLenght.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.departmentBindingSource, "SessionLength", true));
-            this.textEditSessionLenght.Location = new System.Drawing.Point(444, 392);
-            this.textEditSessionLenght.MenuManager = this.ribbonControl1;
-            this.textEditSessionLenght.Name = "textEditSessionLenght";
-            this.textEditSessionLenght.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEditSessionLenght.Properties.Appearance.Options.UseFont = true;
-            this.textEditSessionLenght.Size = new System.Drawing.Size(224, 30);
-            this.textEditSessionLenght.TabIndex = 4;
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(185, 259);
+            this.labelControl1.Location = new System.Drawing.Point(181, 294);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(97, 24);
             this.labelControl1.TabIndex = 5;
@@ -157,7 +146,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(185, 305);
+            this.labelControl2.Location = new System.Drawing.Point(181, 340);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(118, 24);
             this.labelControl2.TabIndex = 6;
@@ -167,45 +156,55 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(185, 350);
+            this.labelControl3.Location = new System.Drawing.Point(181, 385);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(222, 24);
             this.labelControl3.TabIndex = 7;
             this.labelControl3.Text = "Seans Başına Kontenjan:";
             // 
+            // textEditSessionLength
+            // 
+            this.textEditSessionLength.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.departmentBindingSource, "SessionLength", true));
+            this.textEditSessionLength.Location = new System.Drawing.Point(440, 425);
+            this.textEditSessionLength.Name = "textEditSessionLength";
+            this.textEditSessionLength.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textEditSessionLength.Properties.Appearance.Options.UseFont = true;
+            this.textEditSessionLength.Size = new System.Drawing.Size(224, 30);
+            this.textEditSessionLength.TabIndex = 3;
+            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(185, 398);
+            this.labelControl4.Location = new System.Drawing.Point(181, 431);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(191, 24);
-            this.labelControl4.TabIndex = 8;
-            this.labelControl4.Text = "Seans Uzunluğu (dk):";
+            this.labelControl4.Size = new System.Drawing.Size(185, 24);
+            this.labelControl4.TabIndex = 7;
+            this.labelControl4.Text = "Seans Uzunluğu(dk):";
             // 
             // XtraFormDepartmentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 520);
+            this.ClientSize = new System.Drawing.Size(889, 561);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.textEditSessionLenght);
+            this.Controls.Add(this.textEditSessionLength);
             this.Controls.Add(this.textEditQuatoPerSeance);
             this.Controls.Add(this.textEditPaymentPerSeance);
             this.Controls.Add(this.textEditName);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "XtraFormDepartmentDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "XtraFormDepartmentDetails";
+            this.Text = "Bölüm Detayları";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentPerSeance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditQuatoPerSeance.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditSessionLenght.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditSessionLength.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,11 +220,11 @@
         private DevExpress.XtraEditors.TextEdit textEditName;
         private DevExpress.XtraEditors.TextEdit textEditPaymentPerSeance;
         private DevExpress.XtraEditors.TextEdit textEditQuatoPerSeance;
-        private DevExpress.XtraEditors.TextEdit textEditSessionLenght;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.BindingSource departmentBindingSource;
+        private DevExpress.XtraEditors.TextEdit textEditSessionLength;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

@@ -180,8 +180,9 @@
             this.checkEditSystemAdmin.MenuManager = this.ribbonControl1;
             this.checkEditSystemAdmin.Name = "checkEditSystemAdmin";
             this.checkEditSystemAdmin.Properties.Caption = "";
-            this.checkEditSystemAdmin.Size = new System.Drawing.Size(210, 24);
-            this.checkEditSystemAdmin.TabIndex = 8;
+            this.checkEditSystemAdmin.Size = new System.Drawing.Size(94, 24);
+            this.checkEditSystemAdmin.TabIndex = 10;
+            this.checkEditSystemAdmin.CheckedChanged += new System.EventHandler(this.checkEditSystemAdmin_CheckedChanged);
             // 
             // XtraFormUserDetails
             // 
@@ -225,7 +226,7 @@
         private DevExpress.XtraEditors.TextEdit textEditName;
         private DevExpress.XtraEditors.TextEdit textEditSurname;
         private DevExpress.XtraEditors.TextEdit textEditPassword;
-        private DevExpress.XtraEditors.CheckEdit checkEditSystemAdmin;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private DevExpress.XtraEditors.CheckEdit checkEditSystemAdmin;
     }
 }

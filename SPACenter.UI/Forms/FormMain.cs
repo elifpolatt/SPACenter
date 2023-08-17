@@ -17,7 +17,7 @@ namespace SPACenter.UI
         public FormMain()
         {
             InitializeComponent();
-         // accordionControlElementSystem.Visible = GlobalVariables.User.SystemAdmin;
+           accordionControlElementSystem.Visible = GlobalVariables.User.SystemAdmin;
             //Sistem admin yetkisine sahip kullanıcılara bu admin islemleri kısmınını görünürlüğüne sahip olabilir
         }
 

@@ -29,18 +29,7 @@ namespace SPACenter.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //  Application.Run(new FormMain());
-
-
-            //form main acılırken loading ekranı
-
-            //System.Threading.Thread.Sleep(2000); // 2000 ms = 2 saniye bekleyecek main acılırken
-
-            //FormMain mainForm = new FormMain();
-
-            //Application.Run(mainForm);
-
-            //SplashScreenManager.CloseForm(false);
+           
 
 
 
@@ -51,37 +40,7 @@ namespace SPACenter.UI
 
             }
 
-            bool database = false;
-            ConnectInfo connectInfo = GlobalVariables.ConnectInfo;
-            if (connectInfo != null)
-            {
-                DatabaseManager databaseManager = new DatabaseManager(connectInfo);
-                database = databaseManager.TestDatabase();
-            }
-
-            SplashScreenManager.CloseForm(false);
-
-
-            if (!database)
-            {
-                XtraMessageBox.Show(
-                    "Veri tabanı bağlantısı başarısız. Bağlantı sağlandıktan sonra uygulama kullanılabilir.", "Hata",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                XtraFormSetDatabase setDatabase = new XtraFormSetDatabase();
-                setDatabase.ShowDialog();
-
-                if (!setDatabase.Result)
-                {
-                    XtraMessageBox.Show(
-                        "Veri tabanı bağlantısı başarısız. Bağlantı sağlandıktan sonra uygulama kullanılabilir.", "Hata",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                SplashScreenManager.ShowForm(typeof(SplashScreenManager));
-                DatabaseManager databaseManager = new DatabaseManager(GlobalVariables.ConnectInfo);
-                databaseManager.CreatDatabase(setDatabase.User);
-
-            }
+        
             XtraFormLogin login = new XtraFormLogin();
             SplashScreenManager.CloseForm(false);
             login.ShowDialog();
@@ -95,3 +54,54 @@ namespace SPACenter.UI
 
     }
 }
+
+
+
+
+
+//  Application.Run(new FormMain());
+
+
+//form main acılırken loading ekranı
+
+//System.Threading.Thread.Sleep(2000); // 2000 ms = 2 saniye bekleyecek main acılırken
+
+//FormMain mainForm = new FormMain();
+
+//Application.Run(mainForm);
+
+//SplashScreenManager.CloseForm(false);
+
+
+
+//bool database = false;
+//ConnectInfo connectInfo = GlobalVariables.ConnectInfo;
+//if (connectInfo != null)
+//{
+//    DatabaseManager databaseManager = new DatabaseManager(connectInfo);
+//    database = databaseManager.TestDatabase();
+//}
+
+//SplashScreenManager.CloseForm(false);
+
+
+//if (!database)
+//{
+//    XtraMessageBox.Show(
+//        "Veri tabanı bağlantısı başarısız. Bağlantı sağlandıktan sonra uygulama kullanılabilir.", "Hata",
+//        MessageBoxButtons.OK, MessageBoxIcon.Error);
+//    XtraFormSetDatabase setDatabase = new XtraFormSetDatabase();
+//    setDatabase.ShowDialog();
+
+//    if (!setDatabase.Result)
+//    {
+//        XtraMessageBox.Show(
+//            "Veri tabanı bağlantısı başarısız. Bağlantı sağlandıktan sonra uygulama kullanılabilir.", "Hata",
+//            MessageBoxButtons.OK, MessageBoxIcon.Error);
+//        return;
+//    }
+//    SplashScreenManager.ShowForm(typeof(SplashScreenManager));
+//    DatabaseManager databaseManager = new DatabaseManager(GlobalVariables.ConnectInfo);
+//    databaseManager.CreatDatabase(setDatabase.User);
+
+//}

@@ -38,7 +38,7 @@ namespace SPACenter.UI.Forms
         }
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
             //Tuple<bool, List<string>, Department> addResult;
             //addResult = departmentManager.Add(Department);
             //MessageBoxes.ShowResult(addResult);
@@ -49,6 +49,25 @@ namespace SPACenter.UI.Forms
             //    Result = addResult.Item1;
             //    Close();
             //}
+
+            int quatoPerSeance;
+            if (int.TryParse(textEditQuatoPerSeance.Text, out quatoPerSeance))
+            {
+                Department.QuotaPerSeance = quatoPerSeance;
+            }
+
+            int sessionLength;
+            if (int.TryParse(textEditSessionLength.Text, out sessionLength))
+            {
+                Department.SessionLength = sessionLength;
+            }
+          
+            int paymentPerSeance;
+            if (int.TryParse(textEditPaymentPerSeance.Text, out paymentPerSeance))
+            {
+                Department.PaymentPerSeance = paymentPerSeance;
+            }
+
 
             Tuple<bool, List<string>, Department> operationResult;
             if (Department.Id > 0) //bir seçim yapıldıysa id sıfırdan buyukse:

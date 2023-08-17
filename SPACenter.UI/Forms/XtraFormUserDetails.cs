@@ -63,6 +63,19 @@ namespace SPACenter.UI.Forms
             }
         }
 
-      
+        private void checkEditSystemAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEditSystemAdmin.Checked)
+            {
+                // Kullanıcı yönetici olarak atanacak
+                User.SystemAdmin = true;
+            }
+            else
+            {
+                // Kullanıcı çalışan olarak atanacak
+                User.SystemAdmin = false;
+            }
+            userBindingSource.ResetBindings(false);
+        }
     }
 }

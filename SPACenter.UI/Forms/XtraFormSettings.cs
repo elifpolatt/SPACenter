@@ -24,7 +24,7 @@ namespace SPACenter.UI.Forms
 
             foreach (ServerSetting serverSetting in serverSettings)
             {
-                XtraUserControlServerSettings xtraUserControlServerSettings = new XtraUserControlServerSettings(/*serverSetting*/);
+                XtraUserControlServerSettings xtraUserControlServerSettings = new XtraUserControlServerSettings(serverSetting);
                 xtraUserControlServerSettings.Dock = DockStyle.Top;
                 flowLayoutPanelSettings.Controls.Add(xtraUserControlServerSettings);
             }

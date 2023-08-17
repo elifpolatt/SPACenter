@@ -33,6 +33,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditUser = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,13 +46,12 @@
             this.colImageBytes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonLogin = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -83,11 +83,15 @@
             this.gridLookUpEditUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEditUser.Properties.DataSource = this.userBindingSource;
-            this.gridLookUpEditUser.Properties.DisplayMember = "Name";
+            this.gridLookUpEditUser.Properties.DisplayMember = "FullName";
             this.gridLookUpEditUser.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEditUser.Properties.ValueMember = "Id";
             this.gridLookUpEditUser.Size = new System.Drawing.Size(247, 28);
             this.gridLookUpEditUser.TabIndex = 2;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(SPACenter.Entities.Database.User);
             // 
             // gridLookUpEdit1View
             // 
@@ -172,10 +176,6 @@
             this.textEditPassword.Size = new System.Drawing.Size(247, 28);
             this.textEditPassword.TabIndex = 3;
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(SPACenter.Entities.Database.User);
-            // 
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonCancel.ImageOptions.Image")));
@@ -215,9 +215,9 @@
             this.Text = "Giriş Yap";
             this.Load += new System.EventHandler(this.XtraFormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -166,6 +166,8 @@
             this.colSessionLength.FieldName = "SessionLength";
             this.colSessionLength.MinWidth = 25;
             this.colSessionLength.Name = "colSessionLength";
+            this.colSessionLength.Visible = true;
+            this.colSessionLength.VisibleIndex = 3;
             this.colSessionLength.Width = 94;
             // 
             // colDelFlag
