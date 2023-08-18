@@ -1,0 +1,21 @@
+# SPACenter
+SPA Center, çok katmanlı mimari ile Entity Framework kullanılarak yapılmış bir web uygulamasıdır. Hem MSSQL hem de MySQL veri tabanlarıyla uyumlu şekilde çalışmaktadır. Böylece tercih edilen veri tabanına göre proje kullanılabilir. 
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/9f419b5b-3df5-4244-9fe8-27e83d2e0baa)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/222a5f2a-9e02-46f2-8509-4b4d5675d388)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/4c15f687-57a3-4529-8ebd-51e9ebd584c8)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/c3d89b8d-a0be-489e-82e2-c950df7f7ee2)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/193fced0-867c-48fe-80da-02d0308b1349)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/9bf75690-a77e-4cc5-a784-d0d8b34bb131)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/ea9eab23-1ec3-4e1c-adbe-73f5c4f73cdf)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/89eeb434-397f-4082-9f29-aa723c03111b)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/5d3b26d7-c569-4710-9863-f0ebdf912d65)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/ff60907c-1103-4c89-83ba-28ba3c3724e6)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/3853890c-79f8-47a0-87b8-4a751ecb0c3b)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/f21e3a0d-51e5-4ce8-8374-5af5db62e50a)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/3d4219d2-2033-42c2-9a3d-5fb2733cb94d)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/732f0bf2-3000-4f6e-a3c6-7cb73e92c2f7)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/b5c9d20e-0516-45c1-9f64-6c4a14bb1bfa)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/f030a821-8d9c-4e6b-a8c8-083498ee1bc4)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/2a7bf9fc-8a5e-4d98-a79f-d24112ed230b)
+![image](https://github.com/elifpolatt/SPACenter/assets/123379493/c4868c14-3297-43c0-bf03-77da18193a31)
+
